@@ -17,7 +17,9 @@ const Footer = () => {
 
         {/* --- COMPANY INFO --- */}
         <div>
-          <Image src="/assets/images/group-logo.png" alt="Global Technologies Logo" width={140} height={56} className="h-14 mb-4 object-contain" />
+          <div className="inline-block bg-white rounded-lg p-3 mb-4">
+            <Image src="/assets/images/group-logo.png" alt="Global Technologies Logo" width={220} height={88} className="h-20 object-contain" />
+          </div>
 
           <p className="text-sm leading-relaxed mb-5 text-gray-200">
             <span className="font-semibold text-white">
@@ -54,7 +56,7 @@ const Footer = () => {
           <ul className="space-y-3 text-sm">
             <li><a href="/about" className="hover:text-blue-400">About Company</a></li>
             <li><a href="/about/management" className="hover:text-blue-400">Leadership Team</a></li>
-            <li><a href="/projects-and-products" className="hover:text-blue-400">Projects & Products</a></li>
+            <li><a href="/service" className="hover:text-blue-400">Projects & Products</a></li>
             <li><a href="/contactUs" className="hover:text-blue-400">Contact Us</a></li>
           </ul>
         </div>
@@ -66,11 +68,11 @@ const Footer = () => {
           </h4>
 
           <ul className="space-y-3 text-sm">
-            <li><a href="/projects-and-products/air-pollution-control" className="hover:text-blue-400">Air Pollution Control Systems</a></li>
-            <li><a href="/projects-and-products/hvac-clean-room" className="hover:text-blue-400">HVAC Clean Room Projects</a></li>
-            <li><a href="/projects-and-products/material-handling" className="hover:text-blue-400">Material Handling Systems</a></li>
-            <li><a href="https://jettech-website-url.com" className="hover:text-blue-400">EPC Power Projects</a></li>
-            <li><a href="/Ourgroup/GlobalMetallurgy" className="hover:text-blue-400">Metallurgicals & Briquettes</a></li>
+            <li><a href="/service/AirPollutionControl" className="hover:text-blue-400">Air Pollution Control Systems</a></li>
+            <li><a href="/service/HVAC" className="hover:text-blue-400">HVAC Clean Room Projects</a></li>
+            <li><a href="/service/MaterialHandling" className="hover:text-blue-400">Material Handling Systems</a></li>
+            <li><a href="https://www.jettechenergy.com/" className="hover:text-blue-400">EPC Power Projects</a></li>
+            <li><a href="/service/Metallurgicals" className="hover:text-blue-400">Metallurgicals & Briquettes</a></li>
           </ul>
 
           {/* CONTACT CTA */}
