@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import MotionWrapper from "@/components/common/MotionWrapper";
+import LazyAnimatePresence from "@/components/common/LazyAnimatePresence";
 import Image from "next/image";
 
 export default function Certifications() {
@@ -11,14 +12,16 @@ export default function Certifications() {
       img: "/assets/images/Certificate1.jpg",
       desc: `Our ISO 9001:2008 certification highlights our dedication to superior design,
       manufacturing, and customer satisfaction. It reinforces our commitment to excellence
+      and reliability in delivering HVAC and pollution control solutions.Our ISO 9001:2008 certification highlights our dedication to superior design,
+      manufacturing, and customer satisfaction. It reinforces our commitment to excellence
       and reliability in delivering HVAC and pollution control solutions.`,
     },
-    {
-      name: "Global Technologies",
-      img: "/assets/images/Certificate2.jpg",
-      desc: `With ISO 9001:2008 accreditation, Global Technologies continues to deliver top-tier
-      engineering and material handling systems with precision, efficiency, and quality.`,
-    },
+    // {
+    //   name: "Global Technologies",
+    //   img: "/assets/images/Certificate2.jpg",
+    //   desc: `With ISO 9001:2008 accreditation, Global Technologies continues to deliver top-tier
+    //   engineering and material handling systems with precision, efficiency, and quality.`,
+    // },
     {
       name: "Global Enviro Air Systems (Expansion)",
       img: "/assets/images/Certificate3.jpg",
@@ -62,9 +65,9 @@ export default function Certifications() {
       {/* ===== Main Content ===== */}
       <div className="container relative z-10 mx-auto grid md:grid-cols-2 gap-16 items-center">
         {/* ===== Left: Certificate Image ===== */}
-        <div className="flex justify-center">
-          <AnimatePresence mode="wait">
-            <motion.div
+          <div className="flex justify-center">
+          <LazyAnimatePresence mode="wait">
+            <MotionWrapper
               key={active.name}
               initial={{ opacity: 0, x: -80 }}
               animate={{ opacity: 1, x: 0 }}
@@ -79,14 +82,14 @@ export default function Certifications() {
                 height={500}
                 className="rounded-2xl border-4 border-blue-400 object-contain"
               />
-            </motion.div>
-          </AnimatePresence>
+            </MotionWrapper>
+          </LazyAnimatePresence>
         </div>
 
         {/* ===== Right: Certificate Description ===== */}
         <div className="space-y-6">
-          <AnimatePresence mode="wait">
-            <motion.div
+          <LazyAnimatePresence mode="wait">
+            <MotionWrapper
               key={active.img}
               initial={{ opacity: 0, x: 80 }}
               animate={{ opacity: 1, x: 0 }}
@@ -99,21 +102,16 @@ export default function Certifications() {
               <p className="text-base leading-relaxed text-gray-200 mb-4">
                 {active.desc}
               </p>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                className="mt-4 border border-blue-300 px-6 py-2 rounded-md hover:bg-blue-200 hover:text-[#081736] transition-all"
-              >
-                Learn More
-              </motion.button>
-            </motion.div>
-          </AnimatePresence>
+            </MotionWrapper>
+          </LazyAnimatePresence>
         </div>
       </div>
 
       {/* ===== Certificates Thumbnails Row ===== */}
       <div className="mt-20 flex flex-wrap justify-center gap-6 relative z-10">
         {certificates.map((c) => (
-          <motion.div
+          <MotionWrapper
+            as="div"
             key={c.name}
             whileHover={{ scale: 1.05 }}
             onClick={() => setActive(c)}
@@ -130,7 +128,7 @@ export default function Certifications() {
               height={130}
               className="object-cover w-full h-full"
             />
-          </motion.div>
+          </MotionWrapper>
         ))}
       </div>
     </section>

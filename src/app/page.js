@@ -1,75 +1,108 @@
-import AboutUs from "@/components/AboutUs";
 import HeroCarousel from "@/components/HeroCarousel/HeroCarousel";
-// Updated import path:
-
-import ServicesSection from "@/components/ServiceSection";
-import Project from "@/components/Project";
 import About from "@/components/About";
-import ClientsPage from "@/components/ClientsPage";
+import Management from "@/components/About/Management";
+import KeyPersons from "@/components/About/KeyPersons";
+import MissionVision from "@/components/About/MissionVision";
+import OurInfrastructure from "@/components/About/OurInfrastructure";
+import Certifications from "@/components/About/Certifications";
+import OurJourney from "@/components/About/OurJourney";
+import ScrollToHash from "@/components/common/ScrollToHash";
+
+const sectionIds = [
+  "about-us",
+  "management",
+  "key-persons",
+  "mission",
+  "infrastructure",
+  "certifications",
+];
+
 
 export default function Home() {
   const slides = [
     {
-      image:
-        "https://storage.googleapis.com/uxpilot-auth.appspot.com/3e425a459b-733ddb1f886d42169401.png",
-      title: "Global Enviro",
-      subtitle: `With over a decade of excellence, Global Enviro Group leads the industry in air pollution control, HVAC systems, bulk material handling, and industrial solutions.
-We deliver innovative, client-focused services backed by deep technical expertise and proven performance.
-`,
+      image: "https://storage.googleapis.com/uxpilot-auth.appspot.com/3e425a459b-733ddb1f886d42169401.png",
+      title: "Air Pollution Control Systems",
+      subtitle: `Innovative systems designed to reduce emissions and safeguard air quality.\nEmpowering industries to meet environmental standards with efficiency and reliability.`,
       buttonText: "Know More",
-      buttonLink: "/about",
+      buttonLink: "/projects-and-products/AirPollutionControl",
     },
     {
-      image:
-        "https://storage.googleapis.com/uxpilot-auth.appspot.com/3e425a459b-733ddb1f886d42169401.png",
-      title: "Air Pollution Control",
-      subtitle: `Innovative systems designed to reduce emissions and safeguard air quality.
-Empowering industries to meet environmental standards with efficiency and reliability.`,
+      image: "https://storage.googleapis.com/uxpilot-auth.appspot.com/3e425a459b-733ddb1f886d42169401.png",
+      title: "HVAC Clean Room Projects",
+      subtitle: `High-performance cleanroom and HVAC solutions built for precision and energy savings.\nCreating controlled environments that improve comfort, safety, and efficiency.`,
       buttonText: "Know More",
-      buttonLink: "/service/AirPollutionControl",
+      buttonLink: "/projects-and-products/HVAC",
     },
     {
-      image:
-        "https://storage.googleapis.com/uxpilot-auth.appspot.com/3e425a459b-733ddb1f886d42169401.png",
-      title: "HVAC Systems",
-      subtitle: `High-performance cleanroom and HVAC solutions built for precision and energy savings.
-Creating controlled environments that improve comfort, safety, and efficiency.`,
+      image: "https://storage.googleapis.com/uxpilot-auth.appspot.com/3e425a459b-733ddb1f886d42169401.png",
+      title: "Material Handling Systems",
+      subtitle: `Comprehensive solutions for smooth, safe, and efficient bulk material movement.\nOptimized designs that enhance productivity and reduce operational downtime.`,
       buttonText: "Know More",
-      buttonLink: "/service/HVAC",
+      buttonLink: "/projects-and-products/MaterialHandling",
     },
     {
-      image:
-        "https://storage.googleapis.com/uxpilot-auth.appspot.com/3e425a459b-733ddb1f886d42169401.png",
-      title: "Material Handling",
-      subtitle: `Comprehensive solutions for smooth, safe, and efficient bulk material movement.
-Optimized designs that enhance productivity and reduce operational downtime.`,
-      buttonText: "Know More",
-      buttonLink: "/service/MaterialHandling",
-    },
-
-    {
-      image:
-        "https://storage.googleapis.com/uxpilot-auth.appspot.com/3e425a459b-733ddb1f886d42169401.png",
+      image: "https://storage.googleapis.com/uxpilot-auth.appspot.com/3e425a459b-733ddb1f886d42169401.png",
       title: "EPC Power Projects",
-      subtitle: `Complete EPC expertise from concept to commissioning of industrial power plants.
-Delivering reliable, scalable infrastructure that drives sustainable growth and performance.`,
+      subtitle: `Complete EPC expertise from concept to commissioning of industrial power plants.\nDelivering reliable, scalable infrastructure that drives sustainable growth and performance.`,
       buttonText: "Know More",
-      buttonLink: "/service/EPCPower",
+      buttonLink: "/projects-and-products/EPCPower",
+    },
+    {
+      image: "https://storage.googleapis.com/uxpilot-auth.appspot.com/3e425a459b-733ddb1f886d42169401.png",
+      title: "Metallurgicals & Briquettes",
+      subtitle: `Premium metallurgical products and eco-friendly briquettes for diverse industrial applications.\nCombining quality, sustainability, and innovation to meet evolving market demands.`,
+      buttonText: "Know More",
+      buttonLink: "/Ourgroup/GlobalMetallurgy",
     },
   ];
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between bg-gray-300">
+    <main className="flex min-h-screen flex-col w-full">
+      <ScrollToHash ids={sectionIds} />
+
+      {/* Hero Carousel */}
       <HeroCarousel
         slides={slides}
-        interval={4000}
+        interval={2000}
         pauseOnHover={false}
         pauseOnBtnHover={true}
       />
-      <About />
-      
-      <ClientsPage />
-      
+
+      {/* About Us Banner */}
+      <section id="about-us" className="scroll-mt-36">
+        <About />
+      </section>
+
+      {/* Management */}
+      <section id="management" className="scroll-mt-36">
+        <Management />
+      </section>
+
+      {/* Key Persons */}
+      <section id="key-persons" className="scroll-mt-36">
+        <KeyPersons />
+      </section>
+
+      {/* Mission & Vision */}
+      <section id="mission" className="scroll-mt-36">
+        <MissionVision />
+      </section>
+
+      {/* Our Infrastructure */}
+      <section id="infrastructure" className="scroll-mt-36">
+        <OurInfrastructure />
+      </section>
+
+      {/* Certifications */}
+      <section id="certifications" className="scroll-mt-36">
+        <Certifications />
+      </section>
+
+      {/* Our Journey */}
+      <section id="journey">
+        <OurJourney />
+      </section>
     </main>
   );
 }

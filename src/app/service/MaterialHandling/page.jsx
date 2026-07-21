@@ -1,110 +1,207 @@
-import HeaderSection from "@/components/commonForService/HeaderSection";
-import ProductCarousel from "@/components/commonForService/ProductCarousel";
+"use client";
+import { useState } from "react";
+import useOpenOnHash from "@/lib/useOpenOnHash";
+import MotionWrapper from "@/components/common/MotionWrapper";
+import LazyAnimatePresence from "@/components/common/LazyAnimatePresence";
+import Image from "next/image";
+import Link from "next/link";
+import { ChevronDown } from "lucide-react";
+import HeroSection from "@/components/HeroSection/HeroSection";
 
-
-const products = [
+const sections = [
   {
-  id: 1,
-  title: "Fuel Handling System",
-  image: "/assets/images/fuel handling system.png",
-  specs: {
-    "Type of Fuel": "Coal / Bio-mass Husk / Wood / Bagasse.",
-    "Capacity Range": "1 TPH to 200 TPH.",
-    "Type Of": "Belt / Bucket Elevator / Slat Chain.",
+    id: "fuel-handling",
+    title: "1. Fuel Handling Systems",
+    color: "bg-indigo-700",
+    basePath: "FuelHandling",
+    subsystems: [
+      { name: "Coal Handling", slug: "coal-handling" },
+      { name: "Husk Handling", slug: "husk-handling" },
+      { name: "Biomass Briquettes Handling", slug: "biomass-briquettes-handling" },
+    ],
+    equipment: [
+      { name: "Belt Conveyor", slug: "belt-conveyor" },
+      { name: "Bucket Elevator", slug: "bucket-elevator" },
+      { name: "Slot Chain Conveyor", slug: "slot-chain-conveyor" },
+      { name: "Vibratory Screen (Single/Double/Triple Deck)", slug: "vibratory-screen" },
+      { name: "Screw Conveyor", slug: "screw-conveyor" },
+      { name: "Crusher (Impact Hammer Mill)", slug: "crusher-impact-hammer-mill" },
+      { name: "Crusher Cum Screen", slug: "crusher-cum-screen" },
+    ],
   },
-},
-{
-  id: 2,
-  title: "Dense Phase Ash Handling",
-  image: "/assets/images/densephase ash handling.png",
-  specs: {
-    "Application": "Fly ash and bottom ash conveying from ESP / Boiler to silo.",
-    "Capacity Range": "100 Kgs/Hr to 10 Tons/Hr.",
-    "Density": "200 Kgs/M³ to 800 Kgs/M³.",
-    "Length Of Travel": "Up to 300 Mtrs.",
-    "System": "Pneumatic conveying (Dense Phase).",
+  {
+    id: "ash-handling",
+    title: "2. Ash Handling Systems",
+    color: "bg-slate-700",
+    basePath: "AshHandling",
+    subsystems: [
+      { name: "Dense Phase Ash Handling", slug: "dense-phase-ash-handling" },
+      { name: "Lean Phase Ash Handling", slug: "lean-phase-ash-handling" },
+      { name: "Mechanical Ash Handling", slug: "mechanical-ash-handling" },
+    ],
+    equipment: [
+      { name: "Dense Veyor", slug: "dense-veyor" },
+      { name: "Ash Veyor", slug: "ash-veyor" },
+      { name: "Wet Scrapper", slug: "wet-scrapper" },
+      { name: "Ash Conditioner", slug: "ash-conditioner" },
+    ],
   },
-},
-{
-  id: 3,
-  title: "Crusher",
-  image: "/assets/images/crusher.png",
-  specs: {
-    "Application": "Coal Crushing.",
-    "Capacity Range": "3 TPH to 250 TPH.",
-    "Type": "Impactor / Hammer Mill / Ring Granulator.",
+  {
+    id: "warehouse",
+    title: "3. Warehouse Handling Systems",
+    color: "bg-blue-800",
+    basePath: "Warehouse",
+    subsystems: [{ name: "EOT Cranes", slug: "eot-cranes" }],
+    equipment: [
+      { name: "Single Girder EOT Crane", slug: "single-girder-eot-crane" },
+      { name: "Double Girder EOT Crane", slug: "double-girder-eot-crane" },
+    ],
   },
-},
-{
-  id: 4,
-  title: "Vibratory Screen",
-  image: "/assets/images/vibratory screen.png",
-  specs: {
-    "Capacity Range": "3 TPH to 300 TPH.",
-    "No of Decks": "1 / 2 / 3.",
-    "Type of Material": "Coal / Rice Husk / Lime Stone etc.",
-    "Type": "Can Screen.",
-  },
-},
-{
-  id: 5,
-  title: "Ash Conditioner",
-  image: "/assets/images/ash conditioner.png",
-  specs: {
-    "Type": "Single Paddle / Double Paddle / Screw.",
-    "Length": "Maximum 5 Mtrs.",
-    "Capacity": "Up to 30 TPH.",
-    "Material": "Carbon Steel / Stainless Steel.",
-  },
-},
-{
-  id: 6,
-  title: "Belt Conveyor",
-  image: "/assets/images/belt conveyor.png",
-  specs: {
-    "Application": "Material conveying for ash, coal, husk etc.",
-    "Length": "Up to 500 Mtrs.",
-    "Width": "300 mm to 2500 mm.",
-  },
-},
-{
-  id: 7,
-  title: "EOT & HOT Cranes",
-  image: "/assets/images/EOT and HOT cranes.png",
-  specs: {
-    "Class": "IS 3177, M5.",
-    "Span": "Up to 16 Mtrs.",
-    "Travel": "As per client requirement.",
-    "Hoist": "Wire Rope Hoist from 2 Ton to 24 Ton.",
-    "SWL": "1 Ton to 50 Ton.",
-    "HOL (Height of Lift)": "Up to 36 Mtrs.",
-  },
-},
-
 ];
 
-export default function MaterialHandlingPage() {
+// One representative image per section (shown in the accordion body)
+const imageMap = {
+  "fuel-handling": "/assets/images/material-handling-projects/belt-conveyor.jpg",
+  "ash-handling": "/assets/images/material-handling-projects/dense-veyor.jpg",
+  warehouse: "/assets/images/EOT and HOT cranes.png",
+};
+
+function AccordionItem({ section, isOpen, onToggle }) {
   return (
-    <main className="bg-blue-100 min-h-screen">
-      <HeaderSection
-        title="Material Handling Systems"
-        description="Global Technologies delivers advanced Bulk Material Handling Systems 
-        that include Crushing, Screening, Conveying, and Dust Extraction solutions. 
-        Our systems are designed for Power, Process Boilers, Pharma, Chemical, and Paper industries, 
-        ensuring reliable performance with superior engineering quality."
+    <div
+      id={section.id}
+      className={`scroll-mt-32 rounded-xl overflow-hidden border transition-all duration-300 ${
+        isOpen
+          ? "border-blue-300 shadow-lg ring-1 ring-blue-200"
+          : "border-gray-200 shadow-sm hover:shadow-md"
+      }`}
+    >
+      {/* Header */}
+      <button
+        onClick={onToggle}
+        className={`w-full flex items-center justify-between px-6 py-4 text-left text-white font-semibold text-base ${section.color} hover:opacity-90 transition-all`}
+      >
+        <span>{section.title}</span>
+        <ChevronDown
+          size={20}
+          className={`transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+        />
+      </button>
 
-        description1="We integrate innovation with engineering expertise to develop automated 
-        and energy-efficient handling solutions that enhance productivity. 
-        By emphasizing safety, performance, and long-term value, 
-        we enable industries to achieve smoother and more sustainable operations."
+      {/* Body */}
+      <LazyAnimatePresence initial={false}>
+        {isOpen && (
+          <MotionWrapper
+            as="div"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.35 }}
+            className="overflow-hidden"
+          >
+            <div className="bg-white px-6 py-5 flex flex-col md:flex-row gap-6">
+              {/* Image */}
+              <div className="md:w-1/3">
+                <Image
+                  src={imageMap[section.id]}
+                  alt={section.title}
+                  width={480}
+                  height={240}
+                  className="rounded-xl object-cover w-full h-48 shadow"
+                />
+              </div>
 
-        imgSrc="/assets/images/servicebg.jpg"
-      />
+              {/* Content */}
+              <div className="md:w-2/3 space-y-4">
+                {section.subsystems.length > 0 && (
+                  <div>
+                    <p className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">
+                      System Types
+                    </p>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      {section.subsystems.map((item) => (
+                        <li key={item.slug} className="flex items-center gap-2 text-sm">
+                          <span className="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0" />
+                          <Link
+                            href={`/service/MaterialHandling/${section.basePath}/${item.slug}`}
+                            className="text-gray-700 hover:text-blue-700 hover:underline transition-colors"
+                          >
+                            {item.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
 
-      {/* Product Carousel */}
-      <ProductCarousel products={products} />
-    </main>
+                {section.equipment.length > 0 && (
+                  <div>
+                    <p className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">
+                      Equipment
+                    </p>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      {section.equipment.map((item) => (
+                        <li key={item.slug} className="flex items-center gap-2 text-sm">
+                          <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 shrink-0" />
+                          <Link
+                            href={`/service/MaterialHandling/${section.basePath}/${item.slug}`}
+                            className="text-gray-700 hover:text-blue-700 hover:underline transition-colors"
+                          >
+                            {item.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            </div>
+          </MotionWrapper>
+        )}
+      </LazyAnimatePresence>
+    </div>
   );
 }
 
+const sectionIds = sections.map((s) => s.id);
 
+export default function MaterialHandlingPage() {
+  const [openId, setOpenId] = useState("fuel-handling");
+  useOpenOnHash(sectionIds, setOpenId);
+
+  return (
+    <main>
+      <HeroSection
+        imageSrc="/assets/images/fuel handling system.png"
+        title="Material Handling Systems"
+        subtitle="Complete bulk material handling — fuel, ash, and warehouse systems — engineered for power, pharma, and process industries."
+        align="left"
+        overlay="bg-black/60"
+        height="h-[380px]"
+      />
+
+      <section className="py-16 px-6 md:px-16 max-w-5xl mx-auto">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl font-extrabold text-[#0b1e3d] mb-3">
+            Our Handling Systems
+          </h2>
+          <p className="text-gray-500 text-base max-w-2xl mx-auto">
+            Explore our three core material handling divisions — each covering
+            specific system types and the equipment deployed within them.
+          </p>
+        </div>
+
+        <div className="space-y-4">
+          {sections.map((section) => (
+            <AccordionItem
+              key={section.id}
+              section={section}
+              isOpen={openId === section.id}
+              onToggle={() => setOpenId(openId === section.id ? null : section.id)}
+            />
+          ))}
+        </div>
+      </section>
+    </main>
+  );
+}

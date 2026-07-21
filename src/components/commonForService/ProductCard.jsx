@@ -1,11 +1,12 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import MotionWrapper from "@/components/common/MotionWrapper";
 
 export default function ProductCard({ id, title, image, specs = {} }) {
   return (
-    <motion.div
+    <MotionWrapper
+      as="div"
       initial={{ y: 40, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
@@ -25,7 +26,7 @@ export default function ProductCard({ id, title, image, specs = {} }) {
 
       {/* Text Section */}
       <div className="md:w-1/2 mt-6 md:mt-0 md:pl-10">
-        <Link href={`/service/AirPollutionControl/${id}`}>
+        <Link href={`/projects-and-products/AirPollutionControl/${id}`}>
           <h1 className="text-2xl font-semibold text-blue-700 mb-3 hover:underline">
             {title}
           </h1>
@@ -42,6 +43,6 @@ export default function ProductCard({ id, title, image, specs = {} }) {
           </tbody>
         </table>
       </div>
-    </motion.div>
+    </MotionWrapper>
   );
 }

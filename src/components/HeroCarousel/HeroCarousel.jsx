@@ -1,7 +1,10 @@
 "use client";
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import MotionWrapper from "@/components/common/MotionWrapper";
+import LazyAnimatePresence from "@/components/common/LazyAnimatePresence";
 import { cn } from "@/lib/utils";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
 
 // usage
 // const slides = [
@@ -36,24 +39,40 @@ import { cn } from "@/lib/utils";
 
 export default function HeroCarousel({
   slides = [],
-  interval = 2000,
+  interval = 3000,
   pauseOnHover = false,
   pauseOnBtnHover = false,
   className,
 }) {
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [direction, setDirection] = useState(0);
+
+  const nextSlide = () => {
+    setDirection(1);
+    setCurrent((prev) => (prev + 1) % slides.length);
+  };
+
+  const prevSlide = () => {
+    setDirection(-1);
+    setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
+  };
 
   // Auto-rotate logic
   useEffect(() => {
     if (paused) return;
-    const timer = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % slides.length);
-    }, interval);
+    const timer = setInterval(nextSlide, interval);
     return () => clearInterval(timer);
   }, [paused, slides.length, interval]);
 
   if (!slides.length) return null;
+
+  // Slide animation variants
+    const variants = {
+      enter: (dir) => ({ x: dir > 0 ? 100 : -100 }),
+      center: { x: 0 },
+      exit: (dir) => ({ x: dir > 0 ? -100 : 100 }),
+    };
 
   return (
     <div
@@ -61,23 +80,41 @@ export default function HeroCarousel({
       onMouseEnter={() => setPaused(pauseOnHover && true)}
       onMouseLeave={() => setPaused(false)}
     >
-      <AnimatePresence mode="wait">
-        <motion.div key={current} className="absolute inset-0">
-          {/* Image transition */}
-          <motion.img
+      <LazyAnimatePresence mode="sync" custom={direction}>
+        <MotionWrapper
+          key={current}
+          as="div"
+          className="absolute inset-0"
+          custom={direction}
+          variants={variants}
+          initial="enter"
+          animate="center"
+          exit="exit"
+          transition={{ duration: 0.4, ease: "easeOut" }}
+          drag="x"
+          dragConstraints={{ left: 0, right: 0 }}
+          dragElastic={0.8}
+          onDragEnd={(e, { offset, velocity }) => {
+            const swipe = offset.x + velocity.x * 0.2;
+            if (swipe < -100) nextSlide();
+            else if (swipe > 100) prevSlide();
+          }}
+        >
+          {/* Image */}
+          <MotionWrapper
+            as="img"
             key={`image-${current}`}
             src={slides[current].image}
             alt={slides[current].title}
-            className="w-full h-full object-cover"
-            initial={{ opacity: 0, scale: 1 , x:50}}
-            animate={{ opacity: 1, scale: 1 , x:0}}
-            exit={{ opacity: 0, scale: 1 }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
+            className="w-full h-full object-cover absolute inset-0"
+            initial={{ scale: 1 }}
+            animate={{ scale: 1 }}
           />
 
           {/* Overlay */}
           <div className="absolute inset-0 bg-black/70 flex flex-col justify-center text-primary-foreground px-8 md:px-20">
-            <motion.div
+            <MotionWrapper
+              as="div"
               key={`text-${current}`}
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
@@ -85,7 +122,7 @@ export default function HeroCarousel({
               transition={{
                 duration: 0.6,
                 ease: "easeOut",
-                delay: 0.3, //  delay ensures text animates AFTER image fades in
+                delay: 0.3,
               }}
               className="max-w-4xl"
             >
@@ -105,12 +142,30 @@ export default function HeroCarousel({
                   {slides[current].buttonText}
                 </a>
               )}
-            </motion.div>
+            </MotionWrapper>
           </div>
-        </motion.div>
-      </AnimatePresence>
+        </MotionWrapper>
+      </LazyAnimatePresence>
 
-      {/* Navigation Dots */}
+      {/* Arrows */}
+      <button
+        onClick={prevSlide}
+        onMouseEnter={() => setPaused(pauseOnBtnHover && true)}
+        onMouseLeave={() => setPaused(false)}
+        className="absolute left-2 top-1/2 -translate-y-1/2  hover:bg-black/70 text-white p-1 aspect-1/2 transition"
+      >
+        <ChevronLeft className="w-6 h-6" />
+      </button>
+      <button
+        onClick={nextSlide}
+        onMouseEnter={() => setPaused(pauseOnBtnHover && true)}
+        onMouseLeave={() => setPaused(false)}
+        className="absolute right-2 top-1/2 -translate-y-1/2  hover:bg-black/70 text-white p-1 aspect-1/2 transition"
+      >
+        <ChevronRight className="w-6 h-6" />
+      </button>
+
+      {/* Dots */}
       <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2">
         {slides.map((_, i) => (
           <button

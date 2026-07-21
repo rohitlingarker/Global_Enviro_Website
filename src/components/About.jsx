@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import MotionWrapper from "@/components/common/MotionWrapper";
 import Image from "next/image";
 
 export default function About() {
@@ -10,7 +10,8 @@ export default function About() {
       <div className="absolute bottom-0 left-0 w-72 h-72 bg-[#003366]/10 blur-2xl rounded-full" />
 
       {/* Left Side Content */}
-      <motion.div
+      <MotionWrapper
+        as="div"
         className="relative z-10 lg:w-1/2 flex flex-col justify-center h-full space-y-6"
         initial={{ x: -50, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
@@ -18,21 +19,22 @@ export default function About() {
         viewport={{ once: true }}
       >
         <h2 className="text-blue-700 font-extrabold text-2xl uppercase tracking-[6px]">About Us</h2>
-        <h1 className="text-4xl md:text-5xl font-extrabold text-[#003366] uppercase leading-tight">Global Enviro Group</h1>
+        <h1 className="text-2xl md:text-2xl font-bold text-[#003366] leading-tight">Two and a Half Decades of Engineering Excellence</h1>
 
         {/* Simple Description */}
-         <p className="text-gray-700 text-lg justify-start">Leading the industry in air pollution control, HVAC systems, 
-          bulk material handling,and industrial solutions with over a decade of excellence.</p>
-         <p className="text-gray-700 text-lg justify-start">Global Industries now has an established presence in an array of activities that include 
-         Air Pollution Control, Clean Room and HVAC systems,Metal Castings and Exports and Imports. One of the key components of our
-         business culture is the ability to identify and understand our client needs appropriately.</p> 
+         <p className="text-gray-700 text-lg justify-start">We lead the industry in air pollution control, HVAC systems,
+          bulk material handling, and end-to-end industrial solutions. Our expertise spans clean room technology,
+          metal castings, and global import-export operations.</p>
+         <p className="text-gray-700 text-lg justify-start">What sets us apart is our commitment to truly understanding
+          client needs and delivering solutions that work.</p>
 
-          <p className="text-gray-700 text-lg justify-start">As one of the few companies that have reached an unenviable stature, Global Group through its strategic business 
-          endeavours, envisions spectacular growth and presence over varied sectors across the sub continent in the forthcoming years.
-         </p> 
+          <p className="text-gray-700 text-lg justify-start">As one of the industry&apos;s most trusted names, Global Enviro Air Systems Pvt. Ltd.
+          is strategically expanding across diverse sectors. We envision strong, sustainable growth throughout the
+          subcontinent in the years ahead.
+         </p>
 
         {/* Know More Button */}
-        <motion.button
+        {/* <motion.button
           className="mt-6 w-40 py-3 px-6 bg-primary text-white font-semibold rounded-lg shadow-lg hover:cursor-pointer transition-colors"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -40,8 +42,8 @@ export default function About() {
           viewport={{ once: true }}
         >
           Know More
-        </motion.button>
-      </motion.div>
+        </motion.button> */}
+  </MotionWrapper>
 
       {/* Right Side Image (unchanged) */}
       <div className="relative lg:w-1/2 mt-10 lg:mt-0 flex items-center h-full">

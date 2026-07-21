@@ -1,96 +1,113 @@
 "use client";
-import { motion } from "framer-motion";
-import { FaLeaf, FaUsers, FaGlobeAsia, FaRecycle } from "react-icons/fa";
+import MotionWrapper from "@/components/common/MotionWrapper";
+import { FaFlag, FaWind, FaIndustry, FaBolt } from "react-icons/fa";
 
 export default function OurJourney() {
   const milestones = [
     {
-      year: "2010",
+      year: "1999",
       title: "The Beginning",
       description:
-        "Global Enviro was founded with a clear vision — to protect the environment by introducing sustainable innovations that minimize pollution and promote green energy.",
-      icon: <FaLeaf className="text-accent text-3xl" />,
+        "Global Enviro Air Systems Pvt. Ltd. was established with a clear vision — to deliver world-class air pollution control systems and create a cleaner, healthier industrial environment.",
+      icon: <FaFlag className="text-white text-lg" />,
     },
     {
-      year: "2015",
-      title: "Expanding Horizons",
+      year: "2003",
+      title: "HVAC Division Added",
       description:
-        "We expanded globally, forming partnerships with eco-conscious organizations and government initiatives for sustainable industrial growth.",
-      icon: <FaGlobeAsia className="text-accent text-3xl" />,
+        "Expanded capabilities by introducing HVAC Clean Room systems, enabling the company to serve the pharmaceutical and chemical sectors with precision-controlled environments.",
+      icon: <FaWind className="text-white text-lg" />,
     },
     {
-      year: "2018",
-      title: "People & Impact",
+      year: "2008",
+      title: "Material Handling Systems",
       description:
-        "Our team grew to 500+ passionate professionals dedicated to reducing carbon footprints and increasing renewable energy awareness worldwide.",
-      icon: <FaUsers className="text-accent text-3xl" />,
+        "Launched a dedicated Material Handling division covering fuel handling, ash handling, and warehouse systems — strengthening our full-spectrum industrial offering.",
+      icon: <FaIndustry className="text-white text-lg" />,
     },
     {
-      year: "2023",
-      title: "Sustainability Drive",
+      year: "2020",
+      title: "Indophil Jettech Energy Pvt. Ltd.",
       description:
-        "We launched key programs focusing on waste management, water recycling, and circular economy solutions for a cleaner planet.",
-      icon: <FaRecycle className="text-accent text-3xl" />,
+        "Established Indophil Jettech Energy Pvt. Ltd., extending the group's expertise into EPC power projects and marking a major milestone in our diversification journey.",
+      icon: <FaBolt className="text-white text-lg" />,
     },
   ];
 
   return (
-    <div
-      className="min-h-screen flex flex-col items-center justify-center py-20 px-6"
-      style={{
-        background:
-          "linear-gradient(135deg, #0A1833 0%, #417DD8 50%, #EAF2FF 100%)", // Dark navy to blue to light blue gradient
-      }}
-    >
-      {/* Page Title */}
-      <motion.h1
-        initial={{ opacity: 0, y: -30 }}
+    <div className="bg-[#1F3A70] py-20 px-6">
+      {/* Title */}
+      <MotionWrapper
+        as="h1"
+        initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        className="text-5xl font-extrabold mb-12 text-white text-center"
+        transition={{ duration: 0.8 }}
+        className="text-4xl md:text-5xl font-bold mb-16 text-white text-center"
       >
         Our Journey
-      </motion.h1>
+      </MotionWrapper>
 
-      {/* Timeline */}
-      <div className="relative max-w-5xl mx-auto border-l-4 border-white pl-8 space-y-14">
-        {milestones.map((milestone, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: index * 0.2 }}
-            className="relative bg-white/15 backdrop-blur-md rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 text-white"
-          >
-            {/* Icon */}
-            <div className="absolute -left-10 flex items-center justify-center w-12 h-12 bg-white/25 rounded-full backdrop-blur-sm">
-              {milestone.icon}
+      {/* Timeline Wrapper */}
+      <div className="relative max-w-4xl w-full mx-auto">
+
+        {/* 🔥 Animated Line */}
+        <MotionWrapper
+          as="div"
+          initial={{ height: 0, opacity: 0 }}
+          whileInView={{ height: "100%", opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 2, ease: [0.25, 1, 0.5, 1] }}
+          className="absolute left-[20px] top-0 w-[2px] bg-white/70 origin-top"
+        />
+
+        {/* Timeline Items */}
+        <div className="space-y-12">
+          {milestones.map((milestone, index) => (
+            <div key={index} className="relative">
+
+              {/* 🔵 Circle ON LINE */}
+              <div className="absolute left-[20px] -translate-x-1/2 w-9 h-9 flex items-center justify-center bg-blue-600 rounded-full border-2 border-white shadow-md z-10">
+                {milestone.icon}
+              </div>
+
+              {/* 🟦 CARD */}
+              <MotionWrapper
+                as="div"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                className="ml-16 bg-white/15 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 text-white"
+              >
+                <span className="text-xs font-semibold text-blue-200 uppercase tracking-wide">
+                  {milestone.year}
+                </span>
+
+                <h2 className="text-xl font-semibold text-white mt-1 mb-2">
+                  {milestone.title}
+                </h2>
+
+                <p className="text-sm text-blue-100 leading-relaxed">
+                  {milestone.description}
+                </p>
+              </MotionWrapper>
             </div>
-
-            {/* Content */}
-            <h3 className="text-xl font-semibold text-[#EAF2FF]">{milestone.year}</h3>
-            <h2 className="text-2xl font-bold text-[#AECBFF] mb-2">
-              {milestone.title}
-            </h2>
-            <p className="text-[#D8E4F7] leading-relaxed">
-              {milestone.description}
-            </p>
-          </motion.div>
-        ))}
+          ))}
+        </div>
       </div>
 
       {/* Footer Quote */}
-      <motion.div
+      <MotionWrapper
+        as="div"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ delay: 0.5, duration: 1 }}
-        className="mt-20 text-center max-w-3xl"
+        transition={{ delay: 0.3, duration: 0.8 }}
+        className="mt-16 text-center max-w-2xl mx-auto"
       >
-        <p className="text-lg italic text-[#EAF2FF]">
-          “Every milestone we cross strengthens our commitment to building a sustainable world for generations to come.”
+        <p className="text-base italic text-blue-100">
+          "Every milestone we cross strengthens our commitment to building a sustainable world for generations to come."
         </p>
-      </motion.div>
+      </MotionWrapper>
     </div>
   );
 }
