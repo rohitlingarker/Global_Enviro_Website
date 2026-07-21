@@ -143,7 +143,7 @@ const Navbar = () => {
                 {/* MAIN LINK */}
                 {item.external ? (
                   <a href={item.url} target="_blank" rel="noopener noreferrer" className="px-3 py-1">
-                    {item.title} ↗
+                    {item.title} 
                   </a>
                 ) : (
                   <Link
@@ -175,7 +175,7 @@ const Navbar = () => {
                             rel="noopener noreferrer"
                             className="flex justify-between px-3 py-2 text-sm hover:bg-gray-100"
                           >
-                            {sub.title} ↗
+                            {sub.title} 
                           </a>
                         ) : (
                           <Link
