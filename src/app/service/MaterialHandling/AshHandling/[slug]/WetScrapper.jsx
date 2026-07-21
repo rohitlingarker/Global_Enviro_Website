@@ -19,8 +19,24 @@ export default function WetScrapperPage() {
       </section>
 
       {/* ---------- Product Overview ---------- */}
-      <section className="max-w-6xl mx-auto px-6 py-6 flex justify-center">
-        <div className="relative w-full max-w-xl h-[320px]">
+      <section className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center px-6 py-6">
+        <div>
+          <h2 className="text-2xl font-semibold text-blue-800 mb-3">
+            Product Overview
+          </h2>
+          <p className="font-semibold text-gray-700">Ideal For:</p>
+          <ul className="list-disc pl-6 mt-1 space-y-1">
+            <li>Chemical &amp; Process Industries</li>
+            <li>Pharmaceutical Manufacturing Units</li>
+            <li>Metal &amp; Foundry Industries</li>
+            <li>Boiler &amp; Furnace Applications</li>
+            <li>Food Processing Plants</li>
+            <li>Cement &amp; Mineral Industries</li>
+            <li>Industrial Exhaust &amp; Fume Control Systems</li>
+          </ul>
+        </div>
+
+        <div className="relative w-full h-[320px]">
           <Image
             src="/assets/images/material-handling-projects/wet-scrapper.jpg"
             alt="Wet Scrapper"
