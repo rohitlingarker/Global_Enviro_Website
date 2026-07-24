@@ -13,8 +13,8 @@ const highlights = [
       "Air Pollution Control Systems",
       "HVAC Clean Room Systems",
       "Material Handling Systems",
-      "EPC Power Projects",
-      "Metallurgicals & Briquettes",
+      // "EPC Power Projects",
+      // "Metallurgicals & Briquettes",
     ],
   },
   {
@@ -41,7 +41,7 @@ const divisions = [
   },
   {
     title: "HVAC Clean Room Systems",
-    desc: "Turnkey HVAC and clean room solutions including AHUs, puff panels, doors, HEPA filters, laminar flow units, and air showers for pharma and biotech.",
+    desc: "Turnkey HVAC & clean room systems including AHUs, puff panels, doors, HEPA filters, laminar flow units, and air showers for pharma and biotech.",
     img: "/assets/images/hvac clean room.png",
   },
   {
@@ -71,12 +71,12 @@ export default function GlobalEnviroAirSystemsPage() {
         subtitle="Engineering Clean Air, Enabling Clean Industry."
         align="left"
         overlay="bg-black/55"
-        height="h-[400px]"
+        height="h-[260px] sm:h-[320px] md:h-[400px]"
       />
 
       {/* About + Highlights */}
-      <section className="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-center">
-        <div className="space-y-5">
+      <section className="max-w-6xl mx-auto px-6 py-8 grid md:grid-cols-2 gap-6 items-center">
+        <div className="space-y-4">
           <p className="text-[#3877d4] uppercase tracking-widest text-sm font-semibold">
             About the Company
           </p>
@@ -89,7 +89,7 @@ export default function GlobalEnviroAirSystemsPage() {
             into the atmosphere.
           </p>
           <p className="text-gray-600 leading-relaxed">
-            As turnkey solution providers for HVAC and Clean room projects, we
+            As turnkey solution providers for HVAC & Cleanroom systems, we
             deliver complete systems: air handling units, puff panels, clean room
             doors, and high-efficiency dust collectors — all tailored for precision
             manufacturing environments. We also specialize in bulk material handling
@@ -108,7 +108,7 @@ export default function GlobalEnviroAirSystemsPage() {
         </div>
 
         {/* Highlights */}
-        <div className="grid grid-cols-2 gap-4 items-stretch">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-stretch">
           {highlights.map((h) => {
             const isList = Array.isArray(h.value);
             const Icon = h.icon;

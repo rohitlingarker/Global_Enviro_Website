@@ -47,12 +47,12 @@ export default function GlobalMetallurgicalsPage() {
         subtitle="Precision Metal Castings for Industry."
         align="left"
         overlay="bg-black/55"
-        height="h-[400px]"
+        height="h-[260px] sm:h-[320px] md:h-[400px]"
       />
 
       {/* About + Capabilities */}
-      <section className="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-center">
-        <div className="space-y-5">
+      <section className="max-w-6xl mx-auto px-6 py-8 grid md:grid-cols-2 gap-6 items-center">
+        <div className="space-y-4">
           <p className="text-[#3877d4] uppercase tracking-widest text-sm font-semibold">
             About Global Metallurgicals
           </p>
@@ -80,7 +80,7 @@ export default function GlobalMetallurgicalsPage() {
         </div>
 
         {/* Capabilities grid */}
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {capabilities.map((c) => (
             <div
               key={c.label}

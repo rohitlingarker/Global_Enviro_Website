@@ -32,7 +32,8 @@ export default function ServicePage() {
   ];
 
   return (
-    <section className="relative px-62 py-18 overflow-hidden">
+    <section className="relative px-62 py-8 overflow-hidden">
+    <section className="relative px-4 sm:px-6 lg:px-12 py-12 md:py-18 overflow-hidden">
       {/* Background Image with Soft Overlay */}
       <div className="absolute inset-0 -z-10">
         <Image
@@ -60,7 +61,7 @@ export default function ServicePage() {
         </MotionWrapper>
 
         <p
-          className="text-lg text-accent mb-14 max-w-3xl mx-auto"
+          className="text-lg text-accent mb-5 max-w-3xl mx-auto"
         >
           Innovating sustainable industrial solutions for cleaner, safer operations.
           From air pollution control to efficient material handling and HVAC systems.
@@ -68,12 +69,12 @@ export default function ServicePage() {
         </p>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12 justify-items-center w-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-5 justify-items-center w-auto">
           {services.map((service, index) => (
             <MotionWrapper
               key={index}
               as="div"
-              className="flex items-start p-6 w-auto max-w-auto  h-auto bg-white/90 shadow-md rounded-2xl border border-gray-200"
+              className="flex items-start p-6 w-full bg-white/90 shadow-md rounded-2xl border border-gray-200"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 + index * 0.2, duration: 0.6 }}
