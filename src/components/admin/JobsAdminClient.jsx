@@ -1,6 +1,16 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import {
+  Briefcase,
+  ChevronLeft,
+  ChevronRight,
+  MoreVertical,
+  Pencil,
+  Power,
+  Search,
+  Trash2,
+} from "lucide-react";
 import ModalAlert from "@/components/common/ModalAlert";
 import { DEFAULT_JOB_LOCATION, DEFAULT_JOB_TYPE } from "@/lib/config";
 
@@ -14,6 +24,75 @@ const emptyForm = {
   requirements: "",
   is_active: true,
 };
+
+function RowActionsMenu({ job, onEdit, onToggleActive, onDelete }) {
+  const [open, setOpen] = useState(false);
+  const menuRef = useRef(null);
+
+  useEffect(() => {
+    if (!open) return;
+
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [open]);
+
+  return (
+    <div className="relative inline-block text-left" ref={menuRef}>
+      <button
+        type="button"
+        onClick={() => setOpen((value) => !value)}
+        aria-label="Row actions"
+        className="inline-flex h-8 w-8 items-center justify-center rounded-lg border border-slate-200 text-slate-500 transition hover:border-slate-300 hover:bg-slate-50"
+      >
+        <MoreVertical size={16} />
+      </button>
+
+      {open ? (
+        <div className="absolute right-0 top-full z-10 mt-1 w-40 overflow-hidden rounded-xl border border-slate-200 bg-white py-1 shadow-lg">
+          <button
+            type="button"
+            onClick={() => {
+              setOpen(false);
+              onEdit(job);
+            }}
+            className="flex w-full items-center gap-2 px-3 py-2 text-left text-sm text-slate-700 transition hover:bg-slate-50"
+          >
+            <Pencil size={14} />
+            Edit
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              setOpen(false);
+              onToggleActive(job);
+            }}
+            className="flex w-full items-center gap-2 px-3 py-2 text-left text-sm text-slate-700 transition hover:bg-slate-50"
+          >
+            <Power size={14} />
+            {job.is_active ? "Close" : "Activate"}
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              setOpen(false);
+              onDelete(job.id);
+            }}
+            className="flex w-full items-center gap-2 px-3 py-2 text-left text-sm text-red-600 transition hover:bg-red-50"
+          >
+            <Trash2 size={14} />
+            Delete
+          </button>
+        </div>
+      ) : null}
+    </div>
+  );
+}
 
 export default function JobsAdminClient({ initialJobs }) {
   const [jobs, setJobs] = useState(initialJobs);
@@ -277,28 +356,42 @@ export default function JobsAdminClient({ initialJobs }) {
         </form>
       </section>
 
-      <section className="overflow-hidden rounded-3xl bg-white shadow-sm">
-        <div className="border-b border-slate-200 px-6 py-5">
-          <h2 className="text-xl font-semibold text-slate-900">All jobs</h2>
+      <section className="overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-slate-100">
+        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 px-6 py-5">
+          <div className="flex items-center gap-2">
+            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary/10 text-primary">
+              <Briefcase className="h-4.5 w-4.5" size={18} />
+            </span>
+            <h2 className="text-xl font-semibold text-slate-900">All jobs</h2>
+          </div>
+          <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600">
+            {filteredJobs.length} {filteredJobs.length === 1 ? "job" : "jobs"}
+          </span>
         </div>
 
-        <div className="grid gap-4 border-b border-slate-100 px-6 py-5 md:grid-cols-3">
-          <input
-            value={search}
-            onChange={(event) => {
-              setSearch(event.target.value);
-              setPage(1);
-            }}
-            placeholder="Search jobs"
-            className="rounded-xl border border-slate-200 px-4 py-3"
-          />
+        <div className="grid gap-3 border-b border-slate-100 bg-slate-50/60 px-6 py-4 md:grid-cols-3">
+          <div className="relative">
+            <Search
+              className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400"
+              size={16}
+            />
+            <input
+              value={search}
+              onChange={(event) => {
+                setSearch(event.target.value);
+                setPage(1);
+              }}
+              placeholder="Search jobs"
+              className="w-full rounded-xl border border-slate-200 bg-white py-2.5 pl-9 pr-4 text-sm text-slate-700 transition focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+            />
+          </div>
           <select
             value={departmentFilter}
             onChange={(event) => {
               setDepartmentFilter(event.target.value);
               setPage(1);
             }}
-            className="rounded-xl border border-slate-200 px-4 py-3"
+            className="rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-700 transition focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
           >
             <option value="all">All departments</option>
             {departments.map((item) => (
@@ -313,7 +406,7 @@ export default function JobsAdminClient({ initialJobs }) {
               setStatusFilter(event.target.value);
               setPage(1);
             }}
-            className="rounded-xl border border-slate-200 px-4 py-3"
+            className="rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-700 transition focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
           >
             <option value="all">All statuses</option>
             <option value="active">Active</option>
@@ -323,64 +416,51 @@ export default function JobsAdminClient({ initialJobs }) {
 
         <div className="overflow-x-auto">
           <table className="min-w-full divide-y divide-slate-200">
-            <thead className="bg-slate-50 text-left text-sm text-slate-600">
+            <thead className="bg-slate-50 text-left text-xs font-semibold uppercase tracking-wide text-slate-500">
               <tr>
-                <th className="px-6 py-4 font-medium">Title</th>
-                <th className="px-6 py-4 font-medium">Department</th>
-                <th className="px-6 py-4 font-medium">Type</th>
-                <th className="px-6 py-4 font-medium">Status</th>
-                <th className="px-6 py-4 font-medium">Created</th>
-                <th className="px-6 py-4 font-medium">Actions</th>
+                <th className="px-6 py-3.5">Title</th>
+                <th className="px-6 py-3.5">Department</th>
+                <th className="px-6 py-3.5">Type</th>
+                <th className="px-6 py-3.5">Status</th>
+                <th className="px-6 py-3.5">Created</th>
+                <th className="px-6 py-3.5 text-right">Actions</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100 text-sm text-slate-700">
               {paginatedJobs.map((job) => (
-                <tr key={job.id}>
+                <tr key={job.id} className="transition hover:bg-slate-50">
                   <td className="px-6 py-4 font-medium text-slate-900">
                     {job.title}
                   </td>
-                  <td className="px-6 py-4">{job.department || "-"}</td>
-                  <td className="px-6 py-4">{job.type || "-"}</td>
+                  <td className="px-6 py-4 text-slate-600">
+                    {job.department || "-"}
+                  </td>
+                  <td className="px-6 py-4 text-slate-600">
+                    {job.type || "-"}
+                  </td>
                   <td className="px-6 py-4">
                     <span
-                      className={`rounded-full px-3 py-1 text-xs font-semibold ${
+                      className={`inline-flex items-center rounded-full px-2.5 py-1 text-xs font-semibold ${
                         job.is_active
                           ? "bg-emerald-100 text-emerald-700"
-                          : "bg-slate-200 text-slate-700"
+                          : "bg-slate-200 text-slate-600"
                       }`}
                     >
                       {job.is_active ? "Active" : "Closed"}
                     </span>
                   </td>
-                  <td className="px-6 py-4">
+                  <td className="px-6 py-4 text-slate-600">
                     {job.created_at
                       ? new Date(job.created_at).toLocaleDateString()
                       : "-"}
                   </td>
-                  <td className="px-6 py-4">
-                    <div className="flex flex-wrap gap-2">
-                      <button
-                        type="button"
-                        onClick={() => startEdit(job)}
-                        className="rounded-lg border border-slate-200 px-3 py-2 transition hover:bg-slate-50"
-                      >
-                        Edit
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => toggleActive(job)}
-                        className="rounded-lg border border-slate-200 px-3 py-2 transition hover:bg-slate-50"
-                      >
-                        {job.is_active ? "Close" : "Activate"}
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => confirmDelete(job.id)}
-                        className="rounded-lg border border-red-200 px-3 py-2 text-red-600 transition hover:bg-red-50"
-                      >
-                        Delete
-                      </button>
-                    </div>
+                  <td className="px-6 py-4 text-right">
+                    <RowActionsMenu
+                      job={job}
+                      onEdit={startEdit}
+                      onToggleActive={toggleActive}
+                      onDelete={confirmDelete}
+                    />
                   </td>
                 </tr>
               ))}
@@ -388,7 +468,7 @@ export default function JobsAdminClient({ initialJobs }) {
                 <tr>
                   <td
                     colSpan="6"
-                    className="px-6 py-6 text-center text-sm text-slate-500"
+                    className="px-6 py-10 text-center text-sm text-slate-500"
                   >
                     No jobs found.
                   </td>
@@ -398,8 +478,8 @@ export default function JobsAdminClient({ initialJobs }) {
           </table>
         </div>
 
-        {filteredJobs.length > PAGE_SIZE ? (
-          <div className="flex flex-wrap items-center justify-between gap-4 border-t border-slate-100 px-6 py-4">
+        {filteredJobs.length > 0 ? (
+          <div className="flex flex-wrap items-center justify-between gap-4 border-t border-slate-100 bg-slate-50/60 px-6 py-4">
             <p className="text-sm text-slate-500">
               Showing {(currentPage - 1) * PAGE_SIZE + 1}-
               {Math.min(currentPage * PAGE_SIZE, filteredJobs.length)} of{" "}
@@ -410,8 +490,9 @@ export default function JobsAdminClient({ initialJobs }) {
                 type="button"
                 onClick={() => setPage((value) => Math.max(1, value - 1))}
                 disabled={currentPage === 1}
-                className="rounded-lg border border-slate-200 px-3 py-2 text-sm disabled:opacity-50"
+                className="inline-flex items-center gap-1 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-600 transition hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-50"
               >
+                <ChevronLeft size={14} />
                 Previous
               </button>
               <span className="text-sm font-medium text-slate-700">
@@ -423,9 +504,10 @@ export default function JobsAdminClient({ initialJobs }) {
                   setPage((value) => Math.min(totalPages, value + 1))
                 }
                 disabled={currentPage === totalPages}
-                className="rounded-lg border border-slate-200 px-3 py-2 text-sm disabled:opacity-50"
+                className="inline-flex items-center gap-1 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-600 transition hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-50"
               >
                 Next
+                <ChevronRight size={14} />
               </button>
             </div>
           </div>

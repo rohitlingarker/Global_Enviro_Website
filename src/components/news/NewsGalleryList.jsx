@@ -68,7 +68,7 @@ export default function NewsGalleryList({ items }) {
               <p className="mb-3 text-sm text-gray-500">
                 {item.event_date
                   ? new Date(item.event_date).toLocaleDateString()
-                  : "Upcoming"}
+                  : ""}
               </p>
               <p className="news-card-preview text-sm text-gray-700">
                 {item.content}
