@@ -46,7 +46,7 @@ export default function About() {
   </MotionWrapper>
 
       {/* Right Side Image (unchanged) */}
-      <div className="relative lg:w-1/2 mt-10 lg:mt-0 flex items-center h-full">
+      <div className="relative lg:w-1/2 mt-6 lg:mt-0 flex items-center h-full">
         <Image
           src="/assets/images/enviro.png"
           alt="Industrial setup"

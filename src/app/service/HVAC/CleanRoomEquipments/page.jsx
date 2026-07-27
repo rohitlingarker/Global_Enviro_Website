@@ -35,7 +35,7 @@ export default function CleanroomEquipmentsPage() {
   };
 
   return (
-    <div className="bg-blue-50 min-h-screen py-8 px-6 md:px-20">
+    <div className="bg-blue-50 min-h-screen py-6 px-6 md:px-20">
       {/* Header Section */}
       <div
         className="text-center mb-5"

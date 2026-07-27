@@ -32,8 +32,8 @@ export default function ServicePage() {
   ];
 
   return (
-    <section className="relative px-62 py-8 overflow-hidden">
-    <section className="relative px-4 sm:px-6 lg:px-12 py-12 md:py-18 overflow-hidden">
+    <section className="relative px-62 py-6 overflow-hidden">
+    <section className="relative px-4 sm:px-6 lg:px-12 py-8 md:py-18 overflow-hidden">
       {/* Background Image with Soft Overlay */}
       <div className="absolute inset-0 -z-10">
         <Image

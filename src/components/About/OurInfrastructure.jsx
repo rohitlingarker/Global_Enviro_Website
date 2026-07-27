@@ -31,13 +31,13 @@ const OurInfrastructure = () => {
 
   return (
     <section
-      className="relative overflow-hidden text-gray-800 py-8"
+      className="relative overflow-hidden text-gray-800 py-6"
       style={{ backgroundColor: "#E6F0FF" }}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
 
         {/* 🔵 Header */}
-        <div className="mb-14 max-w-3xl">
+        <div className="mb-8 max-w-3xl">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-6 text-black">
             Our Infrastructure
           </h2>

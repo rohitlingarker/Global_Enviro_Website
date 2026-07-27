@@ -13,7 +13,7 @@ export default async function CareersPage() {
   }
 
   return (
-    <main className="mx-auto max-w-6xl px-6 py-8">
+    <main className="mx-auto max-w-6xl px-6 py-6">
       <h1 className="mb-4 text-4xl font-bold text-accent">
         Careers at Global Industries
       </h1>

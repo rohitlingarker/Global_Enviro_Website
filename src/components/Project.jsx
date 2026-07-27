@@ -38,7 +38,7 @@ const Project = () => {
   );
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-b from-[#e8f1fc] to-[#f8fbff] py-8 px-6 overflow-hidden">
+    <div className="relative min-h-screen bg-gradient-to-b from-[#e8f1fc] to-[#f8fbff] py-6 px-6 overflow-hidden">
       {/* Animated background curves */}
       <svg
         className="absolute top-0 left-0 w-full opacity-30 animate-pulse"
@@ -81,7 +81,7 @@ const Project = () => {
       </div>
 
       {/* Pagination */}
-      <div className="flex flex-wrap justify-center mt-12 gap-3 relative z-10">
+      <div className="flex flex-wrap justify-center mt-8 gap-3 relative z-10">
         {Array.from({ length: totalPages }).map((_, i) => (
           <button
             key={i}

@@ -50,7 +50,7 @@ const categories = [
 
 export default function ServicePage() {
   return (
-    <section className="relative min-h-screen py-8 px-6 md:px-12 lg:px-20 overflow-hidden">
+    <section className="relative min-h-screen py-6 px-6 md:px-12 lg:px-20 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 -z-10">
         <Image src="/assets/images/hero-section.png" alt="bg" fill className="object-cover" sizes="100vw" priority={false} />

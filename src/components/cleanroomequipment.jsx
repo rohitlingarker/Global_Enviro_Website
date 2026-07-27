@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function CleanroomEquipment() {
   return (
-    <div className="bg-blue-50 min-h-screen py-8 px-6 md:px-20">
+    <div className="bg-blue-50 min-h-screen py-6 px-6 md:px-20">
       {/* Header Section */}
       <div className="text-center mb-5">
         <h1 className="text-4xl md:text-5xl font-bold text-blue-900 mb-4">

@@ -44,7 +44,7 @@ export default function Certifications() {
   }, []);
 
   return (
-    <section className="relative bg-[#081736] text-white py-8 px-6 md:px-16 overflow-hidden">
+    <section className="relative bg-[#081736] text-white py-6 px-6 md:px-16 overflow-hidden">
       {/* ===== Background Glow ===== */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <div className="absolute -top-20 left-0 w-96 h-96 bg-blue-500/10 blur-3xl rounded-full animate-pulse"></div>
