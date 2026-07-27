@@ -26,6 +26,7 @@ export default function MissionVision() {
           as="h2"
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.7 }}
           className="text-4xl md:text-5xl font-extrabold mb-4 tracking-wide"
         >
@@ -37,6 +38,7 @@ export default function MissionVision() {
           as="p"
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="max-w-2xl text-gray-300 mb-5"
         >
@@ -51,6 +53,7 @@ export default function MissionVision() {
             as="div"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.8 }}
             className="p-6 bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl hover:bg-white/20 transition-all duration-500 shadow-xl"
           >
@@ -67,6 +70,7 @@ export default function MissionVision() {
             as="div"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="p-6 bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl hover:bg-white/20 transition-all duration-500 shadow-xl"
           >
