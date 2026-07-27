@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function MissionVision() {
   return (
-    <section className="relative w-full h-auto py-10 bg-gray-900 text-white overflow-hidden">
+    <section className="relative w-full h-auto py-6 bg-gray-900 text-white overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image

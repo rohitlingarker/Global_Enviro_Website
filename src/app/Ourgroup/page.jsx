@@ -83,7 +83,7 @@ export default function GroupPage() {
       </section>
 
       {/* Company Sections */}
-      <div className="max-w-6xl mx-auto px-8 py-8 space-y-8">
+      <div className="max-w-6xl mx-auto px-8 py-6 space-y-8">
         {companies.map((company, index) => (
           <MotionWrapper
             as="div"

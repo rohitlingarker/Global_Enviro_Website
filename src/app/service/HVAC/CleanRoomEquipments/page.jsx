@@ -35,7 +35,7 @@ export default function CleanroomEquipmentsPage() {
   };
 
   return (
-    <div className="bg-blue-50 min-h-screen py-8 px-6 md:px-20">
+    <div className="bg-blue-50 min-h-screen py-6 px-6 md:px-20">
       {/* Header Section */}
       <div
         className="text-center mb-5"
@@ -71,17 +71,13 @@ export default function CleanroomEquipmentsPage() {
               className="md:w-1/2 relative group"
               transition={{ duration: 0.3 }}
             >
-              <div className="relative w-full aspect-4/3">
-                <Image
-                  src={eq.img}
-                  alt={eq.title}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
-              <p className="text-center font-semibold py-2 text-sm text-gray-600 bg-gray-50">
-                {eq.title}
-              </p>
+              <Image
+                src={eq.img}
+                alt={eq.title}
+                width={500}
+                height={500}
+                className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
+              />
             </div>
 
             {/* Text Section */}

@@ -13,17 +13,17 @@ const Footer = () => {
     <footer className="font-sans text-gray-700">
 
       {/* MAIN FOOTER (light, slightly off-white from the page background) */}
-      <div className="bg-gray-100 border-t border-gray-200 px-6 md:px-12 py-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="bg-gray-100 border-t border-gray-200 px-4 sm:px-6 py-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
         {/* --- COMPANY INFO --- */}
         <div>
-          <div className="inline-block bg-gray-100 rounded-lg p-3 mb-4 ">
-            <Image src="/assets/images/group-logo.png" alt="GLOBAL Technologies Logo" width={220} height={88} className="h-20 object-contain" />
+          <div className="mb-4">
+            <Image src="/assets/images/group-logo.png" alt="GLOBAL Technologies Logo" width={220} height={66} className="h-12 sm:h-16 w-auto object-contain" />
           </div>
 
           <p className="text-sm leading-relaxed mb-3 text-gray-600">
             <span className="font-semibold text-gray-900">
-              GLOBAL ENVIRO AIR SYSTEMS (P) Ltd
+              GLOBAL ENVIRO AIR SYSTEMS (P) Ltd.
             </span>
             <br />
             Sy. No. 163/A, Gagillapur (Vil),
@@ -32,7 +32,7 @@ const Footer = () => {
             <br />
             Medchal-Malkajgiri (Dist),
             <br />
-            Hyderabad, Telangana
+            Hyderabad, Telangana ,India.
           </p>
 
           <ul className="space-y-2 text-sm">
@@ -89,7 +89,7 @@ const Footer = () => {
                 Contact Us
               </a>
 
-              <a
+              {/* <a
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -97,7 +97,7 @@ const Footer = () => {
                 aria-label="LinkedIn"
               >
                 <FaLinkedin className="text-blue-600 group-hover:text-white text-base transition" />
-              </a>
+              </a> */}
             </div>
           </div>
         </div>

@@ -660,6 +660,10 @@
   }
   body {
     @apply bg-background text-foreground;
+    /* Prevent accidental horizontal scroll on mobile without breaking the
+       sticky navbar (clip does not create a scroll container the way hidden does). */
+    overflow-x: clip;
+    max-width: 100%;
   }
   /* Creates a trapezoid clip shape */
 

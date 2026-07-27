@@ -120,7 +120,7 @@ export default function OurClientsPage() {
       </section>
 
       {/* Stats */}
-      {/* <section className="relative -mt-10 bg-white shadow-lg rounded-2xl w-[92%] max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 overflow-hidden">
+      {/* <section className="relative -mt-6 bg-white shadow-lg rounded-2xl w-[92%] max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 overflow-hidden">
         {stats.map((stat, i) => (
           <div key={stat.label} className={`py-6 text-center ${i < stats.length - 1 ? "border-r" : ""}`}>
             <div className="text-3xl font-bold text-[#3877d4]">{stat.value}</div>
@@ -154,7 +154,7 @@ export default function OurClientsPage() {
       </section>
 
       {/* CTA */}
-      {/* <section className="bg-[#3877d4] py-14 text-center text-white">
+      {/* <section className="bg-[#3877d4] py-8 text-center text-white">
         <h2 className="text-2xl font-bold mb-3">Join Our Growing Client Base</h2>
         <p className="text-gray-300 mb-6">
           Partner with us for reliable industrial solutions trusted by 200+ companies.

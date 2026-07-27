@@ -68,7 +68,7 @@ export default function HVACContent() {
   ];
 
 //   return (
-//     <div className="py-12 px-6 md:px-16 bg-[#f4faff]">
+//     <div className="py-8 px-6 md:px-16 bg-[#f4faff]">
 //       {sections.map((section, index) => (
 //         <SectionCard key={index} {...section} />
 //       ))}
@@ -76,7 +76,7 @@ export default function HVACContent() {
 //   );
 return (
     <div
-      className="py-8 px-6 md:px-16 bg-[#f4faff]"
+      className="py-6 px-6 md:px-16 bg-[#f4faff]"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}

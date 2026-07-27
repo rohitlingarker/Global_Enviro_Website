@@ -316,7 +316,7 @@ export default function NewsAdminClient({ initialNews }) {
                 <tr>
                   <td
                     colSpan="5"
-                    className="px-6 py-8 text-center text-sm text-slate-500"
+                    className="px-6 py-6 text-center text-sm text-slate-500"
                   >
                     No events found.
                   </td>

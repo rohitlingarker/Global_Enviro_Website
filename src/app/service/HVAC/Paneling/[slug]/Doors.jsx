@@ -6,7 +6,7 @@ export default function DoorsPage() {
   return (
     <div className="bg-white text-gray-800 leading-relaxed">
       {/* ---------- Intro Section ---------- */}
-      <section className="max-w-6xl mx-auto px-6 py-10">
+      <section className="max-w-6xl mx-auto px-6 py-6">
         <h1 className="text-4xl font-bold mb-4 text-blue-800">Doors</h1>
         <p>
           Metal Doors are durable, hygienic, and secure doors commonly used
@@ -70,9 +70,6 @@ export default function DoorsPage() {
                 className="object-contain rounded-lg shadow-md"
               />
             </div>
-            <p className="mt-2 text-sm font-medium text-gray-600">
-              Door Installation
-            </p>
           </div>
           <div className="text-center">
             <div className="relative w-full h-[220px]">
@@ -83,9 +80,6 @@ export default function DoorsPage() {
                 className="object-contain rounded-lg shadow-md"
               />
             </div>
-            <p className="mt-2 text-sm font-medium text-gray-600">
-              Door Specification
-            </p>
           </div>
           <div className="text-center">
             <div className="relative w-full h-[220px]">
@@ -96,9 +90,6 @@ export default function DoorsPage() {
                 className="object-contain rounded-lg shadow-md"
               />
             </div>
-            <p className="mt-2 text-sm font-medium text-gray-600">
-              Door Product View
-            </p>
           </div>
         </div>
       </section>

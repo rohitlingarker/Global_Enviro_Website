@@ -6,7 +6,7 @@ export default function GlassWindowsPage() {
   return (
     <div className="bg-white text-gray-800 leading-relaxed">
       {/* ---------- Intro Section ---------- */}
-      <section className="max-w-6xl mx-auto px-6 py-10">
+      <section className="max-w-6xl mx-auto px-6 py-6">
         <h1 className="text-4xl font-bold mb-4 text-blue-800">
           Glass Windows
         </h1>
@@ -66,9 +66,6 @@ export default function GlassWindowsPage() {
                 className="object-contain rounded-lg shadow-md"
               />
             </div>
-            <p className="mt-2 text-sm font-medium text-gray-600">
-              Glass Windows Installation
-            </p>
           </div>
         </div>
       </section>

@@ -5,7 +5,7 @@ import { Building2, Leaf, Globe, Users } from "lucide-react";
 
 export default function AboutUs() {
   return (
-    <section className="bg-white py-8 px-6 md:px-20">
+    <section className="bg-white py-6 px-6 md:px-20">
       <div className="max-w-6xl mx-auto text-center">
         <MotionWrapper
           as="h2"

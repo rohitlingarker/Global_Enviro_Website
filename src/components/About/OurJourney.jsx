@@ -35,7 +35,7 @@ export default function OurJourney() {
   ];
 
   return (
-    <div className="bg-[#1F3A70] py-8 px-6">
+    <div className="bg-[#1F3A70] py-6 px-6">
       {/* Title */}
       <MotionWrapper
         as="h1"

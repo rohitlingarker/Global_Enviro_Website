@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function CleanroomEquipment() {
   return (
-    <div className="bg-blue-50 min-h-screen py-8 px-6 md:px-20">
+    <div className="bg-blue-50 min-h-screen py-6 px-6 md:px-20">
       {/* Header Section */}
       <div className="text-center mb-5">
         <h1 className="text-4xl md:text-5xl font-bold text-blue-900 mb-4">
@@ -26,15 +26,13 @@ export default function CleanroomEquipment() {
         {/* PASS BOX */}
         <div className="flex flex-col md:flex-row items-center bg-white rounded-2xl shadow-md overflow-hidden">
           <div className="md:w-1/2">
-            <div className="relative w-full aspect-4/3">
-              <Image
-                src="/assets/images/pass box.png"
-                alt="Pass Box"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <p className="text-center font-semibold py-2 text-sm text-gray-600">PASS BOX</p>
+            <Image
+              src="/assets/images/pass box.png"
+              alt="Pass Box"
+              width={500}
+              height={500}
+              className="object-cover w-full h-full"
+            />
           </div>
           <div className="md:w-1/2 p-6">
             <h2 className="text-xl font-bold text-blue-800 mb-2">PASS BOX</h2>
@@ -51,15 +49,13 @@ export default function CleanroomEquipment() {
         {/* DUST COLLECTOR */}
         <div className="flex flex-col md:flex-row items-center bg-white rounded-2xl shadow-md overflow-hidden">
           <div className="md:w-1/2">
-            <div className="relative w-full aspect-4/3">
-              <Image
-                src="/assets/images/dust collector.png"
-                alt="Dust Collector"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <p className="text-center font-semibold py-2 text-sm text-gray-600">DUST COLLECTOR</p>
+            <Image
+              src="/assets/images/dust collector.png"
+              alt="Dust Collector"
+              width={500}
+              height={500}
+              className="object-cover w-full h-full"
+            />
           </div>
           <div className="md:w-1/2 p-6">
             <h2 className="text-xl font-bold text-blue-800 mb-2">DUST COLLECTOR</h2>
@@ -76,15 +72,13 @@ export default function CleanroomEquipment() {
         {/* AIR SHOWER */}
         <div className="flex flex-col md:flex-row items-center bg-white rounded-2xl shadow-md overflow-hidden">
           <div className="md:w-1/2">
-            <div className="relative w-full aspect-4/3">
-              <Image
-                src="/assets/images/air shower.png"
-                alt="Air Shower"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <p className="text-center font-semibold py-2 text-sm text-gray-600">AIR SHOWER</p>
+            <Image
+              src="/assets/images/air shower.png"
+              alt="Air Shower"
+              width={500}
+              height={500}
+              className="object-cover w-full h-full"
+            />
           </div>
           <div className="md:w-1/2 p-6">
             <h2 className="text-xl font-bold text-blue-800 mb-2">AIR SHOWER</h2>
@@ -101,15 +95,13 @@ export default function CleanroomEquipment() {
         {/* LAMINAR FLOW UNIT */}
         <div className="flex flex-col md:flex-row items-center bg-white rounded-2xl shadow-md overflow-hidden">
           <div className="md:w-1/2">
-            <div className="relative w-full aspect-4/3">
-              <Image
-                src="/assets/images/laminar flow unit.png"
-                alt="Laminar Flow Unit"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <p className="text-center font-semibold py-2 text-sm text-gray-600">LAMINAR FLOW UNIT</p>
+            <Image
+              src="/assets/images/laminar flow unit.png"
+              alt="Laminar Flow Unit"
+              width={500}
+              height={500}
+              className="object-cover w-full h-full"
+            />
           </div>
           <div className="md:w-1/2 p-6">
             <h2 className="text-xl font-bold text-blue-800 mb-2">LAMINAR FLOW UNIT</h2>

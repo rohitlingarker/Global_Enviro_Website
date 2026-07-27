@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function HeaderSection({ title, description, imgSrc, description1 }) {
   return (
-    <section className="relative flex flex-col md:flex-row items-center justify-between py-8 px-6 md:px-16 bg-gradient-to-br from-[#e8f0ff] via-[#f9fbff] to-[#ffffff] overflow-hidden">
+    <section className="relative flex flex-col md:flex-row items-center justify-between py-6 px-6 md:px-16 bg-gradient-to-br from-[#e8f0ff] via-[#f9fbff] to-[#ffffff] overflow-hidden">
       {/* Background animation blobs */}
       <div className="absolute -top-10 -left-10 w-60 h-60 bg-blue-100 rounded-full blur-3xl opacity-60 animate-pulse"></div>
       <div className="absolute bottom-0 right-0 w-72 h-72 bg-cyan-100 rounded-full blur-3xl opacity-70 animate-pulse"></div>

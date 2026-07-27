@@ -16,7 +16,7 @@ export default function AdminShell({ children }) {
   return (
     <div className="min-h-screen bg-slate-100">
       <div className="mx-auto flex min-h-screen max-w-7xl flex-col md:flex-row">
-        <aside className="w-full bg-slate-900 px-6 py-8 text-white md:w-72">
+        <aside className="w-full bg-slate-900 px-6 py-6 text-white md:w-72">
           <div className="mb-8">
             <p className="text-sm uppercase tracking-[0.35em] text-sky-300">
               HR Portal
@@ -53,7 +53,7 @@ export default function AdminShell({ children }) {
           </button>
         </aside>
 
-        <main className="flex-1 px-4 py-6 md:px-8 md:py-8">{children}</main>
+        <main className="flex-1 px-4 py-6 md:px-8 md:py-6">{children}</main>
       </div>
     </div>
   );
