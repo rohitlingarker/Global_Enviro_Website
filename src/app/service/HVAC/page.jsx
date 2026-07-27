@@ -7,7 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 import HeroSection from "@/components/HeroSection/HeroSection";
-
+ 
 const sections = [
   {
     id: "hvac",
@@ -333,13 +333,13 @@ const sections = [
     ],
   },
 ];
-
+ 
 // One representative image per section (shown in the accordion body)
 const imageMap = {
   hvac: "/assets/images/hvac-projects/ahu.jpg",
   paneling: "/assets/images/hvac-projects/panel-4.jpg",
 };
-
+ 
 function AccordionItem({ section, isOpen, onToggle }) {
   return (
     <div
@@ -361,7 +361,7 @@ function AccordionItem({ section, isOpen, onToggle }) {
           className={`transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
         />
       </button>
-
+ 
       {/* Body */}
       <LazyAnimatePresence initial={false}>
         {isOpen && (
@@ -385,7 +385,7 @@ function AccordionItem({ section, isOpen, onToggle }) {
                   />
                 </div>
               </div>
-
+ 
               {/* Content */}
               <div className="md:w-2/3 space-y-4">
                 <h3 className="text-2xl font-bold text-[#0b1e3d]">
@@ -396,7 +396,7 @@ function AccordionItem({ section, isOpen, onToggle }) {
                     {section.intro}
                   </p>
                 )}
-
+ 
                 <div>
                   <p className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">
                     Systems / Equipment
@@ -421,13 +421,13 @@ function AccordionItem({ section, isOpen, onToggle }) {
     </div>
   );
 }
-
+ 
 const sectionIds = sections.map((s) => s.id);
-
+ 
 export default function HVACPage() {
   const [openId, setOpenId] = useState("hvac");
   useOpenOnHash(sectionIds, setOpenId);
-
+ 
   return (
     <main>
       <HeroSection
@@ -449,7 +449,7 @@ export default function HVACPage() {
             units and filtration systems to modular paneling.
           </p>
         </div>
-
+ 
         <div className="space-y-4">
           {sections.map((section) => (
             <AccordionItem
@@ -464,3 +464,4 @@ export default function HVACPage() {
     </main>
   );
 }
+ 
