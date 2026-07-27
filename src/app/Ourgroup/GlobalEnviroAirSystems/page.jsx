@@ -1,12 +1,36 @@
 import HeroSection from "@/components/HeroSection/HeroSection";
 import Link from "next/link";
 import Image from "next/image";
+import { Calendar, MapPin, Cog, Factory, Check } from "lucide-react";
 
 const highlights = [
-  { label: "Founded",        value: "1999" },
-  { label: "Headquarters",   value: "Hyderabad, Telangana" },
-  { label: "Specialization", value: "Air Pollution Control & HVAC" },
-  { label: "Industries",     value: "Cement, Power, Steel, Pharma, Paper" },
+  { label: "Founded",      value: "1999",                 icon: Calendar },
+  { label: "Headquarters", value: "Hyderabad, Telangana", icon: MapPin },
+  {
+    label: "Specialization",
+    icon: Cog,
+    value: [
+      "Air Pollution Control Systems",
+      "HVAC Clean Room Systems",
+      "Material Handling Systems",
+      // "EPC Power Projects",
+      // "Metallurgicals & Briquettes",
+    ],
+  },
+  {
+    label: "Industries We Serve",
+    icon: Factory,
+    value: [
+      "Cement",
+      "Power",
+      "Steel",
+      "Pharmaceuticals",
+      "Paper",
+      "Distilleries",
+      "Food Processing",
+      "Scientific Research",
+    ],
+  },
 ];
 
 const divisions = [
@@ -17,7 +41,7 @@ const divisions = [
   },
   {
     title: "HVAC Clean Room Systems",
-    desc: "Turnkey HVAC and clean room solutions including AHUs, puff panels, doors, HEPA filters, laminar flow units, and air showers for pharma and biotech.",
+    desc: "Turnkey HVAC & clean room systems including AHUs, puff panels, doors, HEPA filters, laminar flow units, and air showers for pharma and biotech.",
     img: "/assets/images/hvac clean room.png",
   },
   {
@@ -47,12 +71,12 @@ export default function GlobalEnviroAirSystemsPage() {
         subtitle="Engineering Clean Air, Enabling Clean Industry."
         align="left"
         overlay="bg-black/55"
-        height="h-[400px]"
+        height="h-[260px] sm:h-[320px] md:h-[400px]"
       />
 
       {/* About + Highlights */}
-      <section className="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-center">
-        <div className="space-y-5">
+      <section className="max-w-6xl mx-auto px-6 py-6 grid md:grid-cols-2 gap-6 items-center">
+        <div className="space-y-4">
           <p className="text-[#3877d4] uppercase tracking-widest text-sm font-semibold">
             About the Company
           </p>
@@ -65,16 +89,16 @@ export default function GlobalEnviroAirSystemsPage() {
             into the atmosphere.
           </p>
           <p className="text-gray-600 leading-relaxed">
-            As turnkey solution providers for HVAC and Clean room projects, we
+            As turnkey solution providers for HVAC & Cleanroom systems, we
             deliver complete systems: air handling units, puff panels, clean room
             doors, and high-efficiency dust collectors — all tailored for precision
             manufacturing environments. We also specialize in bulk material handling
             for cement and fly ash, with proven unloading systems for silos and racks.
           </p>
-          <p className="text-gray-600 leading-relaxed">
+          {/* <p className="text-gray-600 leading-relaxed">
             <span className="font-semibold text-[#0b1e3d]">Industries We Serve:</span> Cement | Power |
             Steel | Pharmaceuticals | Paper | Distilleries | Food Processing | Scientific Research
-          </p>
+          </p> */}
           <Link
             href="/service"
             className="inline-flex items-center gap-2 bg-[#3877d4] text-white px-5 py-2.5 rounded-lg hover:bg-[#2f5fb8] transition-all font-medium mt-2"
@@ -84,18 +108,46 @@ export default function GlobalEnviroAirSystemsPage() {
         </div>
 
         {/* Highlights */}
-        <div className="grid grid-cols-2 gap-4">
-          {highlights.map((h) => (
-            <div
-              key={h.label}
-              className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 text-center"
-            >
-              <p className="text-xs text-gray-400 uppercase tracking-widest mb-1">
-                {h.label}
-              </p>
-              <p className="text-base font-bold text-[#0b1e3d]">{h.value}</p>
-            </div>
-          ))}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-stretch">
+          {highlights.map((h) => {
+            const isList = Array.isArray(h.value);
+            const Icon = h.icon;
+
+            return (
+              <div
+                key={h.label}
+                className="group flex flex-col h-full bg-white rounded-2xl p-5 shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-lg hover:border-blue-200 hover:-translate-y-0.5"
+              >
+                {/* Header */}
+                <div className="flex items-center justify-center gap-2 mb-3">
+                  <span className="flex items-center justify-center w-7 h-7 rounded-full bg-blue-50 text-[#3877d4] group-hover:bg-[#3877d4] group-hover:text-white transition-colors">
+                    {Icon && <Icon size={15} />}
+                  </span>
+                  <p className="text-xs text-gray-400 uppercase tracking-widest">
+                    {h.label}
+                  </p>
+                </div>
+
+                {isList ? (
+                  <ul className="flex-1 flex flex-col justify-center gap-2 w-fit mx-auto">
+                    {h.value.map((v) => (
+                      <li
+                        key={v}
+                        className="flex items-center gap-2 text-sm font-semibold text-[#0b1e3d]"
+                      >
+                        <Check size={15} className="text-[#3877d4] shrink-0" />
+                        <span>{v}</span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="flex-1 flex items-center justify-center text-lg font-bold text-[#0b1e3d]">
+                    {h.value}
+                  </p>
+                )}
+              </div>
+            );
+          })}
         </div>
       </section>
 

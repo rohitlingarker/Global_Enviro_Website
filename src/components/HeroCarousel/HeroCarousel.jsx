@@ -76,7 +76,7 @@ export default function HeroCarousel({
 
   return (
     <div
-      className={cn("relative w-full h-[500px] overflow-hidden", className)}
+      className={cn("relative w-full h-64 sm:h-80 md:h-96 overflow-hidden", className)}
       onMouseEnter={() => setPaused(pauseOnHover && true)}
       onMouseLeave={() => setPaused(false)}
     >

@@ -6,7 +6,7 @@ export default function BiomassBriquettesPage() {
   return (
     <div className="bg-white text-gray-800 leading-relaxed">
       {/* ---------- Intro Section ---------- */}
-      <section className="max-w-6xl mx-auto px-6 py-10">
+      <section className="max-w-6xl mx-auto px-6 py-6">
         <h1 className="text-4xl font-bold mb-2 text-blue-800">
           Biomass Briquettes
         </h1>
@@ -23,7 +23,7 @@ export default function BiomassBriquettesPage() {
 
       {/* ---------- Product Overview ---------- */}
       <section className="max-w-6xl mx-auto px-6 py-6 flex justify-center">
-        <div className="relative w-full max-w-xl h-[320px]">
+        <div className="relative w-full max-w-xl h-[220px] sm:h-[260px] md:h-[320px]">
           <Image
             src="/assets/images/metallurgicals-projects/biomass-briquettes.jpg"
             alt="Biomass Briquettes"

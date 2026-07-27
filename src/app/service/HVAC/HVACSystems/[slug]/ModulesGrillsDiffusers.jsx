@@ -6,7 +6,7 @@ export default function ModulesGrillsDiffusersPage() {
   return (
     <div className="bg-white text-gray-800 leading-relaxed">
       {/* ---------- Intro Section ---------- */}
-      <section className="max-w-6xl mx-auto px-6 py-10">
+      <section className="max-w-6xl mx-auto px-6 py-6">
         <h1 className="text-4xl font-bold mb-4 text-blue-800">
           Modules, Grills, Diffusers &amp; Linear Bar Grills
         </h1>
@@ -24,7 +24,7 @@ export default function ModulesGrillsDiffusersPage() {
       </section>
 
       {/* ---------- Product Overview ---------- */}
-      <section className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center px-6 py-6">
+      <section className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-start px-6 py-6">
         <div>
           <h2 className="text-2xl font-semibold text-blue-800 mb-3">
             Product Overview
@@ -40,7 +40,7 @@ export default function ModulesGrillsDiffusersPage() {
           </ul>
         </div>
 
-        <div className="relative w-full h-[320px]">
+        <div className="relative w-full h-[220px] sm:h-[260px] md:h-[320px]">
           <Image
             src="/assets/images/hvac-projects/module-hepa-housing.jpg"
             alt="Modules, Grills, Diffusers & Linear Bar Grills"
@@ -65,9 +65,6 @@ export default function ModulesGrillsDiffusersPage() {
                 className="object-contain rounded-lg shadow-md"
               />
             </div>
-            <p className="mt-2 text-sm font-medium text-gray-600">
-              Latch Type Grill
-            </p>
           </div>
           <div className="text-center">
             <div className="relative w-full h-[220px]">
@@ -78,7 +75,6 @@ export default function ModulesGrillsDiffusersPage() {
                 className="object-contain rounded-lg shadow-md"
               />
             </div>
-            <p className="mt-2 text-sm font-medium text-gray-600">Diffuser</p>
           </div>
           <div className="text-center">
             <div className="relative w-full h-[220px]">
@@ -89,9 +85,6 @@ export default function ModulesGrillsDiffusersPage() {
                 className="object-contain rounded-lg shadow-md"
               />
             </div>
-            <p className="mt-2 text-sm font-medium text-gray-600">
-              Linear Bar Grill
-            </p>
           </div>
         </div>
       </section>

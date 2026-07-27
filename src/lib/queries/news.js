@@ -5,7 +5,7 @@ export async function getPublishedNews() {
     .from("news_events")
     .select("*")
     .eq("is_published", true)
-    .order("event_date", { ascending: false });
+    .order("created_at", { ascending: false });
 
   if (error) {
     throw new Error(error.message);

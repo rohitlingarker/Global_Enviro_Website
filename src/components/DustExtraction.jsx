@@ -6,7 +6,7 @@ export default function DustExtractionPage() {
   return (
     <div className="bg-white text-gray-800 leading-relaxed">
       {/* ---------- Intro Section ---------- */}
-      <section className="max-w-6xl mx-auto px-6 py-10">
+      <section className="max-w-6xl mx-auto px-6 py-6">
         <h1 className="text-4xl font-bold mb-4 text-blue-800">
           Dust Extraction Systems
         </h1>
@@ -27,38 +27,40 @@ export default function DustExtractionPage() {
           <h2 className="text-xl font-semibold text-blue-700 mb-4">
             Technical Specifications
           </h2>
-          <table className="table-auto w-full text-sm border-collapse">
-            <tbody>
-              <tr className="border-b">
-                <td className="font-medium py-2 pr-3">Application</td>
-                <td>Dust Extraction / Fume Extraction</td>
-              </tr>
-              <tr className="border-b">
-                <td className="font-medium py-2 pr-3">Capacity Range</td>
-                <td>Up to 2,50,000 CMH</td>
-              </tr>
-              <tr className="border-b">
-                <td className="font-medium py-2 pr-3">Operating Temp</td>
-                <td>Up to 260°C</td>
-              </tr>
-              <tr className="border-b">
-                <td className="font-medium py-2 pr-3">Filter Bag Materials</td>
-                <td>Polyester, PPS, Nomex, P-84, PTFE</td>
-              </tr>
-              <tr className="border-b">
-                <td className="font-medium py-2 pr-3">MOC</td>
-                <td>SS304 / SS316 / IS2062</td>
-              </tr>
-              <tr>
-                <td className="font-medium py-2 pr-3">Cleaning Type</td>
-                <td>Offline / Online Pulse Jet</td>
-              </tr>
-            </tbody>
-          </table>
+          <div className="overflow-x-auto">
+            <table className="table-auto w-full text-sm border-collapse">
+              <tbody>
+                <tr className="border-b">
+                  <td className="font-medium py-2 pr-3">Application</td>
+                  <td>Dust Extraction / Fume Extraction</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="font-medium py-2 pr-3">Capacity Range</td>
+                  <td>Up to 2,50,000 CMH</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="font-medium py-2 pr-3">Operating Temp</td>
+                  <td>Up to 260°C</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="font-medium py-2 pr-3">Filter Bag Materials</td>
+                  <td>Polyester, PPS, Nomex, P-84, PTFE</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="font-medium py-2 pr-3">MOC</td>
+                  <td>SS304 / SS316 / IS2062</td>
+                </tr>
+                <tr>
+                  <td className="font-medium py-2 pr-3">Cleaning Type</td>
+                  <td>Offline / Online Pulse Jet</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
 
         {/* RIGHT SIDE – Image */}
-        <div className="relative w-full h-[320px]">
+        <div className="relative w-full h-[220px] sm:h-[260px] md:h-[320px]">
           <Image
             src="/assets/images/dust extraction.png"
             alt="Dust Extraction System"

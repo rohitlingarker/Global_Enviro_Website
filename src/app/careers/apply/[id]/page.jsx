@@ -290,16 +290,16 @@ export default function ApplyJobPage() {
   };
 
   if (isLoading) {
-    return <p className="mt-10 text-center">Loading job details...</p>;
+    return <p className="mt-6 text-center">Loading job details...</p>;
   }
 
   if (!job) {
-    return <p className="mt-10 text-center">Job not found</p>;
+    return <p className="mt-6 text-center">Job not found</p>;
   }
 
   return (
     <>
-      <main className="mx-auto my-5 max-w-2xl rounded-md bg-white px-6 py-10 shadow-lg">
+      <main className="mx-auto my-5 max-w-2xl rounded-md bg-white px-6 py-6 shadow-lg">
         <div className="mb-8 border-b pb-4">
           <h1 className="mb-2 text-3xl font-bold">{job.title}</h1>
           <p className="text-gray-600">
@@ -311,7 +311,7 @@ export default function ApplyJobPage() {
           {steps.map((label, index) => (
             <div
               key={label}
-              className={`flex-1 border-b-4 pb-2 text-center hover:cursor-default ${
+              className={`flex-1 border-b-4 pb-2 px-1 text-center text-[11px] sm:text-sm hover:cursor-default ${
                 index <= currentStep
                   ? "border-primary text-primary"
                   : "border-gray-300 text-gray-500"

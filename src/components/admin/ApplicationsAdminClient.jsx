@@ -181,7 +181,7 @@ export default function ApplicationsAdminClient({
                 <tr>
                   <td
                     colSpan="7"
-                    className="px-6 py-8 text-center text-sm text-slate-500"
+                    className="px-6 py-6 text-center text-sm text-slate-500"
                   >
                     No applications found for the selected filters.
                   </td>

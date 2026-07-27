@@ -162,7 +162,7 @@ export default function NewsAdminClient({ initialNews }) {
   return (
     <div className="space-y-8">
       <section className="rounded-3xl bg-white p-6 shadow-sm">
-        <div className="mb-6 flex items-center justify-between gap-4">
+        <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
               News Manager
@@ -316,7 +316,7 @@ export default function NewsAdminClient({ initialNews }) {
                 <tr>
                   <td
                     colSpan="5"
-                    className="px-6 py-8 text-center text-sm text-slate-500"
+                    className="px-6 py-6 text-center text-sm text-slate-500"
                   >
                     No events found.
                   </td>

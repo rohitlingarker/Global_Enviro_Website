@@ -18,6 +18,7 @@ const sections = [
       "A Dust Extraction System is designed to capture, filter, and remove airborne dust, fumes, and particulate matter generated during industrial processes. The system helps maintain a clean and safe working environment, protects equipment, improves product quality, and ensures compliance with environmental and workplace safety regulations. Dust Extraction Systems provide an effective and reliable solution for controlling airborne dust and particulates, ensuring cleaner operations, safer workplaces, and environmentally compliant industrial processes.",
     subsystems: [
       { name: "Pulse Jet Bag Filter", slug: "pulse-jet-bag-filter" },
+      { name: "Pulse Jet Bag Filter for Boiler", slug: "pulse-jet-bag-filter-for-boiler" },
       { name: "Single Cyclone Separator", slug: "single-cyclone-separator" },
       { name: "Treema Cyclone Separator", slug: "treema-cyclone-separator" },
       { name: "Multi Cyclone Separator", slug: "multi-cyclone-separator" },
@@ -206,11 +207,11 @@ export default function AirPollutionControlPage() {
         subtitle="Comprehensive dust and emission control systems engineered for industrial compliance and environmental safety."
         align="left"
         overlay="bg-black/55"
-        height="h-[380px]"
+        height="h-[240px] sm:h-[300px] md:h-[380px]"
       />
 
-      <section className="py-16 px-6 md:px-16 max-w-5xl mx-auto">
-        <div className="text-center mb-10">
+      <section className="py-6 px-6 md:px-16 max-w-5xl mx-auto">
+        <div className="text-center mb-5">
           <h2 className="text-3xl font-extrabold text-[#0b1e3d] mb-3">
             Our Systems &amp; Products
           </h2>

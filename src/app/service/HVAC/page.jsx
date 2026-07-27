@@ -205,7 +205,7 @@ const sections = [
   },
   {
     id: "paneling",
-    title: "2. Paneling",
+    title: "2. Modular Clean Room Paneling Systems",
     color: "bg-teal-700",
     basePath: "Paneling",
     intro:
@@ -337,7 +337,7 @@ const sections = [
 // One representative image per section (shown in the accordion body)
 const imageMap = {
   hvac: "/assets/images/hvac-projects/ahu.jpg",
-  paneling: "/assets/images/hvac-projects/panel-1.jpg",
+  paneling: "/assets/images/hvac-projects/panel-4.jpg",
 };
  
 function AccordionItem({ section, isOpen, onToggle }) {
@@ -373,20 +373,24 @@ function AccordionItem({ section, isOpen, onToggle }) {
             transition={{ duration: 0.35 }}
             className="overflow-hidden"
           >
-            <div className="bg-white px-6 py-5 flex flex-col md:flex-row gap-6">
+            <div className="bg-white px-6 py-6 flex flex-col md:flex-row md:items-center gap-6">
               {/* Image */}
-              <div className="md:w-1/3">
-                <Image
-                  src={imageMap[section.id]}
-                  alt={section.title}
-                  width={480}
-                  height={240}
-                  className="rounded-xl object-cover w-full h-48 shadow"
-                />
+              <div className="md:w-1/3 shrink-0">
+                <div className="relative w-full aspect-4/3 rounded-xl bg-gray-50 border border-gray-100">
+                  <Image
+                    src={imageMap[section.id]}
+                    alt={section.title}
+                    fill
+                    className="object-contain p-4"
+                  />
+                </div>
               </div>
  
               {/* Content */}
               <div className="md:w-2/3 space-y-4">
+                <h3 className="text-2xl font-bold text-[#0b1e3d]">
+                  {section.title.replace(/^\d+\.\s*/, "")}
+                </h3>
                 {section.intro && (
                   <p className="text-sm text-gray-600 leading-relaxed">
                     {section.intro}
@@ -397,19 +401,17 @@ function AccordionItem({ section, isOpen, onToggle }) {
                   <p className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">
                     Systems / Equipment
                   </p>
-                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  <div className="flex flex-wrap gap-2">
                     {section.items.map((item) => (
-                      <li key={item.slug} className="flex items-center gap-2 text-sm">
-                        <span className="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0" />
-                        <Link
-                          href={`/service/HVAC/${section.basePath}/${item.slug}`}
-                          className="text-gray-700 hover:text-blue-700 hover:underline transition-colors"
-                        >
-                          {item.title}
-                        </Link>
-                      </li>
+                      <Link
+                        key={item.slug}
+                        href={`/service/HVAC/${section.basePath}/${item.slug}`}
+                        className="inline-flex items-center rounded-full border border-gray-200 bg-gray-50 px-3.5 py-1.5 text-sm text-gray-700 transition-colors hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700"
+                      >
+                        {item.title}
+                      </Link>
                     ))}
-                  </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -434,11 +436,11 @@ export default function HVACPage() {
         subtitle="Precision-controlled environments for pharma, biotech, and critical industries — from air handling units to full clean room paneling."
         align="left"
         overlay="bg-black/55"
-        height="h-[380px]"
+        height="h-[240px] sm:h-[300px] md:h-[380px]"
       />
- 
-      <section className="py-16 px-6 md:px-16 max-w-5xl mx-auto">
-        <div className="text-center mb-10">
+
+      <section className="py-6 px-6 md:px-16 max-w-5xl mx-auto">
+        <div className="text-center mb-5">
           <h2 className="text-3xl font-extrabold text-[#0b1e3d] mb-3">
             HVAC &amp; Clean Room Systems
           </h2>

@@ -6,7 +6,7 @@ export default function DoubleGirderEOTCranePage() {
   return (
     <div className="bg-white text-gray-800 leading-relaxed">
       {/* ---------- Intro Section ---------- */}
-      <section className="max-w-6xl mx-auto px-6 py-10">
+      <section className="max-w-6xl mx-auto px-6 py-6">
         <h1 className="text-4xl font-bold mb-4 text-blue-800">
           Double Girder EOT Crane
         </h1>
@@ -21,7 +21,7 @@ export default function DoubleGirderEOTCranePage() {
       </section>
 
       {/* ---------- Product Overview ---------- */}
-      <section className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center px-6 py-6">
+      <section className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-start px-6 py-6">
         <div>
           <h2 className="text-2xl font-semibold text-blue-800 mb-3">
             Product Overview
@@ -38,9 +38,9 @@ export default function DoubleGirderEOTCranePage() {
           </ul>
         </div>
 
-        <div className="relative w-full h-[320px]">
+        <div className="relative w-full h-[220px] sm:h-[260px] md:h-[320px]">
           <Image
-            src="/assets/images/EOT and HOT cranes.png"
+            src="/assets/images/warehouse-projects/EOT_DoubleG.png"
             alt="Double Girder EOT Crane"
             fill
             className="object-contain rounded-lg shadow-md"

@@ -4,9 +4,9 @@ import Image from "next/image";
 
 export default function CleanroomEquipment() {
   return (
-    <div className="bg-blue-50 min-h-screen py-12 px-6 md:px-20">
+    <div className="bg-blue-50 min-h-screen py-6 px-6 md:px-20">
       {/* Header Section */}
-      <div className="text-center mb-12">
+      <div className="text-center mb-5">
         <h1 className="text-4xl md:text-5xl font-bold text-blue-900 mb-4">
           CLEANROOM EQUIPMENT’S
         </h1>
@@ -22,7 +22,7 @@ export default function CleanroomEquipment() {
       </div>
 
       {/* Equipment Grid */}
-      <div className="grid md:grid-cols-2 gap-10">
+      <div className="grid md:grid-cols-2 gap-4">
         {/* PASS BOX */}
         <div className="flex flex-col md:flex-row items-center bg-white rounded-2xl shadow-md overflow-hidden">
           <div className="md:w-1/2">
@@ -33,7 +33,6 @@ export default function CleanroomEquipment() {
               height={500}
               className="object-cover w-full h-full"
             />
-            <p className="text-center font-semibold py-2 text-sm text-gray-600">PASS BOX</p>
           </div>
           <div className="md:w-1/2 p-6">
             <h2 className="text-xl font-bold text-blue-800 mb-2">PASS BOX</h2>
@@ -57,7 +56,6 @@ export default function CleanroomEquipment() {
               height={500}
               className="object-cover w-full h-full"
             />
-            <p className="text-center font-semibold py-2 text-sm text-gray-600">DUST COLLECTOR</p>
           </div>
           <div className="md:w-1/2 p-6">
             <h2 className="text-xl font-bold text-blue-800 mb-2">DUST COLLECTOR</h2>
@@ -81,7 +79,6 @@ export default function CleanroomEquipment() {
               height={500}
               className="object-cover w-full h-full"
             />
-            <p className="text-center font-semibold py-2 text-sm text-gray-600">AIR SHOWER</p>
           </div>
           <div className="md:w-1/2 p-6">
             <h2 className="text-xl font-bold text-blue-800 mb-2">AIR SHOWER</h2>
@@ -105,7 +102,6 @@ export default function CleanroomEquipment() {
               height={500}
               className="object-cover w-full h-full"
             />
-            <p className="text-center font-semibold py-2 text-sm text-gray-600">LAMINAR FLOW UNIT</p>
           </div>
           <div className="md:w-1/2 p-6">
             <h2 className="text-xl font-bold text-blue-800 mb-2">LAMINAR FLOW UNIT</h2>
