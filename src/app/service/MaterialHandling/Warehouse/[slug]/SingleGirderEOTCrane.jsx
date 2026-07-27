@@ -40,7 +40,7 @@ export default function SingleGirderEOTCranePage() {
 
         <div className="relative w-full h-[220px] sm:h-[260px] md:h-[320px]">
           <Image
-            src="/assets/images/EOT and HOT cranes.png"
+            src="/assets/images/warehouse-projects/EOT_SingleG.png"
             alt="Single Girder EOT Crane"
             fill
             className="object-contain rounded-lg shadow-md"
