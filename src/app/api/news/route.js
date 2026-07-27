@@ -22,7 +22,11 @@ export async function POST(request) {
   const body = await request.json();
   const { data, error } = await supabaseAdmin
     .from("news_events")
-    .insert(body)
+    .insert({
+      ...body,
+      event_date: body.event_date || null,
+      content: body.content || null,
+    })
     .select()
     .single();
 

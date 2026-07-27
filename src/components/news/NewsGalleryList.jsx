@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import BentoGallery from "@/components/BentoGallery";
 import { getNewsPhotoUrl } from "@/lib/newsPhotos";
@@ -10,13 +10,40 @@ const NewsDetailModal = dynamic(
   { ssr: false }
 );
 
+// Widest layout is xl:grid-cols-3, so a "row" is approximated as 3 cards.
+const ROWS_PER_PAGE = 2;
+const ITEMS_PER_PAGE = ROWS_PER_PAGE * 3;
+
 export default function NewsGalleryList({ items }) {
   const [activeItem, setActiveItem] = useState(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE);
+  const sentinelRef = useRef(null);
+
+  useEffect(() => {
+    const sentinel = sentinelRef.current;
+    if (!sentinel) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setVisibleCount((count) =>
+            Math.min(count + ITEMS_PER_PAGE, items.length)
+          );
+        }
+      },
+      { rootMargin: "200px" }
+    );
+
+    observer.observe(sentinel);
+    return () => observer.disconnect();
+  }, [items.length]);
+
+  const visibleItems = items.slice(0, visibleCount);
 
   return (
     <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-2 xl:grid-cols-3">
-      {items.map((item) => {
+      {visibleItems.map((item) => {
         const images = item.photo_urls?.length
           ? item.photo_urls.map((photo) => getNewsPhotoUrl(photo))
           : [getNewsPhotoUrl(null)];
@@ -50,6 +77,10 @@ export default function NewsGalleryList({ items }) {
           </article>
         );
       })}
+
+      {visibleCount < items.length ? (
+        <div ref={sentinelRef} className="h-1 md:col-span-2 xl:col-span-3" />
+      ) : null}
 
       {activeItem ? (
         <NewsDetailModal
