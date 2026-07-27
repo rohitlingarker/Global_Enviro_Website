@@ -74,8 +74,6 @@ const ClientsPage = () => {
 
   return (
     <div className="bg-gradient-to-b from-blue-50 to-white py-8">
-      <h2 className="text-4xl font-bold text-center text-blue-900 mb-2">
-    <div className="bg-gradient-to-b from-blue-50 to-white py-16">
       <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-blue-900 mb-2">
         Our Clients
       </h2>
