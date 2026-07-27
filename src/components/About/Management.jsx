@@ -65,11 +65,7 @@ export default function Management() {
       <div className="container relative z-10 mx-auto grid md:grid-cols-2 gap-5 items-center">
 
         {/* Left: Active Member Description */}
-<<<<<<< HEAD
-        <div className="space-y-3">
-=======
         <div className="space-y-6">
->>>>>>> 06cc6158012daca480a776f3e4f6256e35c3e0f9
           <h2 className="text-3xl md:text-4xl font-bold text-blue-100">
             Our Management Team
           </h2>
@@ -96,11 +92,7 @@ export default function Management() {
         </div>
 
         {/* Right: Team Cards */}
-<<<<<<< HEAD
-        <div className="relative grid grid-cols-1 sm:grid-cols-2 gap-5 justify-items-center">
-=======
         <div className="relative grid grid-cols-1 sm:grid-cols-2 gap-8 justify-items-center">
->>>>>>> 06cc6158012daca480a776f3e4f6256e35c3e0f9
           <div className="absolute -top-16 right-0 w-52 h-52 sm:w-80 sm:h-80 bg-blue-400/20 blur-3xl rounded-full animate-pulse" />
 
           {team.map((member, index) => {
@@ -116,11 +108,7 @@ export default function Management() {
                 onClick={() => setActive(member)}
                 aria-pressed={isActive}
                 aria-label={`Show details for ${member.name}, ${member.title}`}
-<<<<<<< HEAD
-                className={`bg-white text-center p-4 rounded-2xl shadow-lg cursor-pointer transition-all w-full max-w-57.5 relative z-10 outline-none focus-visible:ring-4 focus-visible:ring-blue-400/60 ${
-=======
                 className={`bg-white text-center p-6 rounded-2xl shadow-lg cursor-pointer transition-all w-full max-w-57.5 relative z-10 outline-none focus-visible:ring-4 focus-visible:ring-blue-400/60 ${
->>>>>>> 06cc6158012daca480a776f3e4f6256e35c3e0f9
                   isActive ? "ring-4 ring-blue-400 shadow-blue-500/30" : "ring-0"
                 } ${index === 2 ? "sm:col-span-2" : ""}`}
               >
