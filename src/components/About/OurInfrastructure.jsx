@@ -24,7 +24,7 @@ const OurInfrastructure = () => {
       images: [baseImages[1], baseImages[2]], // reused
     },
     {
-      title: "Briquettes Manufacturing Unit",
+      title: "CI Casting and Briquettes Manufacturing Unit",
       images: [baseImages[3], baseImages[0]], // reused
     },
   ];
@@ -37,8 +37,6 @@ const OurInfrastructure = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
 
         {/* 🔵 Header */}
-        <div className="mb-5 max-w-3xl">
-          <h2 className="text-4xl font-extrabold mb-3 text-black">
         <div className="mb-14 max-w-3xl">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-6 text-black">
             Our Infrastructure
