@@ -7,7 +7,7 @@ import MotionWrapper from "@/components/common/MotionWrapper";
 const branches = [
   {
     name: "Global Enviro Air Systems – Unit I & II",
-    address: "Survey No. 163/A (Part), Gagillapur (Vill.), Quthbullapur (Mdl), R.R. Dist, Hyderabad – 500043, Telangana.",
+    address: "Sy. No. 163/A, Gagillapur Village,Dundigal–Gandimaisamma Mandal,Medchal–Malkajgiri District,Hyderabad – 500043, Telangana, India",
     // ✅ This one is already correct from your original code
     mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3804.7368658972755!2d78.39407517512182!3d17.59745768345095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb8eb0081aaaab%3A0x82bf120ade91c860!2sGlobal%20Enviro%20Air%20Systems%20pvt%20limited!5e0!3m2!1sen!2sin!4v1730649852000!5m2!1sen!2sin",
   },
@@ -103,9 +103,10 @@ export default function ContactUS() {
           </div>
           <h4 className="font-semibold text-[#0f172a] mb-2">Head Office</h4>
           <p className="text-gray-600 text-sm leading-relaxed">
-            Survey No. 163/A (Part), Gagillapur (Vill.),<br />
-            Quthbullapur (Mdl), Hyderabad – 500043,<br />
-            Telangana
+           Sy. No. 163/A, Gagillapur Village,<br />
+Dundigal–Gandimaisamma Mandal,<br />
+Medchal–Malkajgiri District,<br />
+Hyderabad – 500043, Telangana, India
           </p>
         </div>
       </section>
@@ -230,7 +231,7 @@ export default function ContactUS() {
             <h2 className="text-2xl font-bold text-[#0b1e3d] mb-2">Head Office</h2>
             <p className="text-gray-500 text-sm mb-4">
               Survey No. 163/A (Part), Gagillapur (Vill.),
-              Quthbullapur (Mdl), Hyderabad – 500043, Telangana.
+              Gandimaisamma (Mdl),Medchal–Malkajgiri (dist), Hyderabad – 500043, Telangana.
             </p>
             <div className="rounded-xl overflow-hidden shadow-md border border-gray-100 h-64 sm:h-80 md:h-100">
               <iframe
