@@ -23,7 +23,7 @@ const RequestQuote = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex justify-center items-center p-6">
+    <div className="bg-gray-50 flex justify-center items-center py-12 px-6">
       <div className="bg-white shadow-xl rounded-lg p-6 w-full max-w-3xl border border-gray-200">
         <h2 className="text-2xl font-semibold text-gray-800 mb-5 text-center">
           Request a Quote
@@ -57,13 +57,13 @@ const RequestQuote = () => {
                   onChange={handleChange}
                   className="w-full border-b border-gray-300 focus:outline-none focus:border-blue-500 p-2"
                   rows="3"
-                  minLength={180}
+                  minLength={50}
                   maxLength={380}
                   required
                   placeholder="Please describe the product/system you're interested in (180-380 characters)"
                 ></textarea>
                 <p className="text-xs text-gray-400 text-right mt-1">
-                  {formData.otherProduct.length}/380 (min 180)
+                  {formData.otherProduct.length}/380 (min 50)
                 </p>
               </div>
             )}

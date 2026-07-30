@@ -69,7 +69,7 @@ export default function ContactUS() {
       </section>
 
       {/* ── Contact Info Bar ── */}
-      <section className="relative z-10 -mt-6 bg-white shadow-lg rounded-2xl w-[92%] max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 p-6 md:p-8">
+      <section className="relative z-10 -mt-10 bg-white shadow-lg rounded-2xl w-[92%] max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-5 p-6">
         <div className="flex flex-col items-center text-center">
           <div className="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center mb-3">
             <Phone className="w-5 h-5 text-[#3877d4]" />
@@ -113,7 +113,7 @@ export default function ContactUS() {
       {/* ── Branch Locations with Maps ── */}
       <section className="py-6 px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-8">
+          <div className="text-center mb-5">
             <h2 className="text-2xl sm:text-3xl font-bold text-[#0b1e3d] mb-3">Our Locations</h2>
             <p className="text-gray-500 text-base">Find us across India and internationally</p>
             <div className="mt-4 mx-auto w-20 h-1 bg-[#3877d4] rounded-full" />

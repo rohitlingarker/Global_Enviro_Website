@@ -24,8 +24,8 @@ export async function PUT(request, { params }) {
     .from("news_events")
     .update({
       title,
-      content,
-      event_date,
+      content: content || null,
+      event_date: event_date || null,
       is_published,
       photo_urls,
       updated_at: new Date().toISOString(),
