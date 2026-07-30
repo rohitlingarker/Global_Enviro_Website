@@ -74,8 +74,10 @@ export default function ContactUS() {
           >
             Reach out to Global Enviro Air Systems for enquiries, support, or
             partnership discussions.
+            <br/>
           </MotionWrapper>
         </div>
+        <br/>
       </section>
 
       {/* ── Contact Info Bar ── */}
