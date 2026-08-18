@@ -2,16 +2,16 @@
 import MotionWrapper from "@/components/common/MotionWrapper";
 
 const keyPersons = [
-  { name: "Naveen",         role: "Head Accounts" },
-  { name: "Sridhar",        role: "Head Purchases" },
-  { name: "Ramesh",         role: "Head Engineering" },
+  { name: "T. Naveen Kumar ",         role: "Head Accounts" },
+  { name: "M. Sridhar ",        role: "Head Purchases" },
+  { name: "B.S. Ramesh",         role: "Head Engineering" },
   { name: "NVS Rao",        role: "Head Projects" },
-  { name: "Aravind",        role: "Head Manufacturing – Air Pollution" },
-  { name: "Ramana",         role: "Head Manufacturing – Material Handling" },
-  { name: "Srinivas Reddy", role: "Head HVAC Projects" },
-  { name: "Suresh Reddy",   role: "Head Marketing" },
-  { name: "Prem",           role: "Head Quality Control" },
-  { name: "Sarala",         role: "Head Commercial" },
+  { name: "A. Aravind  Reddy",        role: "Head Manufacturing & Execution – Air Pollution" },
+  { name: "P. Venkata Ramana ",         role: "Head Manufacturing & Execution – Material Handling" },
+  { name: "K. Srinivasa Reddy", role: "Head HVAC Projects" },
+  { name: "P. Suresh Reddy",   role: "Head Marketing" },
+  { name: "A. Prem Sai",           role: "Head Quality Control" },
+  { name: "G. Sarala",         role: "Head Commercial" },
 ];
 
 export default function KeyPersons() {

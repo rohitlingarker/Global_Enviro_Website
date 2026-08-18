@@ -118,11 +118,11 @@ const Navbar = () => {
           <div className="hidden md:flex items-center gap-4 lg:gap-6 text-sm">
             <div className="flex items-center gap-2">
               <FaPhone className="text-blue-600" />
-              <span>+91 98480 31866</span>
+              <span>+91 89776 14681</span>
             </div>
             <div className="flex items-center gap-2">
               <FaEnvelope className="text-blue-600" />
-              <span>ksr@globalenviro.in</span>
+              <span>info@globalenviro.in</span>
             </div>
             <Link
               href="/RequestQuote"
@@ -346,11 +346,11 @@ const Navbar = () => {
             <div className="md:hidden flex flex-col gap-3 px-4 py-4 border-t text-sm">
               <div className="flex items-center gap-2">
                 <FaPhone className="text-blue-600" />
-                <span>+91 98480 31866</span>
+                <span>+91 89776 14681</span>
               </div>
               <div className="flex items-center gap-2">
                 <FaEnvelope className="text-blue-600" />
-                <span>ksr@globalenviro.in</span>
+                <span>info@globalenviro.in</span>
               </div>
               <Link
                 href="/RequestQuote"

@@ -22,9 +22,7 @@ export default function About() {
         <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#003366] leading-tight">Two and a Half Decades of Engineering Excellence</h1>
 
         {/* Simple Description */}
-         <p className="text-gray-700 text-lg justify-start">We lead the industry in air pollution control, HVAC systems,
-          bulk material handling, and end-to-end industrial solutions. Our expertise spans clean room technology,
-          metal castings, and global import-export operations.</p>
+         <p className="text-gray-700 text-lg justify-start">We lead the industry in air pollution control, HVAC Cleanroom projects, bulk material handling and metal castings.</p>
          <p className="text-gray-700 text-lg justify-start">What sets us apart is our commitment to truly understanding
           client needs and delivering solutions that work.</p>
 
