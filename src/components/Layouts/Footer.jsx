@@ -23,16 +23,16 @@ const Footer = () => {
 
           <p className="text-sm leading-relaxed mb-3 text-gray-600">
             <span className="font-semibold text-gray-900">
-              GLOBAL ENVIRO AIR SYSTEMS (P) Ltd.
+             Global Enviro Air Systems Pvt. Ltd.
             </span>
             <br />
-            Sy. No. 163/A, Gagillapur (Vil),
+           Sy. No. 163/A, Gagillapur Village,
             <br />
-            Dundigal – Gandimaisamma Mandal,
+           Dundigal–Gandimaisamma Mandal,
             <br />
-            Medchal-Malkajgiri (Dist),
+           Medchal–Malkajgiri District,
             <br />
-            Hyderabad, Telangana ,India.
+          Hyderabad – 500043, Telangana, India.
           </p>
 
           <ul className="space-y-2 text-sm">

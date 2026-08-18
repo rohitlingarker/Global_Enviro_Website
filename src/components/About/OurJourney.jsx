@@ -1,6 +1,6 @@
 "use client";
 import MotionWrapper from "@/components/common/MotionWrapper";
-import { FaFlag, FaWind, FaIndustry, FaBolt } from "react-icons/fa";
+import { FaFlag, FaWind, FaIndustry, FaBolt, FaCog, FaLeaf, FaSeedling } from "react-icons/fa";
 
 export default function OurJourney() {
   const milestones = [
@@ -26,11 +26,32 @@ export default function OurJourney() {
       icon: <FaIndustry className="text-white text-lg" />,
     },
     {
+      year: "2012",
+      title: "Global Metallurgicals — Casting Division",
+      description:
+        "Introduced Global Metallurgicals with the launch of the Casting Division, manufacturing high-quality Manganese Steel and Hi-Chrome castings for demanding industrial wear applications.",
+      icon: <FaCog className="text-white text-lg" />,
+    },
+    {
       year: "2020",
       title: "Indophil Jettech Energy Pvt. Ltd.",
       description:
         "Established Indophil Jettech Energy Pvt. Ltd., extending the group's expertise into EPC power projects and marking a major milestone in our diversification journey.",
       icon: <FaBolt className="text-white text-lg" />,
+    },
+    {
+      year: "2025",
+      title: "Biomass Briquettes Division",
+      description:
+        "Started the Biomass Briquettes division, supplying eco-friendly, high-calorific alternative fuel for industrial boilers and helping industries reduce dependence on fossil fuels.",
+      icon: <FaLeaf className="text-white text-lg" />,
+    },
+    {
+      year: "2026",
+      title: "SV Bio Fuels Introduced",
+      description:
+        "Introduced SV Bio Fuels, expanding into sustainable, renewable fuel solutions and reinforcing the group's commitment to cleaner, greener energy.",
+      icon: <FaSeedling className="text-white text-lg" />,
     },
   ];
 
@@ -77,7 +98,7 @@ export default function OurJourney() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="ml-12 sm:ml-16 bg-white/15 rounded-xl p-4 shadow-md hover:shadow-lg transition-all duration-300 text-white"
+                className="ml-12 sm:ml-16 bg-white/15 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 text-white"
               >
                 <span className="text-xs font-semibold text-blue-200 uppercase tracking-wide">
                   {milestone.year}
