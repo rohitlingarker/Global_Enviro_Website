@@ -55,6 +55,13 @@ export default function Home() {
       buttonText: "Know More",
       buttonLink: "/Ourgroup/GlobalMetallurgy",
     },
+    {
+      image: "/assets/images/metal-doors/hero-banner.jpg",
+      title: "Metal Doors & Engineered Steel Solutions",
+      subtitle: `Precision-engineered cleanroom, fire-rated, and industrial steel doors built stronger, smarter, and safer.\nEngineered for safety, designed for style, built to last.`,
+      buttonText: "Know More",
+      buttonLink: "/metal-doors",
+    },
   ];
 
   return (
