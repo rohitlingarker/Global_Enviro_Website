@@ -40,7 +40,7 @@ export default function CrusherImpactHammerMillPage() {
 
         <div className="relative w-full h-[220px] sm:h-[260px] md:h-[320px]">
           <Image
-            src="/assets/images/material-handling-projects/crusher-impact-hammer-mill.jpg"
+            src="/assets/images/updated_images/impact crusher.jpg"
             alt="Crusher (Impact Hammer Mill)"
             fill
             className="object-contain rounded-lg shadow-md"

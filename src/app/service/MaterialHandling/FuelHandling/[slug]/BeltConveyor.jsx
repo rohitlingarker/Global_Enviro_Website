@@ -37,13 +37,31 @@ export default function BeltConveyorPage() {
           </ul>
         </div>
 
-        <div className="relative w-full h-[220px] sm:h-[260px] md:h-[320px]">
-          <Image
-            src="/assets/images/material-handling-projects/belt-conveyor.jpg"
-            alt="Belt Conveyor"
-            fill
-            className="object-contain rounded-lg shadow-md"
-          />
+        <div className="grid grid-cols-3 gap-3">
+          <div className="relative w-full aspect-4/3">
+            <Image
+              src="/assets/images/updated_images/Belt Conveyor.JPG"
+              alt="Belt Conveyor 1"
+              fill
+              className="object-contain rounded-lg shadow-md"
+            />
+          </div>
+          <div className="relative w-full aspect-4/3">
+            <Image
+              src="/assets/images/updated_images/Belt Conveyor-1.JPG"
+              alt="Belt Conveyor 2"
+              fill
+              className="object-contain rounded-lg shadow-md"
+            />
+          </div>
+          <div className="relative w-full aspect-4/3">
+            <Image
+              src="/assets/images/updated_images/Belt Conveyor-2.jpg"
+              alt="Belt Conveyor 3"
+              fill
+              className="object-contain rounded-lg shadow-md"
+            />
+          </div>
         </div>
       </section>
 

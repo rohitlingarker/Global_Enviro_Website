@@ -61,7 +61,7 @@ const sections = [
 
 // One representative image per section (shown in the accordion body)
 const imageMap = {
-  "fuel-handling": "/assets/images/material-handling-projects/belt-conveyor.jpg",
+  "fuel-handling": "/assets/images/updated_images/Belt Conveyor.JPG",
   "ash-handling": "/assets/images/material-handling-projects/dense-veyor.jpg",
   warehouse: "/assets/images/EOT and HOT cranes.png",
 };

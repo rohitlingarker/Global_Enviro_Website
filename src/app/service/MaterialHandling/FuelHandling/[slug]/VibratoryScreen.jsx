@@ -42,7 +42,7 @@ export default function VibratoryScreenPage() {
 
         <div className="relative w-full h-[220px] sm:h-[260px] md:h-[320px]">
           <Image
-            src="/assets/images/material-handling-projects/vibratory-screen.jpg"
+            src="/assets/images/updated_images/vibratory screen.jpg"
             alt="Vibratory Screen"
             fill
             className="object-contain rounded-lg shadow-md"
