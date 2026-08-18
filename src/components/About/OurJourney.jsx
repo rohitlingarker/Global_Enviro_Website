@@ -8,14 +8,14 @@ export default function OurJourney() {
       year: "1999",
       title: "The Beginning",
       description:
-        "Global Enviro Air Systems Pvt. Ltd. was established with a clear vision — to deliver world-class air pollution control systems and create a cleaner, healthier industrial environment.",
+        "Global Enviro Air Systems  was established with a clear vision — to deliver world-class air pollution control systems and create a cleaner, healthier industrial environment.",
       icon: <FaFlag className="text-white text-lg" />,
     },
     {
       year: "2003",
-      title: "HVAC Division Added",
+      title: "HVAC Cleanroom Systems Division ",
       description:
-        "Expanded capabilities by introducing HVAC Clean Room systems, enabling the company to serve the pharmaceutical and chemical sectors with precision-controlled environments.",
+        "Expanded capabilities by introducing HVAC Cleanroom systems, enabling the company to serve the pharmaceutical and chemical sectors with precision-controlled environments.",
       icon: <FaWind className="text-white text-lg" />,
     },
     {
@@ -48,9 +48,9 @@ export default function OurJourney() {
     },
     {
       year: "2026",
-      title: "SV Bio Fuels Introduced",
+      title: "Metal Doors Division",
       description:
-        "Introduced SV Bio Fuels, expanding into sustainable, renewable fuel solutions and reinforcing the group's commitment to cleaner, greener energy.",
+        "Introduced Metal Doors Division, focus on balancing strength and aesthetic appeal",
       icon: <FaSeedling className="text-white text-lg" />,
     },
   ];

@@ -40,17 +40,23 @@ export default function BucketElevatorPage() {
         </div>
 
         <div className="relative w-full h-[220px] sm:h-[260px] md:h-[320px]">
-          <Image
+          {/* <Image
             src="/assets/images/material-handling-projects/bucket-elevator.jpg"
             alt="Bucket Elevator"
             fill
             className="object-contain rounded-lg shadow-md"
-          />
+          /> */}
+           <Image
+                src="/assets/images/material-handling-projects/bucket-elevator-2.jpg"
+                alt="Bucket Elevator Installation"
+                fill
+                className="object-contain rounded-lg shadow-md"
+              />
         </div>
       </section>
 
       {/* ---------- Application Gallery ---------- */}
-      <section className="max-w-6xl mx-auto px-6 py-6">
+      {/* <section className="max-w-6xl mx-auto px-6 py-6">
         <h2 className="text-2xl font-semibold text-blue-800 mb-4">
           Built for Every Application
         </h2>
@@ -66,7 +72,7 @@ export default function BucketElevatorPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ---------- Key Features & Technical Specification ---------- */}
       <section className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 px-6 py-6">
