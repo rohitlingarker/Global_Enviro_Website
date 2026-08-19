@@ -12,7 +12,7 @@ const highlights = [
     value: [
       "Air Pollution Control Systems",
       "HVAC Clean Room Systems",
-      "Material Handling Systems",
+      "Mill handling system",
       // "EPC Power Projects",
       // "Metallurgicals & Briquettes",
     ],

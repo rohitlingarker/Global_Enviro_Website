@@ -34,7 +34,7 @@ export default function IFMInsertFilterModulePage() {
           <ul className="list-disc pl-6 mt-1 space-y-1">
             <li className="break-inside-avoid">
               Dust extraction at transfer points, hoppers, silos, and
-              enclosed material handling systems
+              enclosed Mill handling system
             </li>
             <li className="break-inside-avoid">
               Industries handling powdery materials like cement, fly ash,
