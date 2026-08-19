@@ -20,7 +20,7 @@ export default function Certifications() {
     //   name: "Global Technologies",
     //   img: "/assets/images/Certificate2.jpg",
     //   desc: `With ISO 9001:2008 accreditation, Global Technologies continues to deliver top-tier
-    //   engineering and material handling systems with precision, efficiency, and quality.`,
+    //   engineering and Mill handling system with precision, efficiency, and quality.`,
     // },
     {
       name: "Global Enviro Air Systems (Expansion)",

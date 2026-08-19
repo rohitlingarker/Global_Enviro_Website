@@ -11,7 +11,7 @@ export default function BeltConveyorPage() {
           Belt Conveyor
         </h1>
         <p>
-          Belt Conveyors are versatile material handling systems designed
+          Belt Conveyors are versatile Mill handling system designed
           for the continuous transportation of bulk materials and packaged
           goods across short and long distances. Engineered with durable
           belts, robust structures, and efficient drive systems, these

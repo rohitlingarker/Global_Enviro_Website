@@ -42,7 +42,7 @@ const navItems = [
         url: "/service/AirPollutionControl",
         subDropdown: [
           { title: "Dust Extraction Systems", url: "/service/AirPollutionControl#dust-extraction" },
-          { title: "Fuel Extraction Systems", url: "/service/AirPollutionControl#fuel-extraction" },
+          { title: "Fume Extraction Systems", url: "/service/AirPollutionControl#fuel-extraction" },
           { title: "Silo / Bin Aeration", url: "/service/AirPollutionControl#silo-bin" },
         ],
       },
@@ -55,7 +55,7 @@ const navItems = [
         ],
       },
       {
-        title: "Material Handling Systems",
+        title: "Mill handling system",
         url: "/service/MaterialHandling",
         subDropdown: [
           { title: "Fuel Handling Systems", url: "/service/MaterialHandling#fuel-handling" },

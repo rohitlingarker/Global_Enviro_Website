@@ -10,7 +10,7 @@ export default function SlotChainConveyorPage() {
           Slot Chain Conveyor
         </h1>
         <p>
-          Slot Chain Conveyors are robust material handling systems designed
+          Slot Chain Conveyors are robust Mill handling system designed
           for the horizontal and inclined transportation of bulk materials,
           powders, granules, and industrial products. Utilizing an endless
           chain with specially designed slats or flights moving inside an
