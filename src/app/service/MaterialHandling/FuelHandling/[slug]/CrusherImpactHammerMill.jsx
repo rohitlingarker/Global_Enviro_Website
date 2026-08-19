@@ -34,13 +34,13 @@ export default function CrusherImpactHammerMillPage() {
             <li>Recycling &amp; Waste Processing Units</li>
             <li>Food &amp; Agro Processing Applications</li>
             <li>Mining &amp; Aggregate Industries</li>
-            <li>Bulk Material Handling Systems</li>
+            <li>Bulk Mill handling system</li>
           </ul>
         </div>
 
         <div className="relative w-full h-[220px] sm:h-[260px] md:h-[320px]">
           <Image
-            src="/assets/images/material-handling-projects/crusher-impact-hammer-mill.jpg"
+            src="/assets/images/updated_images/impact crusher.jpg"
             alt="Crusher (Impact Hammer Mill)"
             fill
             className="object-contain rounded-lg shadow-md"

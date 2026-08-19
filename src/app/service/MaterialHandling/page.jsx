@@ -61,7 +61,7 @@ const sections = [
 
 // One representative image per section (shown in the accordion body)
 const imageMap = {
-  "fuel-handling": "/assets/images/material-handling-projects/belt-conveyor.jpg",
+  "fuel-handling": "/assets/images/updated_images/fuel handling system for boiler.JPG",
   "ash-handling": "/assets/images/material-handling-projects/dense-veyor.jpg",
   warehouse: "/assets/images/EOT and HOT cranes.png",
 };
@@ -170,7 +170,7 @@ export default function MaterialHandlingPage() {
     <main>
       <HeroSection
         imageSrc="/assets/images/fuel handling system.png"
-        title="Material Handling Systems"
+        title="Mill Handling Systems"
         subtitle="Complete bulk material handling — fuel, ash, and warehouse systems — engineered for power, pharma, and process industries."
         align="left"
         overlay="bg-black/60"

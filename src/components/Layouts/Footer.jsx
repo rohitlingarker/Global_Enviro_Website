@@ -38,11 +38,11 @@ const Footer = () => {
           <ul className="space-y-2 text-sm">
             <li className="flex items-center gap-3 text-gray-700">
               <FaPhone className="text-blue-600" />
-              +91 98480 31866
+              +91 89776 14681
             </li>
             <li className="flex items-center gap-3 text-gray-700">
               <FaEnvelope className="text-blue-600" />
-              ksr@globalenviro.in
+             info@globalenviro.in
             </li>
           </ul>
         </div>
@@ -69,8 +69,8 @@ const Footer = () => {
 
           <ul className="space-y-2 text-sm">
             <li><a href="/service/AirPollutionControl" className="text-gray-700 hover:text-blue-700 hover:underline">Air Pollution Control Systems</a></li>
-            <li><a href="/service/HVAC" className="text-gray-700 hover:text-blue-700 hover:underline">HVAC Clean Room Projects</a></li>
-            <li><a href="/service/MaterialHandling" className="text-gray-700 hover:text-blue-700 hover:underline">Material Handling Systems</a></li>
+            <li><a href="/service/HVAC" className="text-gray-700 hover:text-blue-700 hover:underline">HVAC Cleanroom Systems</a></li>
+            <li><a href="/service/MaterialHandling" className="text-gray-700 hover:text-blue-700 hover:underline">Mill handling system</a></li>
             <li><a href="https://www.jettechenergy.com/" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-blue-700 hover:underline">EPC Power Projects</a></li>
             <li><a href="/service/Metallurgicals" className="text-gray-700 hover:text-blue-700 hover:underline">Metallurgicals & Briquettes</a></li>
             <li><a href="/metal-doors" className="text-gray-700 hover:text-blue-700 hover:underline">Metal Doors</a></li>

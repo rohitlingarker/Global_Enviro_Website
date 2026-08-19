@@ -25,7 +25,7 @@ export default function MagnaSteelCastingsPage() {
 
       {/* ---------- Ideal For + Application Gallery ---------- */}
       <section className="max-w-6xl mx-auto px-6 py-6">
-        <div className="grid md:grid-cols-2 gap-10">
+        <div className="grid md:grid-cols-[1fr_1.6fr] gap-10">
           <div>
             <h2 className="text-2xl font-semibold text-blue-800 mb-3">
               Ideal For
@@ -45,7 +45,7 @@ export default function MagnaSteelCastingsPage() {
             <h2 className="text-2xl font-semibold text-blue-800 mb-4">
               Casting Division
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               <div className="text-center">
                 <div className="relative w-full aspect-4/3">
                   <Image
@@ -61,6 +61,16 @@ export default function MagnaSteelCastingsPage() {
                   <Image
                     src="/assets/images/metallurgicals-projects/casting-2.jpg"
                     alt="Casting Division View 2"
+                    fill
+                    className="object-contain rounded-lg shadow-md"
+                  />
+                </div>
+              </div>
+              <div className="text-center">
+                <div className="relative w-full aspect-4/3">
+                  <Image
+                    src="/assets/images/metallurgicals-projects/MS Jobs.jpeg"
+                    alt="MS Jobs"
                     fill
                     className="object-contain rounded-lg shadow-md"
                   />

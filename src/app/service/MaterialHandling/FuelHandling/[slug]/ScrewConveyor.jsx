@@ -11,7 +11,7 @@ export default function ScrewConveyorPage() {
           Screw Conveyor
         </h1>
         <p>
-          Screw Conveyors are versatile material handling systems designed
+          Screw Conveyors are versatile Mill handling system designed
           for the smooth transportation of powders, granules, semi-solid
           materials, and bulk solids. Using a rotating helical screw inside
           a trough or tubular casing, these conveyors provide controlled,

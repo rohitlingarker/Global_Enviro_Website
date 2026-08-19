@@ -35,13 +35,13 @@ export default function CrusherCumScreenPage() {
             <li>Recycling &amp; Waste Management Units</li>
             <li>Chemical &amp; Fertilizer Industries</li>
             <li>Mining &amp; Quarry Operations</li>
-            <li>Bulk Material Handling Systems</li>
+            <li>Bulk Mill handling system</li>
           </ul>
         </div>
 
         <div className="relative w-full h-[220px] sm:h-[260px] md:h-[320px]">
           <Image
-            src="/assets/images/material-handling-projects/crusher-cum-screen.jpg"
+            src="/assets/images/updated_images/vibratory screen.jpg"
             alt="Crusher Cum Screen"
             fill
             className="object-contain rounded-lg shadow-md"
