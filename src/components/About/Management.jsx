@@ -21,8 +21,8 @@ export default function Management() {
       name: "V. Ramana Murthy",
       title: "Director",                     // ← simplified per client doc
       img: "/assets/images/Director.png",
-      desc: `A phenomenal management force of Global Enviro Systems,
-      Mr. Ramana Murthy has led over 100 Clean Room and HVAC projects across
+      desc: `A phenomenal management force of Global Enviro Air Systems,
+      Mr. Ramana Murthy has led over 100 HVAC Cleanroom projects across
       Pharma and Chemical sectors. His deep expertise in failure analysis and
       system design continues to strengthen Global Group's project performance.`,
     },
@@ -30,8 +30,9 @@ export default function Management() {
       name: "A. Sambasiva Rao",
       title: "Business Head",                // ← updated per client doc
       img: "/assets/images/Partner.png",
-      desc: `With over 15 years of experience in Fuels and Ash Handling Systems,
-      Mr. Sambasiva Rao brings extensive project management and vendor
+      desc: `With over 25 years of experience in Fuels and Ash Handling Systems, 10 Years in Veesons Energy Systems Pvt. Ltd., Cheema Boilers, Thermax later joined in to Global Enviro Air Systems,  
+
+Mr. A. Sambasiva Rao  brings extensive project management and vendor
       coordination expertise. His leadership ensures the success of complex
       conveyor and material handling projects across the country.`,
     },
@@ -67,7 +68,7 @@ export default function Management() {
         {/* Left: Active Member Description */}
         <div className="space-y-6">
           <h2 className="text-3xl md:text-4xl font-bold text-blue-100">
-            Our Management Team
+            Management Team
           </h2>
 
           <LazyAnimatePresence mode="wait">
