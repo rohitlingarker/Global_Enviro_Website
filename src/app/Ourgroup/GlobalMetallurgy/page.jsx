@@ -11,6 +11,7 @@ const products = [
   { title: "Core Shop",           img: "/assets/images/core shop.png" },
 ];
 
+
 const capabilities = [
   { label: "Specialization",  value: "Manganese Steel & Hi-Chrome Castings" },
   { label: "Furnace Capacity",value: "500 Kgs Induction Furnace" },
