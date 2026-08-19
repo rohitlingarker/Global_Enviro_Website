@@ -245,7 +245,7 @@ const sections = [
         ],
       },
       {
-        title: "Doors",
+        title: "Metal Doors",
         slug: "doors",
         description:
           "Metal Doors are durable, hygienic, and secure doors commonly used in cleanrooms, pharmaceutical facilities, hospitals, laboratories, industrial facilities, and commercial facilities. We are designed to provide strength, cleanliness, fire resistance, and environmental control while withstanding frequent use. Industrial and clean room doors are specially designed to provide secure, hygienic, and efficient access control in controlled environments and industrial facilities. Built with durable materials and precision-engineered sealing systems, these doors ensure smooth operation, thermal insulation, contamination control, and long-term reliability.",
