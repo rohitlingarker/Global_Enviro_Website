@@ -2,26 +2,43 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import {
+  IndianRupee,
+  SlidersHorizontal,
+  Clock3,
+  BadgeCheck,
+  Boxes,
+  Ruler,
+  FlaskConical,
+  DoorOpen,
+  ShieldAlert,
+  ShieldCheck,
+  AlignJustify,
+  MoveVertical,
+  Lock,
+  PersonStanding,
+  Building2,
+} from 'lucide-react';
 
 const PRODUCT_CATEGORIES = [
-  { name: 'Scientific Door', anchor: 'scientific-door' },
-  { name: 'Cleanroom Door', anchor: 'scientific-door' },
-  { name: 'Fire-Related Door', anchor: 'fire-rated-door' },
-  { name: 'Stainless Steel Doors', anchor: 'stainless-steel-door' },
-  { name: 'General Door & Louvered Door', anchor: 'general-door' },
-  { name: 'Shaft Door', anchor: 'shaft-door' },
-  { name: 'Hatch Door', anchor: null },
-  { name: 'Emergency Exit Door', anchor: null },
-  { name: 'Commercial Building Metal Louvers', anchor: 'metal-louvers' },
+  { name: 'Scientific Door', anchor: 'scientific-door', icon: FlaskConical },
+  { name: 'Cleanroom Door', anchor: 'scientific-door', icon: DoorOpen },
+  { name: 'Fire-Related Door', anchor: 'fire-rated-door', icon: ShieldAlert },
+  { name: 'Stainless Steel Doors', anchor: 'stainless-steel-door', icon: ShieldCheck },
+  { name: 'General Door & Louvered Door', anchor: 'general-door', icon: AlignJustify },
+  { name: 'Shaft Door', anchor: 'shaft-door', icon: MoveVertical },
+  { name: 'Hatch Door', anchor: null, icon: Lock },
+  { name: 'Emergency Exit Door', anchor: null, icon: PersonStanding },
+  { name: 'Commercial Building Metal Louvers', anchor: 'metal-louvers', icon: Building2 },
 ];
 
 const ADVANTAGES = [
-  'Cost-Effective Construction',
-  'Full Control of Design at all Stages',
-  'Minimum Production Lead and Delivery Time',
-  'Production Quality Certified to Standards',
-  'Modular Construction Facility for Easy Transportation',
-  'Variety of Custom Finishes',
+  { text: 'Cost-Effective Construction', icon: IndianRupee, color: 'bg-blue-900' },
+  { text: 'Full Control of Design at all Stages', icon: SlidersHorizontal, color: 'bg-red-700' },
+  { text: 'Minimum Production Lead and Delivery Time', icon: Clock3, color: 'bg-blue-900' },
+  { text: 'Production Quality Certified to Standards', icon: BadgeCheck, color: 'bg-red-700' },
+  { text: 'Modular Construction Facility for Easy Transportation', icon: Boxes, color: 'bg-blue-900' },
+  { text: 'Variety of Custom Finishes', icon: Ruler, color: 'bg-red-700' },
 ];
 
 const COLOR_CODES = [
@@ -54,6 +71,10 @@ const SPEC_ROWS = [
   },
   {
     label: 'Shutter Thickness',
+    cleanroom: ['46 mm'],
+    commercial: ['46 mm'],
+    general: ['46 mm'],
+    fire: ['46 mm'],
     cleanroom: ['46 mm'],
     commercial: ['46 mm'],
     general: ['46 mm'],
@@ -196,23 +217,6 @@ export default function MetalDoors() {
         </div>
       </section>
 
-      {/* ---------- About Us ---------- */}
-      <section className="max-w-6xl mx-auto px-6 py-8">
-        <h2 className="text-3xl font-bold mb-4 text-blue-800">About Us</h2>
-        <p className="mb-4">
-          Global Enviro Air Systems Pvt. Ltd. is a leading company in Air Pollution Control, HVAC Systems
-          and Cleanroom Technology Systems, Bulk Material Handling, Metal Doors, Engineered Metal Products
-          and end-to-end industrial solutions. Our expertise spans clean room technology, metal castings,
-          and global import-export operations. What sets us apart is our commitment to truly understanding
-          client needs and delivering solutions that work.
-        </p>
-        <p>
-          As one of the industry&apos;s most trusted names, Global Enviro Air Systems Pvt. Ltd. is
-          strategically expanding across diverse sectors. We envision strong, sustainable growth
-          throughout the subcontinent in the years ahead.
-        </p>
-      </section>
-
       {/* ---------- Our Metal Doors ---------- */}
       <section className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-start px-6 py-8">
         <div>
@@ -259,10 +263,12 @@ export default function MetalDoors() {
           Advantages of Our Metal Doors
         </h2>
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {ADVANTAGES.map((item) => (
-            <div key={item} className="flex items-start gap-3 bg-gray-50 rounded-lg p-4 border border-gray-100">
-              <span className="mt-1 h-2 w-2 rounded-full bg-red-700 flex-shrink-0" />
-              <span className="font-semibold text-gray-700">{item}</span>
+          {ADVANTAGES.map(({ text, icon: Icon, color }) => (
+            <div key={text} className="flex items-center gap-4 bg-white rounded-lg p-4 border border-gray-100 shadow-sm">
+              <span className={`flex items-center justify-center h-12 w-12 rounded-full ${color} flex-shrink-0`}>
+                <Icon className="h-6 w-6 text-white" />
+              </span>
+              <span className="font-semibold text-gray-700">{text}</span>
             </div>
           ))}
         </div>
@@ -272,24 +278,33 @@ export default function MetalDoors() {
       <section className="max-w-6xl mx-auto px-6 py-8 bg-gray-50 rounded-2xl">
         <h2 className="text-2xl font-semibold text-blue-800 mb-6">Our Products</h2>
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {PRODUCT_CATEGORIES.map((cat) =>
-            cat.anchor ? (
+          {PRODUCT_CATEGORIES.map((cat) => {
+            const Icon = cat.icon;
+            const content = (
+              <>
+                <span className="flex items-center justify-center h-10 w-10 rounded-full bg-blue-900 flex-shrink-0">
+                  <Icon className="h-5 w-5 text-white" />
+                </span>
+                <span className="font-semibold">{cat.name}</span>
+              </>
+            );
+            return cat.anchor ? (
               <a
                 key={cat.name}
                 href={`#${cat.anchor}`}
-                className="bg-white rounded-lg border border-gray-200 px-4 py-3 font-semibold text-gray-700 hover:border-blue-300 hover:text-blue-700 hover:shadow-sm transition"
+                className="flex items-center gap-3 bg-white rounded-lg border border-gray-200 px-4 py-3 text-gray-700 hover:border-blue-300 hover:text-blue-700 hover:shadow-sm transition"
               >
-                {cat.name}
+                {content}
               </a>
             ) : (
               <div
                 key={cat.name}
-                className="bg-white rounded-lg border border-gray-200 px-4 py-3 font-semibold text-gray-500"
+                className="flex items-center gap-3 bg-white rounded-lg border border-gray-200 px-4 py-3 text-gray-500"
               >
-                {cat.name}
+                {content}
               </div>
-            )
-          )}
+            );
+          })}
         </div>
       </section>
 
@@ -401,8 +416,9 @@ export default function MetalDoors() {
 
       {/* ---------- General Door & Louver Door ---------- */}
       <section id="general-door" className="max-w-6xl mx-auto px-6 py-8 scroll-mt-28 border-t border-gray-100">
-        <h3 className="text-2xl font-semibold text-blue-800 mb-1">General Door</h3>
-        <p className="text-lg text-red-700 font-semibold mb-3">& Louver Door</p>
+        <h3 className="text-2xl font-semibold mb-3">
+          <span className="text-blue-800">General Door</span> <span className="text-red-700">& Louver Door</span>
+        </h3>
         <p className="mb-4">
           General doors — commonly referred to as general-purpose commercial doors or utility doors — are
           standard architectural swing doors designed for areas that do not require specialized cleanroom

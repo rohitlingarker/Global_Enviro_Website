@@ -245,7 +245,7 @@ const sections = [
         ],
       },
       {
-        title: "Doors",
+        title: "Metal Doors",
         slug: "doors",
         description:
           "Metal Doors are durable, hygienic, and secure doors commonly used in cleanrooms, pharmaceutical facilities, hospitals, laboratories, industrial facilities, and commercial facilities. We are designed to provide strength, cleanliness, fire resistance, and environmental control while withstanding frequent use. Industrial and clean room doors are specially designed to provide secure, hygienic, and efficient access control in controlled environments and industrial facilities. Built with durable materials and precision-engineered sealing systems, these doors ensure smooth operation, thermal insulation, contamination control, and long-term reliability.",
@@ -353,7 +353,7 @@ function AccordionItem({ section, isOpen, onToggle }) {
       {/* Header */}
       <button
         onClick={onToggle}
-        className={`w-full flex items-center justify-between px-6 py-4 text-left text-white font-semibold text-base ${section.color} hover:opacity-90 transition-all`}
+        className="w-full flex items-center justify-between px-6 py-4 text-left text-white font-semibold text-base bg-[#3877d4] hover:opacity-90 transition-all"
       >
         <span>{section.title}</span>
         <ChevronDown

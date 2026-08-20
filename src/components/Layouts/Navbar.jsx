@@ -77,6 +77,7 @@ const navItems = [
         ],
       },
       { title: "SV Bio Fuels", url: "/Ourgroup/SVBioFuels" },
+      { title: "Metal Doors", url: "/metal-doors" },
     ],
   },
 

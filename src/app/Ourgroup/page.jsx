@@ -11,7 +11,7 @@ const companies = [
     tagline: "Engineering Clean Air, Enabling Clean Industry",
     description:
       "We design and manufacture advanced air pollution control systems, engineered to drastically reduce or eliminate industrial emissions into the atmosphere. As turnkey solution providers for HVAC and Clean room projects, we deliver complete systems — air handling units, puff panels, clean room doors, and high-efficiency dust collectors — all tailored for precision manufacturing environments. We also specialize in bulk material handling for cement and fly ash, with proven unloading systems for silos and racks.",
-    image: "/assets/images/global image.jpg",
+    image: "/assets/images/hvac-projects/door-brochure.jpg",
     shape: "rounded-full",
     link: "/Ourgroup/GlobalEnviroAirSystems",
     external: false,

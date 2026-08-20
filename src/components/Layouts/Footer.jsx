@@ -73,6 +73,7 @@ const Footer = () => {
             <li><a href="/service/MaterialHandling" className="text-gray-700 hover:text-blue-700 hover:underline">Mill handling system</a></li>
             <li><a href="https://www.jettechenergy.com/" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-blue-700 hover:underline">EPC Power Projects</a></li>
             <li><a href="/service/Metallurgicals" className="text-gray-700 hover:text-blue-700 hover:underline">Metallurgicals & Briquettes</a></li>
+            <li><a href="/metal-doors" className="text-gray-700 hover:text-blue-700 hover:underline">Metal Doors</a></li>
           </ul>
 
           {/* CONTACT CTA */}
