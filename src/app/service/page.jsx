@@ -14,7 +14,7 @@ const categories = [
     color: "from-blue-600 to-blue-800",
   },
   {
-    title: "HVAC Clean Room Projects",
+    title: "HVAC Cleanroom Systems",
     description:
       "Precision HVAC systems and clean room paneling solutions for pharma, biotech, and critical environments requiring strict contamination control.",
     icon: <Cog className="w-12 h-12" strokeWidth={1.5} />,
@@ -22,7 +22,7 @@ const categories = [
     color: "from-cyan-600 to-cyan-800",
   },
   {
-    title: "Material Handling Systems",
+    title: "Mill handling system",
     description:
       "Complete fuel handling, ash handling, and warehouse handling systems with conveyors, elevators, crushers, and EOT cranes.",
     icon: <Factory className="w-12 h-12" strokeWidth={1.5} />,

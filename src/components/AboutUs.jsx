@@ -24,9 +24,7 @@ export default function AboutUs() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
         >
-          We lead the industry in air pollution control, HVAC systems, bulk material
-          handling, and end-to-end industrial solutions. Our expertise spans clean room
-          technology, metal castings, and global import-export operations. What sets us
+         We lead the industry in air pollution control, HVAC Cleanroom projects, bulk material handling and metal castings. What sets us
           apart is our commitment to truly understanding client needs and delivering
           solutions that work. As one of the industry&apos;s most trusted names, Global Enviro
           Air Systems Pvt. Ltd. is strategically expanding across diverse sectors.

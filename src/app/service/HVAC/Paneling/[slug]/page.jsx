@@ -2,20 +2,20 @@
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import PanelForWalls from '@/app/service/HVAC/Paneling/[slug]/PanelForWalls';
-import Doors from '@/app/service/HVAC/Paneling/[slug]/Doors';
+import MetalDoors from '@/components/MetalDoors';
 import CrushPanel from '@/app/service/HVAC/Paneling/[slug]/CrushPanel';
 import GlassWindows from '@/app/service/HVAC/Paneling/[slug]/GlassWindows';
 
 const componentMap = {
   'panel-for-walls-partitions-ceiling': PanelForWalls,
-  'doors': Doors,
+  'doors': MetalDoors,
   'crush-panel': CrushPanel,
   'glass-windows': GlassWindows,
 };
 
 const items = [
   { name: 'Panel for Walls, Partitions & Ceiling', slug: 'panel-for-walls-partitions-ceiling' },
-  { name: 'Doors', slug: 'doors' },
+  { name: 'Metal Doors', slug: 'doors' },
   { name: 'Crush Panel', slug: 'crush-panel' },
   { name: 'Glass Windows', slug: 'glass-windows' },
 ];

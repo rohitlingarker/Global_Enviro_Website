@@ -20,13 +20,19 @@ export default function Certifications() {
     //   name: "Global Technologies",
     //   img: "/assets/images/Certificate2.jpg",
     //   desc: `With ISO 9001:2008 accreditation, Global Technologies continues to deliver top-tier
-    //   engineering and material handling systems with precision, efficiency, and quality.`,
+    //   engineering and Mill handling system with precision, efficiency, and quality.`,
     // },
     {
       name: "Global Enviro Air Systems (Expansion)",
       img: "/assets/images/Certificate3.jpg",
       desc: `Our expansion certification reflects continued innovation, growth, and compliance with
       global standards in environmental engineering and cleanroom technology.`,
+    },
+    {
+      name: "Global Enviro Air Systems Pvt Ltd",
+      img: "/assets/images/02. Q-251201 Global Enviro Air Systems pvt Ltd_page-0001.jpg",
+      desc: `Recognition of our quality management practices and continued adherence to
+      international standards across our HVAC, cleanroom, and air pollution control systems.`,
     },
   ];
 

@@ -245,7 +245,7 @@ const sections = [
         ],
       },
       {
-        title: "Doors",
+        title: "Metal Doors",
         slug: "doors",
         description:
           "Metal Doors are durable, hygienic, and secure doors commonly used in cleanrooms, pharmaceutical facilities, hospitals, laboratories, industrial facilities, and commercial facilities. We are designed to provide strength, cleanliness, fire resistance, and environmental control while withstanding frequent use. Industrial and clean room doors are specially designed to provide secure, hygienic, and efficient access control in controlled environments and industrial facilities. Built with durable materials and precision-engineered sealing systems, these doors ensure smooth operation, thermal insulation, contamination control, and long-term reliability.",
@@ -432,7 +432,7 @@ export default function HVACPage() {
     <main>
       <HeroSection
         imageSrc="/assets/images/hvac clean room.png"
-        title="HVAC Clean Room Projects"
+        title="HVAC Cleanroom Systems"
         subtitle="Precision-controlled environments for pharma, biotech, and critical industries — from air handling units to full clean room paneling."
         align="left"
         overlay="bg-black/55"
@@ -442,10 +442,10 @@ export default function HVACPage() {
       <section className="py-6 px-6 md:px-16 max-w-5xl mx-auto">
         <div className="text-center mb-5">
           <h2 className="text-3xl font-extrabold text-[#0b1e3d] mb-3">
-            HVAC &amp; Clean Room Systems
+            HVAC  Cleanroom Systems
           </h2>
           <p className="text-gray-500 text-base max-w-2xl mx-auto">
-            We deliver complete HVAC and clean room solutions — from air handling
+            We deliver complete HVAC cleanroom solutions — from air handling
             units and filtration systems to modular paneling.
           </p>
         </div>

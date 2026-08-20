@@ -29,11 +29,11 @@ const sections = [
   },
   {
     id: "fuel-extraction",
-    title: "2. Fuel Extraction Systems",
+    title: "2. Fume Extraction System",
     color: "bg-cyan-600",
     basePath: "FuelExtraction",
     description:
-      "A Fuel Extraction System is designed to extract, reclaim, and transfer fuel from storage bunkers, silos, stockyards, or hoppers to downstream conveying and combustion systems. It ensures a controlled, continuous, and reliable fuel supply to boilers, furnaces, kilns, and power generation units. Fuel Extraction Systems provide a reliable and efficient solution for reclaiming and feeding fuel from storage facilities, ensuring uninterrupted operation and optimal performance of industrial combustion and power generation systems.",
+      "A Fume Extraction System is designed to extract, reclaim, and transfer fuel from storage bunkers, silos, stockyards, or hoppers to downstream conveying and combustion systems. It ensures a controlled, continuous, and reliable fuel supply to boilers, furnaces, kilns, and power generation units. Fume Extraction Systems provide a reliable and efficient solution for reclaiming and feeding fuel from storage facilities, ensuring uninterrupted operation and optimal performance of industrial combustion and power generation systems.",
     subsystems: [
       { name: "Wet Scrubber", slug: "wet-scrubber" },
       // { name: "Venturi Scrubber", slug: "venturi-scrubber" },

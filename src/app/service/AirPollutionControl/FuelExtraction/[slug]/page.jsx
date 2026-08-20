@@ -45,7 +45,7 @@ export default function FuelExtractionDetail() {
       {otherItems.length > 0 && (
         <div className="max-w-6xl mx-auto px-6 pb-8">
           <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">
-            More Fuel Extraction Systems
+            More Fume Extraction Systems
           </p>
           <div className="flex flex-wrap gap-2">
             {otherItems.map((item) => (

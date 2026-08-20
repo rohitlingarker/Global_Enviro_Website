@@ -29,14 +29,14 @@ export default function Home() {
     },
     {
       image: "https://storage.googleapis.com/uxpilot-auth.appspot.com/3e425a459b-733ddb1f886d42169401.png",
-      title: "HVAC Clean Room Projects",
+      title: "HVAC Cleanroom Systems",
       subtitle: `High-performance cleanroom and HVAC solutions built for precision and energy savings.\nCreating controlled environments that improve comfort, safety, and efficiency.`,
       buttonText: "Know More",
       buttonLink: "/projects-and-products/HVAC",
     },
     {
       image: "https://storage.googleapis.com/uxpilot-auth.appspot.com/3e425a459b-733ddb1f886d42169401.png",
-      title: "Material Handling Systems",
+      title: "Mill handling system",
       subtitle: `Comprehensive solutions for smooth, safe, and efficient bulk material movement.\nOptimized designs that enhance productivity and reduce operational downtime.`,
       buttonText: "Know More",
       buttonLink: "/projects-and-products/MaterialHandling",
@@ -54,6 +54,13 @@ export default function Home() {
       subtitle: `Premium metallurgical products and eco-friendly briquettes for diverse industrial applications.\nCombining quality, sustainability, and innovation to meet evolving market demands.`,
       buttonText: "Know More",
       buttonLink: "/Ourgroup/GlobalMetallurgy",
+    },
+    {
+      image: "/assets/images/metal-doors/hero-banner.jpg",
+      title: "Metal Doors & Engineered Steel Solutions",
+      subtitle: `Precision-engineered cleanroom, fire-rated, and industrial steel doors built stronger, smarter, and safer.\nEngineered for safety, designed for style, built to last.`,
+      buttonText: "Know More",
+      buttonLink: "/metal-doors",
     },
   ];
 

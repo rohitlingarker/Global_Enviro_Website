@@ -62,7 +62,7 @@ export default function NewsGalleryList({ items }) {
             <BentoGallery photos={images} onPhotoClick={openDetail} />
 
             <div className="news-card-body p-6">
-              <h2 className="mb-2 text-xl font-semibold text-blue-800">
+              <h2 className="mb-2 text-xl font-semibold text-blue-800 text-center">
                 {item.title}
               </h2>
               <p className="mb-3 text-sm text-gray-500">
