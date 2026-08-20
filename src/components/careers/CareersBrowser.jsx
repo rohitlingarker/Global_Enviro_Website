@@ -5,7 +5,7 @@ import JobCard from "@/components/careers/JobCard";
 
 const PAGE_SIZE = 4;
 
-// Fixed department list (client-specified)
+// Fixed option lists (client-specified)
 const DEPARTMENTS = [
   "Technical Engineer",
   "Sales & Marketing Executive",
@@ -13,6 +13,8 @@ const DEPARTMENTS = [
   "Production Supervisor",
   "Machine Operator",
 ];
+const LOCATIONS = ["Hyderabad"];
+const JOB_TYPES = ["Full-time"];
 
 export default function CareersBrowser({ jobs }) {
   const [search, setSearch] = useState("");
@@ -21,8 +23,6 @@ export default function CareersBrowser({ jobs }) {
   const [jobType, setJobType] = useState("all");
   const [page, setPage] = useState(1);
 
-  const locations = [...new Set(jobs.map((job) => job.location).filter(Boolean))];
-  const types = [...new Set(jobs.map((job) => job.type).filter(Boolean))];
 
   const filteredJobs = useMemo(() => {
     const query = search.trim().toLowerCase();
@@ -91,8 +91,8 @@ export default function CareersBrowser({ jobs }) {
           onChange={handleFilterChange(setLocation)}
           className="rounded-xl border border-slate-200 bg-white px-4 py-3"
         >
-          <option value="all">All locations</option>
-          {locations.map((item) => (
+          <option value="all">Location</option>
+          {LOCATIONS.map((item) => (
             <option key={item} value={item}>
               {item}
             </option>
@@ -104,7 +104,7 @@ export default function CareersBrowser({ jobs }) {
           className="rounded-xl border border-slate-200 bg-white px-4 py-3"
         >
           <option value="all">Job Type</option>
-          {types.map((item) => (
+          {JOB_TYPES.map((item) => (
             <option key={item} value={item}>
               {item}
             </option>
