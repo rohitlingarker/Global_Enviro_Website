@@ -26,8 +26,8 @@ const navItems = [
     title: "Group",
     url: "/Ourgroup",
     dropdown: [
-      { title: "Global Enviro Air Systems", url: "/Ourgroup/GlobalEnviroAirSystems" },
-      { title: "Indophil Jettech Energy", url: "https://www.jettechenergy.com/", external: true },
+      { title: "Global Enviro Air Systems (P) Ltd", url: "/Ourgroup/GlobalEnviroAirSystems" },
+      { title: "Indophil Jettech Energy Private Limited", url: "https://www.jettechenergy.com/", external: true },
       { title: "Global Metallurgicals", url: "/Ourgroup/GlobalMetallurgy" },
       { title: "SV Bio Fuels", url: "/Ourgroup/SVBioFuels" },
     ],
@@ -47,7 +47,7 @@ const navItems = [
         ],
       },
       {
-        title: "HVAC Clean Room Systems",
+        title: "HVAC Cleanroom Systems",
         url: "/service/HVAC",
         subDropdown: [
           { title: "HVAC", url: "/service/HVAC#hvac" },
