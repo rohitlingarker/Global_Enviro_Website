@@ -5,6 +5,15 @@ import JobCard from "@/components/careers/JobCard";
 
 const PAGE_SIZE = 4;
 
+// Fixed department list (client-specified)
+const DEPARTMENTS = [
+  "Technical Engineer",
+  "Sales & Marketing Executive",
+  "Design Engineer",
+  "Production Supervisor",
+  "Machine Operator",
+];
+
 export default function CareersBrowser({ jobs }) {
   const [search, setSearch] = useState("");
   const [department, setDepartment] = useState("all");
@@ -12,7 +21,6 @@ export default function CareersBrowser({ jobs }) {
   const [jobType, setJobType] = useState("all");
   const [page, setPage] = useState(1);
 
-  const departments = [...new Set(jobs.map((job) => job.department).filter(Boolean))];
   const locations = [...new Set(jobs.map((job) => job.location).filter(Boolean))];
   const types = [...new Set(jobs.map((job) => job.type).filter(Boolean))];
 
@@ -71,8 +79,8 @@ export default function CareersBrowser({ jobs }) {
           onChange={handleFilterChange(setDepartment)}
           className="rounded-xl border border-slate-200 bg-white px-4 py-3"
         >
-          <option value="all">All departments</option>
-          {departments.map((item) => (
+          <option value="all">Department</option>
+          {DEPARTMENTS.map((item) => (
             <option key={item} value={item}>
               {item}
             </option>
@@ -95,7 +103,7 @@ export default function CareersBrowser({ jobs }) {
           onChange={handleFilterChange(setJobType)}
           className="rounded-xl border border-slate-200 bg-white px-4 py-3"
         >
-          <option value="all">All job types</option>
+          <option value="all">Job Type</option>
           {types.map((item) => (
             <option key={item} value={item}>
               {item}
