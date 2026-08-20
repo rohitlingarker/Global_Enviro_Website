@@ -13,6 +13,7 @@ const DEPARTMENTS = [
   "Production Supervisor",
   "Machine Operator",
 ];
+
 const LOCATIONS = ["Hyderabad"];
 const JOB_TYPES = ["Full-time"];
 
@@ -22,7 +23,6 @@ export default function CareersBrowser({ jobs }) {
   const [location, setLocation] = useState("all");
   const [jobType, setJobType] = useState("all");
   const [page, setPage] = useState(1);
-
 
   const filteredJobs = useMemo(() => {
     const query = search.trim().toLowerCase();
@@ -38,8 +38,12 @@ export default function CareersBrowser({ jobs }) {
 
       const matchesDepartment =
         department === "all" || job.department === department;
-      const matchesLocation = location === "all" || job.location === location;
-      const matchesType = jobType === "all" || job.type === jobType;
+
+      const matchesLocation =
+        location === "all" || job.location === location;
+
+      const matchesType =
+        jobType === "all" || job.type === jobType;
 
       return (
         matchesSearch &&
@@ -50,8 +54,13 @@ export default function CareersBrowser({ jobs }) {
     });
   }, [department, jobType, jobs, location, search]);
 
-  const totalPages = Math.max(1, Math.ceil(filteredJobs.length / PAGE_SIZE));
+  const totalPages = Math.max(
+    1,
+    Math.ceil(filteredJobs.length / PAGE_SIZE)
+  );
+
   const currentPage = Math.min(page, totalPages);
+
   const paginatedJobs = filteredJobs.slice(
     (currentPage - 1) * PAGE_SIZE,
     currentPage * PAGE_SIZE
@@ -74,36 +83,51 @@ export default function CareersBrowser({ jobs }) {
           placeholder="Search jobs"
           className="rounded-xl border border-slate-200 bg-white px-4 py-3"
         />
+
+        {/* Department */}
         <select
           value={department}
           onChange={handleFilterChange(setDepartment)}
           className="rounded-xl border border-slate-200 bg-white px-4 py-3"
         >
-          <option value="all">Department</option>
+          <option value="all" hidden>
+            Department
+          </option>
+
           {DEPARTMENTS.map((item) => (
             <option key={item} value={item}>
               {item}
             </option>
           ))}
         </select>
+
+        {/* Location */}
         <select
           value={location}
           onChange={handleFilterChange(setLocation)}
           className="rounded-xl border border-slate-200 bg-white px-4 py-3"
         >
-          <option value="all">Location</option>
+          <option value="all" hidden>
+            Location
+          </option>
+
           {LOCATIONS.map((item) => (
             <option key={item} value={item}>
               {item}
             </option>
           ))}
         </select>
+
+        {/* Job Type */}
         <select
           value={jobType}
           onChange={handleFilterChange(setJobType)}
           className="rounded-xl border border-slate-200 bg-white px-4 py-3"
         >
-          <option value="all">Job Type</option>
+          <option value="all" hidden>
+            Job Type
+          </option>
+
           {JOB_TYPES.map((item) => (
             <option key={item} value={item}>
               {item}
@@ -115,32 +139,44 @@ export default function CareersBrowser({ jobs }) {
       {filteredJobs.length === 0 ? (
         <p>No open positions match your filters right now.</p>
       ) : (
-        paginatedJobs.map((job) => <JobCard key={job.id} job={job} />)
+        paginatedJobs.map((job) => (
+          <JobCard key={job.id} job={job} />
+        ))
       )}
 
       {filteredJobs.length > PAGE_SIZE ? (
         <div className="flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-slate-200 px-4 py-3">
           <p className="text-sm text-slate-500">
             Showing {(currentPage - 1) * PAGE_SIZE + 1}-
-            {Math.min(currentPage * PAGE_SIZE, filteredJobs.length)} of{" "}
-            {filteredJobs.length} jobs
+            {Math.min(
+              currentPage * PAGE_SIZE,
+              filteredJobs.length
+            )}{" "}
+            of {filteredJobs.length} jobs
           </p>
+
           <div className="flex items-center gap-2">
             <button
               type="button"
-              onClick={() => setPage((value) => Math.max(1, value - 1))}
+              onClick={() =>
+                setPage((value) => Math.max(1, value - 1))
+              }
               disabled={currentPage === 1}
               className="rounded-lg border border-slate-200 px-3 py-2 text-sm disabled:opacity-50"
             >
               Previous
             </button>
+
             <span className="text-sm font-medium text-slate-700">
               Page {currentPage} of {totalPages}
             </span>
+
             <button
               type="button"
               onClick={() =>
-                setPage((value) => Math.min(totalPages, value + 1))
+                setPage((value) =>
+                  Math.min(totalPages, value + 1)
+                )
               }
               disabled={currentPage === totalPages}
               className="rounded-lg border border-slate-200 px-3 py-2 text-sm disabled:opacity-50"
@@ -153,3 +189,5 @@ export default function CareersBrowser({ jobs }) {
     </div>
   );
 }
+
+

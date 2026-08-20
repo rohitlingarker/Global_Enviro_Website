@@ -50,7 +50,7 @@ function AccordionItem({ section, isOpen, onToggle }) {
       {/* Header */}
       <button
         onClick={onToggle}
-        className={`w-full flex items-center justify-between px-6 py-4 text-left text-white font-semibold text-base ${section.color} hover:opacity-90 transition-all`}
+        className="w-full flex items-center justify-between px-6 py-4 text-left text-white font-semibold text-base bg-[#3877d4] hover:opacity-90 transition-all"
       >
         <span>{section.title}</span>
         <ChevronDown
