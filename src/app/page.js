@@ -30,7 +30,7 @@ export default function Home() {
     {
       image: "https://storage.googleapis.com/uxpilot-auth.appspot.com/3e425a459b-733ddb1f886d42169401.png",
       title: "HVAC Cleanroom Systems",
-      subtitle: `High-performance cleanroom and HVAC solutions built for precision and energy savings.\nCreating controlled environments that improve comfort, safety, and efficiency.`,
+      subtitle: `High-performance HVAC Cleanrooms systems built for precision and energy savings.\nCreating controlled environments that improve comfort, safety, and efficiency.`,
       buttonText: "Know More",
       buttonLink: "/projects-and-products/HVAC",
     },

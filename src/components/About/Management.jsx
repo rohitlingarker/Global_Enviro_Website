@@ -12,6 +12,8 @@ export default function Management() {
       title: "Managing Director",
       img: "/assets/images/founder.jpeg",
       desc: `As the Founder and Managing Director of Global Enviro Air Systems,
+
+      
       Mr. Srirami Reddy's remarkable engineering experience, business acumen,
       and relentless dedication helped lay a strong foundation for all group
       companies. His research in pollution control technology and innovative

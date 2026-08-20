@@ -131,7 +131,7 @@ const RequestQuote = () => {
 
           {/* Address */}
           <div>
-            <label className="block text-gray-600 mb-2">Company Address</label>
+            <label className="block text-gray-600 mb-2">Your Requirements</label>
             <textarea
               name="address"
               value={formData.address}
