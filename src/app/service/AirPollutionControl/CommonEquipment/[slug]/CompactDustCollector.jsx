@@ -41,7 +41,7 @@ export default function CompactDustCollectorPage() {
 
         <div className="relative w-full aspect-4/3">
           <Image
-            src="/assets/images/Air_Pollution/d01. Compact Dust Collector.jpeg"
+            src="/assets/images/Air_Pollution/d01. Compact Dust Collector.png"
             alt="Compact Dust Collector"
             fill
             className="object-contain rounded-lg shadow-md"
