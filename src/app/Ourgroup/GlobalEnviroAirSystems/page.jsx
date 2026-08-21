@@ -66,7 +66,7 @@ export default function GlobalEnviroAirSystemsPage() {
 
       {/* Hero */}
       <HeroSection
-        imageSrc="/assets/images/global image.jpg"
+        imageSrc="/assets/images/metal-doors/group_building.png"
         title="Global Enviro Air Systems (P) Ltd"
         subtitle="Engineering Clean Air, Enabling Clean Industry."
         align="left"
