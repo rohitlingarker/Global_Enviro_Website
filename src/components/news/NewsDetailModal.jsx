@@ -110,11 +110,11 @@ export default function NewsDetailModal({ item, photos, initialIndex = 0, onClos
           <h2 className="mb-2 text-2xl font-semibold text-blue-800">
             {item.title}
           </h2>
-          <p className="mb-4 text-sm text-gray-500">
-            {item.event_date
-              ? new Date(item.event_date).toLocaleDateString()
-              : "Upcoming"}
-          </p>
+          {item.event_date ? (
+            <p className="mb-4 text-sm text-gray-500">
+              {new Date(item.event_date).toLocaleDateString()}
+            </p>
+          ) : null}
           <p className="whitespace-pre-wrap text-sm text-gray-700">
             {item.content}
           </p>

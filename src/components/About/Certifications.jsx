@@ -7,15 +7,15 @@ import Image from "next/image";
 
 export default function Certifications() {
   const certificates = [
-    {
-      name: "Global Enviro Air Systems Pvt. Ltd.",
-      img: "/assets/images/Certificate1.jpg",
-      desc: `Our ISO 9001:2008 certification highlights our dedication to superior design,
-      manufacturing, and customer satisfaction. It reinforces our commitment to excellence
-      and reliability in delivering HVAC and pollution control solutions.Our ISO 9001:2008 certification highlights our dedication to superior design,
-      manufacturing, and customer satisfaction. It reinforces our commitment to excellence
-      and reliability in delivering HVAC and pollution control solutions.`,
-    },
+    // {
+    //   name: "Global Enviro Air Systems Pvt. Ltd.",
+    //   img: "/assets/images/Certificate1.jpg",
+    //   desc: `Our ISO 9001:2008 certification highlights our dedication to superior design,
+    //   manufacturing, and customer satisfaction. It reinforces our commitment to excellence
+    //   and reliability in delivering HVAC and pollution control solutions.Our ISO 9001:2008 certification highlights our dedication to superior design,
+    //   manufacturing, and customer satisfaction. It reinforces our commitment to excellence
+    //   and reliability in delivering HVAC and pollution control solutions.`,
+    // },
     // {
     //   name: "Global Technologies",
     //   img: "/assets/images/Certificate2.jpg",
@@ -23,17 +23,18 @@ export default function Certifications() {
     //   engineering and Mill handling system with precision, efficiency, and quality.`,
     // },
     {
-      name: "Global Enviro Air Systems (Expansion)",
-      img: "/assets/images/Certificate3.jpg",
-      desc: `Our expansion certification reflects continued innovation, growth, and compliance with
-      global standards in environmental engineering and cleanroom technology.`,
-    },
-    {
       name: "Global Enviro Air Systems Pvt Ltd",
       img: "/assets/images/02. Q-251201 Global Enviro Air Systems pvt Ltd_page-0001.jpg",
       desc: `Recognition of our quality management practices and continued adherence to
       international standards across our HVAC, cleanroom, and air pollution control systems.`,
     },
+    {
+      name: "Global Enviro Air Systems (Expansion)",
+      img: "/assets/images/Certificate3.jpg",
+      desc: `Our expansion certification reflects continued innovation, growth, and compliance with
+      global standards in environmental engineering and cleanroom technology.`,
+    },
+    
   ];
 
   const [active, setActive] = useState(certificates[0]);

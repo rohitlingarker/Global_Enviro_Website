@@ -75,6 +75,10 @@ const SPEC_ROWS = [
     commercial: ['46 mm'],
     general: ['46 mm'],
     fire: ['46 mm'],
+    cleanroom: ['46 mm'],
+    commercial: ['46 mm'],
+    general: ['46 mm'],
+    fire: ['46 mm'],
   },
   {
     label: 'Infill Material',
@@ -115,7 +119,7 @@ const INFILL_MATERIALS = [
   {
     name: 'Rockwool',
     image: '/assets/images/metal-doors/rockwool.jpg',
-    color: 'bg-amber-800',
+    color: 'bg-green-900',
     points: [
       'High density rockwool board insulation produced from molten basalt spun to fine fibers and bonded with heat resistant binder',
       'Meets the requirements of technical fire performance',
@@ -569,7 +573,7 @@ export default function MetalDoors() {
         <div className="grid md:grid-cols-3 gap-6">
           {INFILL_MATERIALS.map((m) => (
             <div key={m.name} className="rounded-lg border border-gray-200 shadow-sm overflow-hidden flex flex-col">
-              <div className="relative w-full h-[180px]">
+              <div className="relative w-full h-[150px]">
                 <Image src={m.image} alt={m.name} fill className="object-cover" />
               </div>
               <div className={`${m.color} text-white text-center font-bold py-2`}>{m.name}</div>

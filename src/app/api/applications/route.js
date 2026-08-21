@@ -1,3 +1,4 @@
+import { after } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { sendApplicationAlert } from "@/lib/email";
@@ -43,15 +44,15 @@ export async function POST(request) {
     return Response.json({ error: error.message }, { status: 500 });
   }
 
-  try {
-    await sendApplicationAlert({
+  after(() =>
+    sendApplicationAlert({
       applicantName: data.name,
       jobTitle: data.jobs?.title || "Open role",
       applicationId: data.id,
-    });
-  } catch (emailError) {
-    console.error("Failed to send application alert:", emailError);
-  }
+    }).catch((emailError) => {
+      console.error("Failed to send application alert:", emailError);
+    })
+  );
 
   return Response.json(data, { status: 201 });
 }
