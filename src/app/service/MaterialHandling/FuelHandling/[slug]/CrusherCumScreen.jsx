@@ -41,7 +41,7 @@ export default function CrusherCumScreenPage() {
 
         <div className="relative w-full h-[220px] sm:h-[260px] md:h-[320px]">
           <Image
-            src="/assets/images/updated_images/vibratory screen.jpg"
+            src="/assets/images/material-handling-projects/vibratory screen.jpg"
             alt="Crusher Cum Screen"
             fill
             className="object-contain rounded-lg shadow-md"

@@ -49,7 +49,7 @@ export default function IFMInsertFilterModulePage() {
 
         <div className="relative w-full aspect-4/3">
           <Image
-            src="/assets/images/updated_images/Insert Filter module.jpg"
+            src="/assets/images/Air_Pollution/Insert Filter module.jpg"
             alt="IFM (Insert Filter Module)"
             fill
             className="object-contain rounded-lg shadow-md"

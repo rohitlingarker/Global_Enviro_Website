@@ -15,7 +15,7 @@ export default function HVACContent() {
              "Equipped with high-efficiency motors and low-noise operation.",
              "Improves indoor air quality through multi-stage filtration.",
         ],
-        image: "/assets/images/air handling units.png",    
+        image: "/assets/images/hvac-projects/air handling units.png",    
     },
     {
       title: "WALL PARTITIONS, SEALING PARTITIONS AND DOORS",
@@ -28,7 +28,7 @@ export default function HVACContent() {
         "Air-tight and meet most of the cGMP requirements.",
         "Doors, frames and windows are flush with the walls.",
       ],
-      image: "/assets/images/wall partitions.png",
+      image: "/assets/images/hvac-projects/wall partitions.png",
     },
     {
       title: "PRE AND FINE FILTERS",
@@ -39,7 +39,7 @@ export default function HVACContent() {
         "Cleanable with compressed air.",
         "Perforated protective sheet is provided on request.",
       ],
-      image: "/assets/images/pre and fine filters.png",
+      image: "/assets/images/hvac-projects/pre and fine filters.png",
     },
     {
       title: "HEPA FILTERS",
@@ -50,7 +50,7 @@ export default function HVACContent() {
         "Ideal for clean rooms, pharma, and medical industries.",
         "Available in standard and custom dimensions.",
       ],
-      image: "/assets/images/hepa filters.png",
+      image: "/assets/images/hvac-projects/hepa filters.png",
     },
     {
     title: "Automation for HVAC Cleanroom Projects",

@@ -40,7 +40,7 @@ export default function BeltConveyorPage() {
         <div className="grid grid-cols-3 gap-3">
           <div className="relative w-full aspect-4/3">
             <Image
-              src="/assets/images/updated_images/Belt Conveyor.JPG"
+              src="/assets/images/material-handling-projects/Belt Conveyor.JPG"
               alt="Belt Conveyor 1"
               fill
               className="object-contain rounded-lg shadow-md"
@@ -48,7 +48,7 @@ export default function BeltConveyorPage() {
           </div>
           <div className="relative w-full aspect-4/3">
             <Image
-              src="/assets/images/updated_images/Belt Conveyor-1.JPG"
+              src="/assets/images/material-handling-projects/Belt Conveyor-1.JPG"
               alt="Belt Conveyor 2"
               fill
               className="object-contain rounded-lg shadow-md"
@@ -56,7 +56,7 @@ export default function BeltConveyorPage() {
           </div>
           <div className="relative w-full aspect-4/3">
             <Image
-              src="/assets/images/updated_images/Belt Conveyor-2.jpg"
+              src="/assets/images/material-handling-projects/Belt Conveyor-2.jpg"
               alt="Belt Conveyor 3"
               fill
               className="object-contain rounded-lg shadow-md"

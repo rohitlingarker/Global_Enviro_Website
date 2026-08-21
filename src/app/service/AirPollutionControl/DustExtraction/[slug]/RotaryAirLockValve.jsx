@@ -42,7 +42,7 @@ export default function RotaryAirLockValvePage() {
 
         <div className="relative w-full aspect-4/3">
           <Image
-            src="/assets/images/updated_images/RAV.jpg"
+            src="/assets/images/Air_Pollution/RAV.jpg"
             alt="RAV (Rotary Air Lock Valve)"
             fill
             className="object-contain rounded-lg shadow-md"

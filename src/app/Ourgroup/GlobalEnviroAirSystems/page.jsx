@@ -54,10 +54,10 @@ const divisions = [
 const products = [
   { name: "Pulse Jet Bag Filter",    img: "/assets/images/pulsejet.png" },
   { name: "Dust Extraction Systems", img: "/assets/images/dust extraction.png" },
-  { name: "Centrifugal Fans",        img: "/assets/images/updated_images/Centrifugal Fans-2.jpg" },
+  { name: "Centrifugal Fans",        img: "/assets/images/group-projects/Centrifugal Fans-2.jpg" },
   { name: "HVAC Clean Room",         img: "/assets/images/hvac clean room.png" },
-  { name: "Clean Room Panels",       img: "/assets/images/clean room panel.png" },
-  { name: "Ash Handling Systems",    img: "/assets/images/ash handling.png" },
+  { name: "Clean Room Panels",       img: "/assets/images/group-projects/clean room panel.png" },
+  { name: "Ash Handling Systems",    img: "/assets/images/group-projects/ash handling.png" },
 ];
 
 export default function GlobalEnviroAirSystemsPage() {
