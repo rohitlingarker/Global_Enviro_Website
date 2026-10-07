@@ -26,7 +26,7 @@ export default function RotaryAirLockValvePage() {
             feeder used for controlled discharge of bulk materials while
             maintaining an effective air seal between two different pressure
             zones. It is widely used in pneumatic conveying, dust collection,
-            and Mill handling system to ensure continuous and leak-free
+            and Material handling system to ensure continuous and leak-free
             material transfer.
           </p>
           <p className="mt-2 font-semibold text-gray-700">Ideal For:</p>

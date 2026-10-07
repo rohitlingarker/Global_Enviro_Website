@@ -20,7 +20,7 @@ export default function OurJourney() {
     },
     {
       year: "2008",
-      title: "Mill handling system",
+      title: "Material handling system",
       description:
         "Launched a dedicated Material Handling division covering fuel handling, ash handling, and warehouse systems — strengthening our full-spectrum industrial offering.",
       icon: <FaIndustry className="text-white text-lg" />,

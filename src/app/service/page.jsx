@@ -22,7 +22,7 @@ const categories = [
     color: "from-cyan-600 to-cyan-800",
   },
   {
-    title: "Mill handling system",
+    title: "Material handling system",
     description:
       "Complete fuel handling, ash handling, and warehouse handling systems with conveyors, elevators, crushers, and EOT cranes.",
     icon: <Factory className="w-12 h-12" strokeWidth={1.5} />,

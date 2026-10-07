@@ -35,7 +35,7 @@ export default function CrusherCumScreenPage() {
             <li>Recycling &amp; Waste Management Units</li>
             <li>Chemical &amp; Fertilizer Industries</li>
             <li>Mining &amp; Quarry Operations</li>
-            <li>Bulk Mill handling system</li>
+            <li>Bulk Material handling system</li>
           </ul>
         </div>
 

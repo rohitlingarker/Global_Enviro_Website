@@ -170,7 +170,7 @@ export default function MaterialHandlingPage() {
     <main>
       <HeroSection
         imageSrc="/assets/images/fuel handling system.png"
-        title="Mill Handling Systems"
+        title="Material Handling Systems"
         subtitle="Complete bulk material handling — fuel, ash, and warehouse systems — engineered for power, pharma, and process industries."
         align="left"
         overlay="bg-black/60"
