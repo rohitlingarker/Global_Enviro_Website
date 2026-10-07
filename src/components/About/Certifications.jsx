@@ -34,21 +34,25 @@ export default function Certifications() {
       desc: `Our expansion certification reflects continued innovation, growth, and compliance with
       global standards in environmental engineering and cleanroom technology.`,
     },
-    
+    {
+      name: "MSME ZED Gold Certification",
+      img: "/assets/images/about/zed-gold-certificate.jpg",
+      desc: `Awarded to Global Enviro Air Systems Pvt Ltd under the MSME Sustainable (ZED)
+      Certification Scheme by the Ministry of MSME, Government of India. The Gold level
+      recognises our commitment to Zero Defect, Zero Effect manufacturing.`,
+    },
   ];
 
-  const [active, setActive] = useState(certificates[0]);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const active = certificates[activeIndex];
 
-  // Auto rotate every 3 seconds
+  // Auto rotate every 3 seconds through every certificate; restarts after a manual click
   useEffect(() => {
     const interval = setInterval(() => {
-      setActive((prev) => {
-        const currentIndex = certificates.findIndex((c) => c.name === prev.name);
-        return certificates[(currentIndex + 1) % certificates.length];
-      });
+      setActiveIndex((prev) => (prev + 1) % certificates.length);
     }, 3000);
     return () => clearInterval(interval);
-  }, []);
+  }, [activeIndex, certificates.length]);
 
   return (
     <section className="relative bg-[#081736] text-white py-6 px-6 md:px-16 overflow-hidden">
@@ -116,14 +120,14 @@ export default function Certifications() {
 
       {/* ===== Certificates Thumbnails Row ===== */}
       <div className="mt-6 flex flex-wrap justify-center gap-4 relative z-10">
-        {certificates.map((c) => (
+        {certificates.map((c, i) => (
           <MotionWrapper
             as="div"
             key={c.name}
             whileHover={{ scale: 1.05 }}
-            onClick={() => setActive(c)}
+            onClick={() => setActiveIndex(i)}
             className={`cursor-pointer w-24 h-32 rounded-md overflow-hidden border-2 ${
-              c.name === active.name
+              i === activeIndex
                 ? "border-blue-400"
                 : "border-transparent opacity-70"
             }`}
