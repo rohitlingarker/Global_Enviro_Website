@@ -55,7 +55,7 @@ const navItems = [
         ],
       },
       {
-        title: "Material handling system",
+        title: "Material handling systems",
         url: "/service/MaterialHandling",
         subDropdown: [
           { title: "Fuel Handling Systems", url: "/service/MaterialHandling#fuel-handling" },

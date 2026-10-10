@@ -34,7 +34,7 @@ export default function CrusherImpactHammerMillPage() {
             <li>Recycling &amp; Waste Processing Units</li>
             <li>Food &amp; Agro Processing Applications</li>
             <li>Mining &amp; Aggregate Industries</li>
-            <li>Bulk Material handling system</li>
+            <li>Bulk Material handling systems</li>
           </ul>
         </div>
 

@@ -36,7 +36,7 @@ export default function Home() {
     },
     {
       image: "https://storage.googleapis.com/uxpilot-auth.appspot.com/3e425a459b-733ddb1f886d42169401.png",
-      title: "Material handling system",
+      title: "Material handling systems",
       subtitle: `Comprehensive solutions for smooth, safe, and efficient bulk material movement.\nOptimized designs that enhance productivity and reduce operational downtime.`,
       buttonText: "Know More",
       buttonLink: "/projects-and-products/MaterialHandling",

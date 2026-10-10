@@ -70,7 +70,7 @@ const Footer = () => {
           <ul className="space-y-2 text-sm">
             <li><a href="/service/AirPollutionControl" className="text-gray-700 hover:text-blue-700 hover:underline">Air Pollution Control Systems</a></li>
             <li><a href="/service/HVAC" className="text-gray-700 hover:text-blue-700 hover:underline">HVAC Cleanroom Systems</a></li>
-            <li><a href="/service/MaterialHandling" className="text-gray-700 hover:text-blue-700 hover:underline">Material handling system</a></li>
+            <li><a href="/service/MaterialHandling" className="text-gray-700 hover:text-blue-700 hover:underline">Material handling systems</a></li>
             <li><a href="https://www.jettechenergy.com/" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-blue-700 hover:underline">EPC Power Projects</a></li>
             <li><a href="/service/Metallurgicals" className="text-gray-700 hover:text-blue-700 hover:underline">Metallurgicals & Briquettes</a></li>
             <li><a href="/metal-doors" className="text-gray-700 hover:text-blue-700 hover:underline">Metal Doors</a></li>

@@ -38,7 +38,7 @@ export default function SingleCycloneSeparatorPage() {
             <li className="break-inside-avoid">Food Processing Plants</li>
             <li className="break-inside-avoid">Boiler &amp; Furnace Systems</li>
             <li className="break-inside-avoid">Chemical &amp; Fertilizer Industries</li>
-            <li className="break-inside-avoid">Material handling system</li>
+            <li className="break-inside-avoid">Material handling systems</li>
             <li className="break-inside-avoid">Industrial Dust Collection Applications</li>
           </ul>
         </div>
