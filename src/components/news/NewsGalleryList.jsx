@@ -61,19 +61,25 @@ export default function NewsGalleryList({ items }) {
           >
             <BentoGallery photos={images} onPhotoClick={openDetail} />
 
-            <div className="news-card-body p-6">
-              <h2 className="mb-2 text-xl font-semibold text-blue-800 text-center">
-                {item.title}
-              </h2>
-              <p className="mb-3 text-sm text-gray-500">
-                {item.event_date
-                  ? new Date(item.event_date).toLocaleDateString()
-                  : ""}
-              </p>
-              <p className="news-card-preview text-sm text-gray-700">
-                {item.content}
-              </p>
-            </div>
+            {item.title || item.event_date || item.content ? (
+              <div className="news-card-body gap-2 p-6 text-center">
+                {item.title ? (
+                  <h2 className="text-xl font-semibold text-blue-800">
+                    {item.title}
+                  </h2>
+                ) : null}
+                {item.event_date ? (
+                  <p className="text-sm text-gray-500">
+                    {new Date(item.event_date).toLocaleDateString()}
+                  </p>
+                ) : null}
+                {item.content ? (
+                  <p className="news-card-preview text-sm text-gray-700">
+                    {item.content}
+                  </p>
+                ) : null}
+              </div>
+            ) : null}
           </article>
         );
       })}

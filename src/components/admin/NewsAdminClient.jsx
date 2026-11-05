@@ -1,9 +1,16 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import ImageManager from "@/components/admin/ImageManager";
 import { NEWS_PHOTOS_BUCKET } from "@/lib/config";
+import { getNewsPhotoUrl } from "@/lib/newsPhotos";
 import { supabase } from "@/lib/supabase/client";
+
+// One ordered list holds saved and about-to-be-uploaded photos together, so an
+// editor can place a new photo between two existing ones. Keys are prefixed so
+// a saved path and a local file can never collide.
+const savedKey = (path) => `e:${path}`;
+const fileKey = (file) => `n:${file.name}:${file.size}:${file.lastModified}`;
 
 const emptyForm = {
   title: "",
@@ -17,19 +24,92 @@ export default function NewsAdminClient({ initialNews }) {
   const [formData, setFormData] = useState(emptyForm);
   const [editingId, setEditingId] = useState(null);
   const [selectedFiles, setSelectedFiles] = useState([]);
-  const [managedPhotos, setManagedPhotos] = useState([]);
+  const [photoOrder, setPhotoOrder] = useState([]);
+  const [photoDetails, setPhotoDetails] = useState({});
+  // Name/details for not-yet-uploaded files, keyed by fileKey.
+  const [newFileDetails, setNewFileDetails] = useState({});
+  const [fileInputKey, setFileInputKey] = useState(0);
   const [error, setError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const currentEditingItem = items.find((item) => item.id === editingId);
 
-  useEffect(() => {
-    setManagedPhotos(currentEditingItem?.photo_urls || []);
-  }, [currentEditingItem?.id]);
+  const selectedPreviews = useMemo(
+    () => selectedFiles.map((file) => URL.createObjectURL(file)),
+    [selectedFiles]
+  );
+
+  useEffect(
+    () => () => selectedPreviews.forEach((url) => URL.revokeObjectURL(url)),
+    [selectedPreviews]
+  );
+
+  const orderedItems = photoOrder.flatMap((key) => {
+    if (key.startsWith("e:")) {
+      const path = key.slice(2);
+      return [
+        {
+          key,
+          src: getNewsPhotoUrl(path),
+          name: photoDetails[path]?.name || "",
+          details: photoDetails[path]?.details || "",
+        },
+      ];
+    }
+    const index = selectedFiles.findIndex((file) => fileKey(file) === key);
+    return index === -1
+      ? []
+      : [
+          {
+            key,
+            src: selectedPreviews[index],
+            name: newFileDetails[key]?.name || "",
+            details: newFileDetails[key]?.details || "",
+          },
+        ];
+  });
+
+  const reorderPhoto = (fromIndex, toIndex) => {
+    setPhotoOrder((current) => {
+      const updated = [...current];
+      const [moved] = updated.splice(fromIndex, 1);
+      updated.splice(toIndex, 0, moved);
+      return updated;
+    });
+  };
+
+  // A photo removed from the list is a photo the editor no longer wants, so a
+  // new file that is no longer ordered must not be uploaded either.
+  const removePhoto = (index) => {
+    const removedKey = photoOrder[index];
+    setPhotoOrder((current) => current.filter((key) => key !== removedKey));
+    if (!removedKey.startsWith("e:")) {
+      setSelectedFiles((current) =>
+        current.filter((file) => fileKey(file) !== removedKey)
+      );
+    }
+  };
+
+  const updatePhotoDetail = (key, field, value) => {
+    if (key.startsWith("e:")) {
+      const path = key.slice(2);
+      setPhotoDetails((current) => ({
+        ...current,
+        [path]: { ...current[path], [field]: value },
+      }));
+      return;
+    }
+    setNewFileDetails((current) => ({
+      ...current,
+      [key]: { ...current[key], [field]: value },
+    }));
+  };
 
   const resetForm = () => {
     setFormData(emptyForm);
     setSelectedFiles([]);
-    setManagedPhotos([]);
+    setPhotoOrder([]);
+    setPhotoDetails({});
+    setNewFileDetails({});
+    setFileInputKey((key) => key + 1);
     setEditingId(null);
     setError("");
   };
@@ -91,13 +171,25 @@ export default function NewsAdminClient({ initialNews }) {
       return;
     }
 
-    const finalPhotoUrls = editingId
-      ? [...managedPhotos, ...newlyUploadedUrls]
-      : newlyUploadedUrls;
+    const uploadedByKey = new Map(
+      selectedFiles.map((file, index) => [fileKey(file), newlyUploadedUrls[index]])
+    );
+    const finalPhotoUrls = photoOrder.flatMap((key) => {
+      if (key.startsWith("e:")) {
+        return [key.slice(2)];
+      }
+      return uploadedByKey.has(key) ? [uploadedByKey.get(key)] : [];
+    });
+
+    const finalPhotoDetails = { ...photoDetails };
+    selectedFiles.forEach((file, index) => {
+      finalPhotoDetails[newlyUploadedUrls[index]] = newFileDetails[fileKey(file)];
+    });
 
     const payload = {
       ...formData,
       photo_urls: finalPhotoUrls,
+      photo_details: finalPhotoDetails,
       is_published: formData.is_published,
     };
 
@@ -135,7 +227,10 @@ export default function NewsAdminClient({ initialNews }) {
       is_published: item.is_published ?? true,
     });
     setSelectedFiles([]);
-    setManagedPhotos(item.photo_urls || []);
+    setNewFileDetails({});
+    setFileInputKey((key) => key + 1);
+    setPhotoOrder((item.photo_urls || []).map(savedKey));
+    setPhotoDetails(item.photo_details || {});
   };
 
   const deleteItem = async (id) => {
@@ -190,7 +285,7 @@ export default function NewsAdminClient({ initialNews }) {
             onChange={(event) =>
               setFormData((current) => ({ ...current, title: event.target.value }))
             }
-            placeholder="Event title"
+            placeholder="Event name"
             className="rounded-xl border border-slate-200 px-4 py-3"
             required
           />
@@ -215,24 +310,34 @@ export default function NewsAdminClient({ initialNews }) {
                 content: event.target.value,
               }))
             }
-            placeholder="Event content"
+            placeholder="Event details (optional)"
             className="min-h-40 rounded-xl border border-slate-200 px-4 py-3"
           />
           <input
+            key={fileInputKey}
             type="file"
             multiple
             accept="image/*"
-            onChange={(event) =>
-              setSelectedFiles(Array.from(event.target.files || []))
-            }
+            onChange={(event) => {
+              const files = Array.from(event.target.files || []);
+              setSelectedFiles(files);
+              setNewFileDetails({});
+              // Saved photos keep their place; the new batch is appended and
+              // can then be moved anywhere among them.
+              setPhotoOrder((current) => [
+                ...current.filter((key) => key.startsWith("e:")),
+                ...files.map(fileKey),
+              ]);
+            }}
             className="rounded-xl border border-slate-200 px-4 py-3"
           />
-          {editingId ? (
-            <ImageManager
-              initialPhotos={managedPhotos}
-              onChange={setManagedPhotos}
-            />
-          ) : null}
+          <ImageManager
+            title="Photos"
+            photos={orderedItems}
+            onReorder={reorderPhoto}
+            onRemove={removePhoto}
+            onDetailChange={updatePhotoDetail}
+          />
           <label className="flex items-center gap-3 text-sm text-slate-700">
             <input
               type="checkbox"
@@ -279,7 +384,9 @@ export default function NewsAdminClient({ initialNews }) {
               {items.map((item) => (
                 <tr key={item.id}>
                   <td className="px-6 py-4 font-medium text-slate-900">
-                    {item.title}
+                    {item.title || (
+                      <span className="italic text-slate-400">Untitled</span>
+                    )}
                   </td>
                   <td className="px-6 py-4">
                     {item.event_date

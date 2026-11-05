@@ -563,19 +563,25 @@
 }
 
 .img-manager-list {
-  display: flex;
-  gap: 10px;
-  overflow-x: auto;
-  padding-bottom: 8px;
-  scrollbar-width: thin;
-  scrollbar-color: #e5e7eb transparent;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 12px;
+  /* Every photo is laid out in view. No inner scroll box: the page itself
+     scrolls, and the browser scrolls it while a photo is being dragged. */
+  padding: 4px 0 8px;
 }
 
 .img-manager-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.img-manager-thumb-wrapper {
   position: relative;
-  flex: 0 0 120px;
-  width: 120px;
-  height: 120px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
   border-radius: 8px;
   overflow: hidden;
   border: 1.5px solid #e5e7eb;
@@ -584,7 +590,7 @@
   background: #f9fafb;
 }
 
-.img-manager-card:active {
+.img-manager-thumb-wrapper:active {
   cursor: grabbing;
   transform: scale(0.97);
   border-color: #3b82f6;
@@ -618,7 +624,7 @@
 .img-manager-badge {
   position: absolute;
   bottom: 5px;
-  left: 26px;
+  left: 5px;
   background: rgba(0, 0, 0, 0.55);
   color: #fff;
   font-size: 11px;
