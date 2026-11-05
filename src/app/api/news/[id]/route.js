@@ -1,6 +1,7 @@
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { supabaseAdmin } from "@/lib/supabase/server";
+import { cleanPhotoDetails } from "@/lib/newsPhotos";
 
 export async function PUT(request, { params }) {
   const session = await getServerSession(authOptions);
@@ -9,9 +10,7 @@ export async function PUT(request, { params }) {
     return Response.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  console.log("Params received:", params);
   const { id } = await params;
-  console.log("Params received:", params);
 
   const {
     title,
@@ -19,15 +18,22 @@ export async function PUT(request, { params }) {
     event_date,
     is_published,
     photo_urls,
+    photo_details,
   } = await request.json();
+
+  if (!title?.trim()) {
+    return Response.json({ error: "Event name is required." }, { status: 400 });
+  }
+
   const { data, error } = await supabaseAdmin
     .from("news_events")
     .update({
-      title,
-      content: content || null,
+      title: title.trim(),
+      content: content?.trim() || null,
       event_date: event_date || null,
       is_published,
       photo_urls,
+      photo_details: cleanPhotoDetails(photo_details, photo_urls),
       updated_at: new Date().toISOString(),
     })
     .eq("id", id)

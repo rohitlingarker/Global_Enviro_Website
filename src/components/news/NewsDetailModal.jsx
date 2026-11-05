@@ -5,6 +5,7 @@ import Image from "next/image";
 
 export default function NewsDetailModal({ item, photos, initialIndex = 0, onClose }) {
   const [current, setCurrent] = useState(initialIndex);
+  const currentPhoto = item.photo_details?.[item.photo_urls?.[current]];
 
   const prev = useCallback(() => {
     setCurrent((value) => (value - 1 + photos.length) % photos.length);
@@ -63,7 +64,7 @@ export default function NewsDetailModal({ item, photos, initialIndex = 0, onClos
           <Image
             key={current}
             src={photos[current]}
-            alt={`Photo ${current + 1}`}
+            alt={currentPhoto?.name || `Photo ${current + 1}`}
             fill
             sizes="(max-width: 768px) 100vw, 900px"
             className="object-contain"
@@ -106,19 +107,40 @@ export default function NewsDetailModal({ item, photos, initialIndex = 0, onClos
           ) : null}
         </div>
 
-        <div className="news-detail-modal-body">
-          <h2 className="mb-2 text-2xl font-semibold text-blue-800">
-            {item.title}
-          </h2>
-          {item.event_date ? (
-            <p className="mb-4 text-sm text-gray-500">
-              {new Date(item.event_date).toLocaleDateString()}
-            </p>
-          ) : null}
-          <p className="whitespace-pre-wrap text-sm text-gray-700">
-            {item.content}
-          </p>
-        </div>
+        {currentPhoto ? (
+          <div className="flex flex-col gap-1 border-b border-slate-100 px-6 py-4 text-center sm:px-8">
+            {currentPhoto.name ? (
+              <h3 className="text-lg font-semibold text-slate-900">
+                {currentPhoto.name}
+              </h3>
+            ) : null}
+            {currentPhoto.details ? (
+              <p className="whitespace-pre-wrap text-sm text-gray-600">
+                {currentPhoto.details}
+              </p>
+            ) : null}
+          </div>
+        ) : null}
+
+        {item.title || item.event_date || item.content ? (
+          <div className="news-detail-modal-body flex flex-col gap-2">
+            {item.title ? (
+              <h2 className="text-2xl font-semibold text-blue-800">
+                {item.title}
+              </h2>
+            ) : null}
+            {item.event_date ? (
+              <p className="text-sm text-gray-500">
+                {new Date(item.event_date).toLocaleDateString()}
+              </p>
+            ) : null}
+            {item.content ? (
+              <p className="mt-2 whitespace-pre-wrap text-sm text-gray-700">
+                {item.content}
+              </p>
+            ) : null}
+          </div>
+        ) : null}
       </div>
     </div>
   );
