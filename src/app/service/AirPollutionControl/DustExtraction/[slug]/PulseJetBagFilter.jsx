@@ -44,7 +44,7 @@ export default function PulseJetBagFilterPage() {
 
         <div className="relative w-full aspect-4/3">
           <Image
-            src="/assets/images/Air_Pollution/a01. Pulsejet Bag Filter for Boiler.jpg"
+            src="/assets/images/Air_Pollution/pulsejet bag filter.png"
             alt="Pulse Jet Bag Filter"
             fill
             className="object-contain rounded-lg shadow-md"

@@ -44,7 +44,7 @@ export default function CentrifugalFansPage() {
 
         <div className="relative w-full aspect-4/3">
           <Image
-            src="/assets/images/updated_images/centrifugal fan.jpg"
+            src="/assets/images/Air_Pollution/centrifugal fan.jpg"
             alt="Centrifugal Fans"
             fill
             className="object-contain rounded-lg shadow-md"

@@ -5,7 +5,8 @@ export async function getPublishedNews() {
     .from("news_events")
     .select("*")
     .eq("is_published", true)
-    .order("created_at", { ascending: false });
+    .order("created_at", { ascending: false })
+    .limit(500);
 
   if (error) {
     throw new Error(error.message);

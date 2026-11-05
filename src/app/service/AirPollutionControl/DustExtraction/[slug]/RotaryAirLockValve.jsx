@@ -26,7 +26,7 @@ export default function RotaryAirLockValvePage() {
             feeder used for controlled discharge of bulk materials while
             maintaining an effective air seal between two different pressure
             zones. It is widely used in pneumatic conveying, dust collection,
-            and Mill handling system to ensure continuous and leak-free
+            and Material handling system to ensure continuous and leak-free
             material transfer.
           </p>
           <p className="mt-2 font-semibold text-gray-700">Ideal For:</p>
@@ -42,7 +42,7 @@ export default function RotaryAirLockValvePage() {
 
         <div className="relative w-full aspect-4/3">
           <Image
-            src="/assets/images/updated_images/RAV.jpg"
+            src="/assets/images/Air_Pollution/RAV.jpg"
             alt="RAV (Rotary Air Lock Valve)"
             fill
             className="object-contain rounded-lg shadow-md"

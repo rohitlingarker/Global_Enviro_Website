@@ -9,7 +9,7 @@ export default function Certifications() {
   const certificates = [
     // {
     //   name: "Global Enviro Air Systems Pvt. Ltd.",
-    //   img: "/assets/images/Certificate1.jpg",
+    //   img: "/assets/images/about/Certificate1.jpg",
     //   desc: `Our ISO 9001:2008 certification highlights our dedication to superior design,
     //   manufacturing, and customer satisfaction. It reinforces our commitment to excellence
     //   and reliability in delivering HVAC and pollution control solutions.Our ISO 9001:2008 certification highlights our dedication to superior design,
@@ -18,37 +18,41 @@ export default function Certifications() {
     // },
     // {
     //   name: "Global Technologies",
-    //   img: "/assets/images/Certificate2.jpg",
+    //   img: "/assets/images/about/Certificate2.jpg",
     //   desc: `With ISO 9001:2008 accreditation, Global Technologies continues to deliver top-tier
-    //   engineering and Mill handling system with precision, efficiency, and quality.`,
+    //   engineering and Material handling system with precision, efficiency, and quality.`,
     // },
     {
       name: "Global Enviro Air Systems Pvt Ltd",
-      img: "/assets/images/02. Q-251201 Global Enviro Air Systems pvt Ltd_page-0001.jpg",
+      img: "/assets/images/about/02. Q-251201 Global Enviro Air Systems pvt Ltd_page-0001.jpg",
       desc: `Recognition of our quality management practices and continued adherence to
       international standards across our HVAC, cleanroom, and air pollution control systems.`,
     },
     {
       name: "Global Enviro Air Systems (Expansion)",
-      img: "/assets/images/Certificate3.jpg",
+      img: "/assets/images/about/Certificate3.jpg",
       desc: `Our expansion certification reflects continued innovation, growth, and compliance with
       global standards in environmental engineering and cleanroom technology.`,
     },
-    
+    {
+      name: "MSME ZED Gold Certification",
+      img: "/assets/images/about/zed-gold-certificate.jpg",
+      desc: `Awarded to Global Enviro Air Systems Pvt Ltd under the MSME Sustainable (ZED)
+      Certification Scheme by the Ministry of MSME, Government of India. The Gold level
+      recognises our commitment to Zero Defect, Zero Effect manufacturing.`,
+    },
   ];
 
-  const [active, setActive] = useState(certificates[0]);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const active = certificates[activeIndex];
 
-  // Auto rotate every 3 seconds
+  // Auto rotate every 3 seconds through every certificate; restarts after a manual click
   useEffect(() => {
     const interval = setInterval(() => {
-      setActive((prev) => {
-        const currentIndex = certificates.findIndex((c) => c.name === prev.name);
-        return certificates[(currentIndex + 1) % certificates.length];
-      });
+      setActiveIndex((prev) => (prev + 1) % certificates.length);
     }, 3000);
     return () => clearInterval(interval);
-  }, []);
+  }, [activeIndex, certificates.length]);
 
   return (
     <section className="relative bg-[#081736] text-white py-6 px-6 md:px-16 overflow-hidden">
@@ -116,14 +120,14 @@ export default function Certifications() {
 
       {/* ===== Certificates Thumbnails Row ===== */}
       <div className="mt-6 flex flex-wrap justify-center gap-4 relative z-10">
-        {certificates.map((c) => (
+        {certificates.map((c, i) => (
           <MotionWrapper
             as="div"
             key={c.name}
             whileHover={{ scale: 1.05 }}
-            onClick={() => setActive(c)}
+            onClick={() => setActiveIndex(i)}
             className={`cursor-pointer w-24 h-32 rounded-md overflow-hidden border-2 ${
-              c.name === active.name
+              i === activeIndex
                 ? "border-blue-400"
                 : "border-transparent opacity-70"
             }`}

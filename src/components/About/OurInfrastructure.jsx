@@ -4,10 +4,10 @@ import Image from "next/image";
 
 const OurInfrastructure = () => {
   const baseImages = [
-    "/assets/images/Infrastructure1.jpg",
-    "/assets/images/Infrastructure4.jpg",
-    "/assets/images/Infrastructure6.jpg",
-    "/assets/images/Infrastructure8.jpg",
+    "/assets/images/about/Infrastructure1.jpg",
+    "/assets/images/about/Infrastructure4.jpg",
+    "/assets/images/about/Infrastructure6.jpg",
+    "/assets/images/about/Infrastructure8.jpg",
   ];
 
   const infrastructureData = [

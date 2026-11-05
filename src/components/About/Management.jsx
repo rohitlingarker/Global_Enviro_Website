@@ -10,7 +10,7 @@ export default function Management() {
     {
       name: "K. Srirami Reddy",
       title: "Managing Director",
-      img: "/assets/images/founder.jpeg",
+      img: "/assets/images/about/founder.jpeg",
       desc: `As the Founder and Managing Director of Global Enviro Air Systems,
 
       
@@ -22,7 +22,7 @@ export default function Management() {
     {
       name: "V. Ramana Murthy",
       title: "Director",                     // ← simplified per client doc
-      img: "/assets/images/Director.png",
+      img: "/assets/images/about/Director.png",
       desc: `A phenomenal management force of Global Enviro Air Systems,
       Mr. Ramana Murthy has led over 100 HVAC Cleanroom projects across
       Pharma and Chemical sectors. His deep expertise in failure analysis and
@@ -31,7 +31,7 @@ export default function Management() {
     {
       name: "A. Sambasiva Rao",
       title: "Business Head",                // ← updated per client doc
-      img: "/assets/images/Partner.png",
+      img: "/assets/images/about/Partner.png",
       desc: `With over 25 years of experience in Fuels and Ash Handling Systems, 10 Years in Veesons Energy Systems Pvt. Ltd., Cheema Boilers, Thermax later joined in to Global Enviro Air Systems,  
 
 Mr. A. Sambasiva Rao  brings extensive project management and vendor

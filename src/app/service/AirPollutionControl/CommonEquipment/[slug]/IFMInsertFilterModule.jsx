@@ -34,7 +34,7 @@ export default function IFMInsertFilterModulePage() {
           <ul className="list-disc pl-6 mt-1 space-y-1">
             <li className="break-inside-avoid">
               Dust extraction at transfer points, hoppers, silos, and
-              enclosed Mill handling system
+              enclosed Material handling system
             </li>
             <li className="break-inside-avoid">
               Industries handling powdery materials like cement, fly ash,
@@ -49,7 +49,7 @@ export default function IFMInsertFilterModulePage() {
 
         <div className="relative w-full aspect-4/3">
           <Image
-            src="/assets/images/updated_images/Insert Filter module.jpg"
+            src="/assets/images/Air_Pollution/Insert Filter module.jpg"
             alt="IFM (Insert Filter Module)"
             fill
             className="object-contain rounded-lg shadow-md"

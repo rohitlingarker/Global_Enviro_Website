@@ -3,12 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 const products = [
-  { title: "Castings",            img: "/assets/images/castings.png" },
-  { title: "Carbon Steel",        img: "/assets/images/carbon.png" },
-  { title: "Guidevan",            img: "/assets/images/guidevan.png" },
-  { title: "MDC Cones",           img: "/assets/images/MDC cones.png" },
+  { title: "Castings",            img: "/assets/images/group-projects/castings.png" },
+  { title: "Carbon Steel",        img: "/assets/images/group-projects/carbon.png" },
+  { title: "Guidevan",            img: "/assets/images/group-projects/guidevan.png" },
+  { title: "MDC Cones",           img: "/assets/images/group-projects/MDC cones.png" },
   { title: "Rotary Airlock Valve",img: "/assets/images/rotary airlock valve.png" },
-  { title: "Core Shop",           img: "/assets/images/core shop.png" },
+  { title: "Core Shop",           img: "/assets/images/group-projects/core shop.png" },
 ];
 
 
@@ -23,12 +23,12 @@ const castingTypes = [
   {
     title: "Manganese Steel Castings",
     desc: "High-impact resistant castings used in crushing, grinding, and material handling applications. Ideal for high-wear environments.",
-    img: "/assets/images/castings.png",
+    img: "/assets/images/group-projects/castings.png",
   },
   {
     title: "Hi-Chrome Castings",
     desc: "Superior abrasion-resistant castings offering extended service life in cement, power, and mineral processing industries.",
-    img: "/assets/images/carbon.png",
+    img: "/assets/images/group-projects/carbon.png",
   },
   {
     title: "Cast Iron Components",
@@ -43,7 +43,7 @@ export default function GlobalMetallurgicalsPage() {
 
       {/* Hero */}
       <HeroSection
-        imageSrc="/assets/images/metallurgy.jpg"
+        imageSrc="/assets/images/group-projects/metallurgy.jpg"
         title="Global Metallurgicals"
         subtitle="Precision Metal Castings for Industry."
         align="left"

@@ -11,8 +11,9 @@ const companies = [
     tagline: "Engineering Clean Air, Enabling Clean Industry",
     description:
       "We design and manufacture advanced air pollution control systems, engineered to drastically reduce or eliminate industrial emissions into the atmosphere. As turnkey solution providers for HVAC and Clean room projects, we deliver complete systems — air handling units, puff panels, clean room doors, and high-efficiency dust collectors — all tailored for precision manufacturing environments. We also specialize in bulk material handling for cement and fly ash, with proven unloading systems for silos and racks.",
-    image: "/assets/images/hvac-projects/door-brochure.jpg",
+    image: "/assets/images/metal-doors/group_building.png",
     shape: "rounded-full",
+    fit: "contain",
     link: "/Ourgroup/GlobalEnviroAirSystems",
     external: false,
   },
@@ -21,7 +22,7 @@ const companies = [
     name: "Indophil Jettech Energy Private Limited",
     description:
       "Indophil Jettech Energy Pvt. Ltd. is a leading player in Engineering, Procurement, and Construction (EPC) services for Biomass Power Plants, Solar Power Plants, Edible Oil Refineries, and Process Boilers. As a rapidly growing entity in the Philippines Energy Sector, our portfolio boasts over 55 MW (Biomass Power Plants) capacity and 15 MW (Solar Power Plants).",
-    image: "/assets/images/jettech.jpg",
+    image: "/assets/images/group-projects/jettech.jpg",
     shape: "rounded-full",
     link: "https://www.jettechenergy.com/",
     external: true,
@@ -32,7 +33,7 @@ const companies = [
     tagline: "Precision Metal Castings for Industry",
     description:
       "We specialize in high-performance Manganese Steel Castings and Hi-Chrome Castings, engineered for extreme wear and impact applications. Our core cast iron products include Rotary Airlock Valves, Dust Collector Cones, Bearing Housings, Crusher Liners & Beaters, and Hammers. In-House Capabilities That Deliver — with a 500 Kg induction furnace, a dedicated heat treatment facility, and complete in-house machining, we maintain full quality control from melt to final component.",
-    image: "/assets/images/metallurgy.jpg",
+    image: "/assets/images/group-projects/metallurgy.jpg",
     shape: "rounded-full",
     link: "/Ourgroup/GlobalMetallurgy",
     external: false,

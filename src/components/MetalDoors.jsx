@@ -33,12 +33,12 @@ const PRODUCT_CATEGORIES = [
 ];
 
 const ADVANTAGES = [
-  { text: 'Cost-Effective Construction', icon: IndianRupee, color: 'bg-blue-900' },
-  { text: 'Full Control of Design at all Stages', icon: SlidersHorizontal, color: 'bg-red-700' },
-  { text: 'Minimum Production Lead and Delivery Time', icon: Clock3, color: 'bg-blue-900' },
-  { text: 'Production Quality Certified to Standards', icon: BadgeCheck, color: 'bg-red-700' },
-  { text: 'Modular Construction Facility for Easy Transportation', icon: Boxes, color: 'bg-blue-900' },
-  { text: 'Variety of Custom Finishes', icon: Ruler, color: 'bg-red-700' },
+  { text: 'Cost-Effective Construction', icon: IndianRupee, color: 'bg-red-700', tint: 'bg-red-50', border: 'border-red-200 hover:border-red-400' },
+  { text: 'Full Control of Design at all Stages', icon: SlidersHorizontal, color: 'bg-red-700', tint: 'bg-red-50', border: 'border-red-200 hover:border-red-400' },
+  { text: 'Minimum Production Lead and Delivery Time', icon: Clock3, color: 'bg-red-700', tint: 'bg-red-50', border: 'border-red-200 hover:border-red-400' },
+  { text: 'Production Quality Certified to Standards', icon: BadgeCheck, color: 'bg-red-700', tint: 'bg-red-50', border: 'border-red-200 hover:border-red-400' },
+  { text: 'Modular Construction Facility for Easy Transportation', icon: Boxes, color: 'bg-red-700', tint: 'bg-red-50', border: 'border-red-200 hover:border-red-400' },
+  { text: 'Variety of Custom Finishes', icon: Ruler, color: 'bg-red-700', tint: 'bg-red-50', border: 'border-red-200 hover:border-red-400' },
 ];
 
 const COLOR_CODES = [
@@ -263,12 +263,15 @@ export default function MetalDoors() {
           Advantages of Our Metal Doors
         </h2>
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {ADVANTAGES.map(({ text, icon: Icon, color }) => (
-            <div key={text} className="flex items-center gap-4 bg-white rounded-lg p-4 border border-gray-100 shadow-sm">
-              <span className={`flex items-center justify-center h-12 w-12 rounded-full ${color} flex-shrink-0`}>
+          {ADVANTAGES.map(({ text, icon: Icon, color, tint, border }) => (
+            <div
+              key={text}
+              className={`flex items-center gap-4 ${tint} rounded-lg p-4 border-2 ${border} shadow-md hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200`}
+            >
+              <span className={`flex items-center justify-center h-12 w-12 rounded-full ${color} shadow-sm flex-shrink-0`}>
                 <Icon className="h-6 w-6 text-white" />
               </span>
-              <span className="font-semibold text-gray-700">{text}</span>
+              <span className="font-semibold text-gray-800">{text}</span>
             </div>
           ))}
         </div>
@@ -292,14 +295,14 @@ export default function MetalDoors() {
               <a
                 key={cat.name}
                 href={`#${cat.anchor}`}
-                className="flex items-center gap-3 bg-white rounded-lg border border-gray-200 px-4 py-3 text-gray-700 hover:border-blue-300 hover:text-blue-700 hover:shadow-sm transition"
+                className="flex items-center gap-3 bg-blue-50 rounded-lg border-2 border-blue-200 px-4 py-3 text-gray-700 shadow-sm hover:border-blue-400 hover:bg-blue-100 hover:text-blue-800 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
               >
                 {content}
               </a>
             ) : (
               <div
                 key={cat.name}
-                className="flex items-center gap-3 bg-white rounded-lg border border-gray-200 px-4 py-3 text-gray-500"
+                className="flex items-center gap-3 bg-blue-50 rounded-lg border-2 border-blue-200 px-4 py-3 text-gray-700 shadow-sm"
               >
                 {content}
               </div>
@@ -474,9 +477,9 @@ export default function MetalDoors() {
         <h2 className="text-2xl font-semibold text-blue-800 mb-6">Color Codes</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
           {COLOR_CODES.map((c) => (
-            <div key={c.name} className="text-center">
+            <div key={c.name} className="text-center rounded-lg border-2 border-gray-200 shadow-sm hover:shadow-md transition-shadow p-2">
               <div
-                className={`h-16 rounded-md shadow-sm ${c.border ? 'border border-gray-300' : ''}`}
+                className={`h-16 rounded-md shadow-inner ${c.border ? 'border border-gray-300' : 'border border-black/10'}`}
                 style={{ backgroundColor: c.hex }}
               />
               <p className="mt-2 text-xs font-semibold text-gray-700">{c.name}</p>
@@ -572,7 +575,7 @@ export default function MetalDoors() {
         <h2 className="text-2xl font-semibold text-blue-800 mb-6">Shutter Infill Materials</h2>
         <div className="grid md:grid-cols-3 gap-6">
           {INFILL_MATERIALS.map((m) => (
-            <div key={m.name} className="rounded-lg border border-gray-200 shadow-sm overflow-hidden flex flex-col">
+            <div key={m.name} className="rounded-lg border-2 border-gray-200 shadow-md hover:shadow-xl hover:border-gray-300 transition-all duration-200 overflow-hidden flex flex-col bg-white">
               <div className="relative w-full h-[150px]">
                 <Image src={m.image} alt={m.name} fill className="object-cover" />
               </div>

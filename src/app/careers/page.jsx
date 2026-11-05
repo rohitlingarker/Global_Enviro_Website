@@ -1,7 +1,7 @@
 import CareersBrowser from "@/components/careers/CareersBrowser";
 import { getActiveJobs } from "@/lib/queries/jobs";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 60;
 
 export default async function CareersPage() {
   let jobs = [];

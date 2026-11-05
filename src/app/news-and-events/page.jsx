@@ -1,7 +1,7 @@
 import NewsGalleryList from "@/components/news/NewsGalleryList";
 import { getPublishedNews } from "@/lib/queries/news";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 60;
 
 export default async function NewsAndEventsPage() {
   let items = [];

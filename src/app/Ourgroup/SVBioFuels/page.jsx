@@ -28,11 +28,11 @@ const features = [
 
 const products = [
   { name: "Biomass Briquettes",       img: "/assets/images/fuel handling system.png" },
-  { name: "Coal Handling Systems",    img: "/assets/images/belt conveyor.png" },
-  { name: "Husk Handling",            img: "/assets/images/vibratory screen.png" },
-  { name: "Ash Handling",             img: "/assets/images/ash handling.png" },
+  { name: "Coal Handling Systems",    img: "/assets/images/group-projects/belt conveyor.png" },
+  { name: "Husk Handling",            img: "/assets/images/group-projects/vibratory screen.png" },
+  { name: "Ash Handling",             img: "/assets/images/group-projects/ash handling.png" },
   { name: "Ash Conditioner",          img: "/assets/images/ash conditioner.png" },
-  { name: "Dense Phase Conveying",    img: "/assets/images/densephase ash handling.png" },
+  { name: "Dense Phase Conveying",    img: "/assets/images/group-projects/densephase ash handling.png" },
 ];
 
 const divisions = [
@@ -44,12 +44,12 @@ const divisions = [
   {
     title: "Fuel Handling Systems",
     desc: "Complete fuel handling solutions including coal, husk, and biomass briquette handling with conveyors, screens, and crushers.",
-    img: "/assets/images/belt conveyor.png",
+    img: "/assets/images/group-projects/belt conveyor.png",
   },
   {
     title: "Renewable Energy Solutions",
     desc: "Sustainable alternatives to fossil fuels, helping industries reduce carbon footprint while maintaining energy efficiency.",
-    img: "/assets/images/ash handling.png",
+    img: "/assets/images/group-projects/ash handling.png",
   },
 ];
 
